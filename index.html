@@ -38,7 +38,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
     .bg-grid {
       background-image:
         radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
@@ -50,13 +52,13 @@
 
   <!-- NAVBAR -->
   <header class="sticky top-0 z-40 border-b border-white/5 bg-clblack/80 backdrop-blur">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 gap-4">
-      <div class="flex items-center gap-3">
-        <!-- LOGO GRANDE -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20 sm:h-20 md:h-24 gap-4">
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- LOGO GRANDE Y RESPONSIVE -->
         <img
           src="https://i.postimg.cc/s2YtHvzB/IMG_0156.png"
           alt="CL Tech Solutions"
-          class="h-10 sm:h-12 md:h-14 w-auto object-contain"
+          class="h-14 sm:h-16 md:h-20 w-auto object-contain"
         />
         <div class="leading-tight hidden sm:block">
           <p class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-clturq">CL Tech Solutions</p>
@@ -64,7 +66,7 @@
         </div>
       </div>
 
-      <nav class="hidden md:flex.items-center gap-8 text-sm">
+      <nav class="hidden md:flex items-center gap-8 text-sm">
         <a href="#beneficios" class="text-white/70 hover:text-clturq transition">Beneficios</a>
         <a href="#incluye" class="text-white/70 hover:text-clturq transition">Qué incluye</a>
         <a href="#proceso" class="text-white/70 hover:text-clturq transition">Cómo funciona</a>
@@ -73,18 +75,6 @@
       </nav>
 
       <div class="hidden md:flex items-center gap-4">
-        <!-- WHATSAPP ARRIBA -->
-        <div class="flex flex-col items-end leading-tight text-[11px]">
-          <span class="text-white/50 uppercase tracking-[0.16em]">WhatsApp directo</span>
-          <a
-            href="https://wa.me/593999630862?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20Impulso%20Digital%20360."
-            target="_blank"
-            class="text-clturq font-semibold hover:text-clturq/80"
-          >
-            099 963 0862
-          </a>
-        </div>
-
         <a href="#formulario"
            class="px-4 py-2 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_12px_35px_rgba(17,215,227,0.45)] hover:-translate-y-[2px] hover:shadow-[0_18px_45px_rgba(17,215,227,0.7)] active:translate-y-0 active:shadow-none transition">
           Quiero mi web
@@ -154,7 +144,7 @@
           <div class="flex items-baseline justify-between">
             <div>
               <p class="text-xs text-white/50 mb-1">Inversión única</p>
-              <p class="text-2xl font-bold text-clturq">$97<span class="text-sm text-white/50"> USD</span></p>
+              <p class="text-2xl font-bold text-clturq mb-1">$97<span class="text-sm text-white/50"> USD</span></p>
               <p class="text-[11px] text-white/50">Sin mensualidades. Sin letras pequeñas.</p>
             </div>
             <div class="flex flex-col items-end gap-1 text-[11px] text-white/60">
@@ -248,7 +238,7 @@
   <!-- PROCESO -->
   <section id="proceso" class="py-14 md:py-20 border-t border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl md:tex-3xl font-semibold mb-3">¿Cómo funciona el proceso?</h2>
+      <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Cómo funciona el proceso?</h2>
       <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
         Queremos que todo sea claro, rápido y sin estrés. Así trabajamos contigo:
       </p>
@@ -354,7 +344,7 @@
 
         <!-- Plan 197/mes -->
         <div class="rounded-2xl border border-clturq/60 bg-gradient-to-br from-clgray via-clblack to-black p-5 shadow-[0_18px_55px_rgba(0,0,0,0.8)] hover:-translate-y-1 transition">
-          <p class="text-xs.text-white/60 mb-1 uppercase tracking-[0.18em]">Más vendido</p>
+          <p class="text-xs text-white/60 mb-1 uppercase tracking-[0.18em]">Más vendido</p>
           <h3 class="font-semibold mb-1 text-clturq">Automatización Completa</h3>
           <p class="text-2xl font-bold mb-1">$197<span class="text-xs text-white/50">/mes</span></p>
           <p class="text-xs text-white/50 mb-3">Para negocios que quieren sistemas serios.</p>
@@ -377,7 +367,7 @@
           <h3 class="font-semibold mb-1 text-clturq">Premium Crecimiento</h3>
           <p class="text-2xl font-bold mb-1">$297<span class="text-xs text-white/50">/mes</span></p>
           <p class="text-xs text-white/50 mb-3">Para empresas que quieren escalar serio.</p>
-          <ul class="space-y-1 text-white/80 mb-3">
+          <ul class="space-y-1 text-white/80.mb-3">
             <li>• Web avanzada (hasta 5 secciones).</li>
             <li>• Automatización PRO completa.</li>
             <li>• 4 posts + 2 reels mensuales.</li>
@@ -396,13 +386,13 @@
   <section id="faq" class="py-14 md:py-20 border-t border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl md:text-3xl font-semibold mb-3">Preguntas frecuentes</h2>
-      <p class="text-white/70 text-sm md:text-base.mb-8 max-w-2xl">
+      <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
         Si tienes dudas, es probable que estén aquí. Si no, puedes escribirnos directamente por WhatsApp.
       </p>
 
       <div class="space-y-4 text-sm">
         <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between">
+          <summary class="flex cursor-pointer list-none.items-center justify-between">
             <span class="font-semibold text-white/90">¿La web es mía o la pierdo después de un tiempo?</span>
             <span class="text-clturq group-open:rotate-180 transition">▼</span>
           </summary>
@@ -423,7 +413,7 @@
         </details>
 
         <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
-          <summary class="flex.cursor-pointer list-none items-center justify-between">
+          <summary class="flex cursor-pointer list-none items-center justify-between">
             <span class="font-semibold text-white/90">¿Es obligatorio tomar un plan mensual después?</span>
             <span class="text-clturq group-open:rotate-180 transition">▼</span>
           </summary>
@@ -456,32 +446,39 @@
       </p>
 
       <div class="mb-8">
-        <a href="TU_LINK_DE_FORMULARIO"
-           class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.9)] hover:-translate-y-[2px] hover:shadow-[0_22px_70px_rgba(17,215,227,1)].active:translate-y-0 active:shadow-none transition">
+        <!-- REEMPLAZA ESTA URL POR TU LINK REAL DE FORMULARIO -->
+        <a href="PON_AQUI_TU_LINK_DE_FORMULARIO"
+           class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.9)] hover:-translate-y-[2px] hover:shadow-[0_22px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
           Ir al formulario de aplicación
         </a>
       </div>
 
       <!-- Si deseas incrustar el formulario:
       <div class="mt-6">
-        <iframe src="TU_LINK_DE_FORMULARIO"
+        <iframe src="PON_AQUI_TU_LINK_DE_FORMULARIO"
                 class="w-full h-[520px] rounded-2xl border border-white/15 bg-white"
                 loading="lazy"></iframe>
       </div>
       -->
 
       <p class="text-xs text-white/50 mt-6">
-        Si tienes dudas antes de aplicar, puedes escribirnos a:<br>
-        <a
-          href="https://wa.me/593999630862?text=Hola,%20tengo%20dudas%20sobre%20Impulso%20Digital%20360."
-          target="_blank"
-          class="text-clturq font-semibold"
-        >
-          +593 99 963 0862 (WhatsApp)
-        </a>
+        Una vez envíes el formulario, te contactaremos por WhatsApp usando los datos que nos compartas.
       </p>
     </div>
   </section>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a
+    href="https://wa.me/593999630862?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20Impulso%20Digital%20360."
+    target="_blank"
+    class="fixed z-50 bottom-4 right-4 sm:bottom-6 sm:right-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-clturq text-clblack flex items-center justify-center shadow-[0_12px_35px_rgba(17,215,227,0.85)] hover:scale-105 active:scale-95 transition-transform"
+    aria-label="Escríbenos por WhatsApp"
+  >
+    <!-- Icono WhatsApp simple -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-8 h-8">
+      <path fill="#0C0E12" d="M16.04 2.67C9.76 2.67 4.67 7.76 4.67 14.04c0 2.02.54 3.98 1.57 5.71L4 28l8.47-2.16a11.6 11.6 0 0 0 3.57.55c6.28 0 11.37-5.09 11.37-11.37S22.32 2.67 16.04 2.67Zm0 20.7c-1.64 0-3.24-.44-4.63-1.28l-.33-.2-5.01 1.28 1.34-4.88-.22-.36a8.5 8.5 0 0 1-1.3-4.56c0-4.76 3.88-8.64 8.65-8.64 4.77 0 8.64 3.88 8.64 8.64s-3.87 8.64-8.64 8.64Zm4.37-6.47c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.16-.7-.62-1.18-1.38-1.32-1.61-.14-.24-.01-.37.12-.49.13-.12.3-.32.44-.48.15-.16.2-.28.3-.47.1-.2.05-.36-.02-.49-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.68 4.16 3.64 1.46.58 2.04.63 2.77.53.44-.06 1.42-.58 1.62-1.13.2-.55.2-1.03.14-1.13-.06-.1-.22-.16-.46-.29Z"/>
+    </svg>
+  </a>
 
   <!-- FOOTER -->
   <footer class="border-t border-white/10 py-6">
