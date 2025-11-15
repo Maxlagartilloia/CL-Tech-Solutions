@@ -6,14 +6,14 @@
   <title>Impulso Digital 360 | CL Tech Solutions</title>
 
   <!-- SEO -->
-  <meta name="description" content="Impulso Digital 360 de CL Tech Solutions: página web profesional en 48 horas, lista para vender, con Google Maps, SEO inicial y botón de WhatsApp.">
-  <meta name="keywords" content="página web para emprendedores, web profesional, landing page Ecuador, CL Tech Solutions, Impulso Digital 360">
+  <meta name="description" content="Impulso Digital 360 de CL Tech Solutions: página web profesional en 48 horas, lista para vender, con Google Maps, SEO inicial y botón de WhatsApp. Dominio y hosting incluidos.">
+  <meta name="keywords" content="página web para emprendedores, web profesional, página web Ecuador, CL Tech Solutions, Impulso Digital 360, dominio y hosting incluidos">
   <meta name="author" content="CL Tech Solutions">
 
   <!-- OG / Redes -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Impulso Digital 360 | Tu negocio listo para vender en 48 horas">
-  <meta property="og:description" content="Web profesional + Google Maps + SEO inicial + botón de WhatsApp en un solo sistema.">
+  <meta property="og:description" content="Página web profesional + dominio + hosting + Google Maps + SEO inicial + botón de WhatsApp en un solo sistema.">
   <meta property="og:image" content="URL_DE_TU_PREVIEW" />
   <meta property="og:url" content="https://tudominio.com/impulso-digital-360" />
 
@@ -46,6 +46,80 @@
         radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
       background-size: 32px 32px;
     }
+    /* Logo grande y responsive */
+    .cl-logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .cl-logo-img {
+      display: block;
+      height: 56px; /* base */
+      width: auto;
+    }
+    @media (min-width: 640px) { /* tablet */
+      .cl-logo-img {
+        height: 72px;
+      }
+    }
+    @media (min-width: 1024px) { /* desktop */
+      .cl-logo-img {
+        height: 88px;
+      }
+    }
+
+    /* Botón flotante de WhatsApp */
+    .btn-whatsapp-float {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 9999px;
+      background-color: #11D7E3;
+      color: #0C0E12;
+      box-shadow: 0 18px 45px rgba(17, 215, 227, 0.75);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    }
+    .btn-whatsapp-float:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 24px 60px rgba(17, 215, 227, 0.95);
+      filter: brightness(1.05);
+    }
+    .btn-whatsapp-float svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    /* Modal formulario */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 40;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-content {
+      width: 100%;
+      max-width: 840px;
+      max-height: 90vh;
+      background: linear-gradient(to bottom right,#151820,#05060a);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.95);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
   </style>
 </head>
 <body class="bg-clblack text-white bg-grid">
@@ -53,38 +127,39 @@
   <!-- NAVBAR -->
   <header class="sticky top-0 z-40 border-b border-white/5 bg-clblack/80 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-      <!-- LOGO GRANDE -->
-      <a href="#inicio" class="flex items-center gap-3">
+      <div class="cl-logo-wrapper">
         <img
           src="https://i.postimg.cc/s2YtHvzB/IMG_0156.png"
           alt="CL Tech Solutions"
-          class="h-12 sm:h-14 md:h-16 w-auto drop-shadow-[0_0_25px_rgba(17,215,227,0.7)]"
+          class="cl-logo-img"
         />
-        <div class="leading-tight hidden sm:block">
+        <div class="leading-tight">
           <p class="text-xs uppercase tracking-[0.2em] text-clturq">CL Tech Solutions</p>
           <p class="text-sm text-white/80">Impulso Digital 360</p>
         </div>
-      </a>
+      </div>
 
       <nav class="hidden md:flex items-center gap-8 text-sm">
         <a href="#beneficios" class="text-white/70 hover:text-clturq transition">Beneficios</a>
         <a href="#incluye" class="text-white/70 hover:text-clturq transition">Qué incluye</a>
         <a href="#proceso" class="text-white/70 hover:text-clturq transition">Cómo funciona</a>
         <a href="#planes" class="text-white/70 hover:text-clturq transition">Inversión</a>
+        <a href="#formulario" class="text-white/70 hover:text-clturq transition">Aplicar</a>
         <a href="#faq" class="text-white/70 hover:text-clturq transition">Preguntas</a>
       </nav>
 
       <div class="hidden md:flex">
-        <a href="#formulario"
+        <button
+           id="openFormModalTop"
            class="px-4 py-2 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_12px_35px_rgba(17,215,227,0.45)] hover:-translate-y-[2px] hover:shadow-[0_18px_45px_rgba(17,215,227,0.7)] active:translate-y-0 active:shadow-none transition">
-          Quiero mi web
-        </a>
+          Quiero mi página web
+        </button>
       </div>
     </div>
   </header>
 
   <!-- HERO -->
-  <section id="inicio" class="pt-14 pb-16 md:pt-24 md:pb-24">
+  <section class="pt-14 pb-16 md:pt-24 md:pb-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-[0.2em] text-clturq mb-4">
@@ -98,15 +173,17 @@
 
         <p class="text-sm sm:text-base text-white/70 mb-6">
           <strong>Impulso Digital 360</strong> es un programa de una sola vez donde creamos tu
-          página web profesional lista para vender: con diseño moderno, Google Maps, SEO inicial
-          y botón de WhatsApp, sin mensualidades ni complicaciones técnicas.
+          <strong>página web profesional (estructura de una sola página con 1–3 secciones principales)</strong>,
+          lista para vender: con diseño moderno, Google Maps, SEO inicial y botón de WhatsApp,
+          <strong>con dominio y hosting incluidos</strong>.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-3 mb-4">
-          <a href="#formulario"
+          <button
+             id="openFormModalHero"
              class="inline-flex items-center justify-center px-5 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_14px_40px_rgba(17,215,227,0.65)] hover:-translate-y-[2px] hover:shadow-[0_20px_60px_rgba(17,215,227,0.85)] active:translate-y-0 active:shadow-none transition">
             Quiero aplicar a Impulso Digital 360
-          </a>
+          </button>
           <a href="#incluye"
              class="inline-flex items-center justify-center px-5 py-3 text-sm font-semibold rounded-full border border-white/15 hover:border-clturq hover:text-clturq transition">
             Ver todo lo que incluye
@@ -120,7 +197,8 @@
         <div class="mt-6 flex flex-wrap gap-3 text-[11px] text-white/60">
           <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Entrega en 48 horas</div>
           <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Pago único: sin mensualidades</div>
-          <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Diseño profesional responsive</div>
+          <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Página web completa, en una sola página</div>
+          <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Dominio y hosting incluidos</div>
         </div>
       </div>
 
@@ -133,11 +211,12 @@
           <h2 class="text-xl font-semibold mb-3">Lo que tendrás en 48 horas</h2>
 
           <ul class="space-y-2 text-sm text-white/80 mb-4">
-            <li>• Landing page profesional (1–3 secciones).</li>
+            <li>• Página web profesional (una sola página con 1–3 secciones).</li>
             <li>• Diseño adaptado a tu marca y negocio.</li>
             <li>• Botón directo a tu WhatsApp.</li>
             <li>• Google Maps integrado para que te encuentren.</li>
             <li>• SEO inicial para que Google te reconozca.</li>
+            <li>• Dominio y hosting incluidos por CL Tech Solutions.</li>
             <li>• Soporte básico por 30 días después de la entrega.</li>
           </ul>
 
@@ -145,7 +224,7 @@
             <div>
               <p class="text-xs text-white/50 mb-1">Inversión única</p>
               <p class="text-2xl font-bold text-clturq">$97<span class="text-sm text-white/50"> USD</span></p>
-              <p class="text-[11px] text-white/50">Sin mensualidades. Sin letras pequeñas.</p>
+              <p class="text-[11px] text-white/50">Sin mensualidades. Sin letras pequeñas. Dominio y hosting incluidos.</p>
             </div>
             <div class="flex flex-col items-end gap-1 text-[11px] text-white/60">
               <span class="px-2 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/40 text-emerald-200">Ideal para tu primera web</span>
@@ -195,17 +274,19 @@
       <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Qué incluye Impulso Digital 360?</h2>
       <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
         Esto es exactamente lo que recibes con tu inversión de <strong>$97 USD</strong>, sin cargos ocultos ni mensualidades.
+        <strong>Dominio y hosting están incluidos en todos los planes.</strong>
       </p>
 
       <div class="grid md:grid-cols-2 gap-8">
         <div class="space-y-3 text-sm text-white/80">
           <h3 class="text-sm font-semibold text-clturq">Web Express Profesional</h3>
           <ul class="space-y-1">
-            <li>• 1–3 secciones (inicio, servicios/productos, contacto).</li>
+            <li>• Página web profesional de una sola página (1–3 secciones principales).</li>
             <li>• Diseño moderno, limpio y adaptable a celular.</li>
             <li>• Carga de hasta 10 fotos de tu negocio.</li>
             <li>• Colores alineados a tu marca o rubro.</li>
             <li>• Textos base redactados de forma persuasiva.</li>
+            <li>• Dominio y hosting incluidos y administrados por CL Tech Solutions.</li>
           </ul>
 
           <h3 class="pt-5 text-sm font-semibold text-clturq">Visibilidad y confianza</h3>
@@ -213,7 +294,7 @@
             <li>• Integración con Google Maps para que te encuentren fácil.</li>
             <li>• SEO inicial (títulos y descripciones básicas para Google).</li>
             <li>• Sección de testimonios (si ya tienes).</li>
-            <li>• Datos de contacto claros (teléfono, redes, dirección).</li>
+            <li>• Datos de contacto claros (redes, dirección, WhatsApp).</li>
           </ul>
         </div>
         <div class="space-y-3 text-sm text-white/80">
@@ -247,7 +328,7 @@
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p class="text-xs text-white/50 mb-1">Paso 1</p>
           <h3 class="font-semibold mb-1 text-clturq">Aplicación</h3>
-          <p class="text-white/70">Llenas el formulario con los datos de tu negocio y tus objetivos.</p>
+          <p class="text-white/70">Abres el formulario desde la web y llenas los datos de tu negocio y tus objetivos.</p>
         </div>
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p class="text-xs text-white/50 mb-1">Paso 2</p>
@@ -257,7 +338,7 @@
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p class="text-xs text-white/50 mb-1">Paso 3</p>
           <h3 class="font-semibold mb-1 text-clturq">Diseño & montaje</h3>
-          <p class="text-white/70">En máximo 48 horas construimos tu web y la dejamos funcionando.</p>
+          <p class="text-white/70">En máximo 48 horas construimos tu página web y la dejamos funcionando.</p>
         </div>
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p class="text-xs text-white/50 mb-1">Paso 4</p>
@@ -273,8 +354,9 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl md:text-3xl font-semibold mb-3">Inversión: simple, clara y sin letras pequeñas</h2>
       <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
-        Impulso Digital 360 es un programa de <strong>pago único</strong>. Pagas una vez, obtienes tu web y
-        luego puedes decidir si quieres seguir creciendo con planes mensuales de automatización y contenido.
+        Impulso Digital 360 es un programa de <strong>pago único</strong>. Pagas una vez, obtienes tu página web
+        y luego puedes decidir si quieres seguir creciendo con planes mensuales de automatización y contenido.
+        <strong>En todos los planes incluimos dominio y hosting administrados por CL Tech Solutions.</strong>
       </p>
 
       <!-- PROGRAMA IMPULSO DIGITAL 360 -->
@@ -291,13 +373,14 @@
           </div>
 
           <p class="text-3xl font-bold text-clturq mb-1">$97<span class="text-sm text-white/50"> USD</span></p>
-          <p class="text-xs text-white/50 mb-4">Pago único · Sin mensualidades · Sin costos ocultos.</p>
+          <p class="text-xs text-white/50 mb-4">Pago único · Sin mensualidades · Dominio y hosting incluidos.</p>
 
           <ul class="text-sm text-white/80 space-y-1 mb-5">
-            <li>• Web profesional en 48 horas.</li>
+            <li>• Página web profesional de una sola página (1–3 secciones).</li>
             <li>• Diseño adaptado a tu negocio.</li>
             <li>• Google Maps y SEO inicial.</li>
             <li>• Botón a WhatsApp y guía de configuración básica.</li>
+            <li>• Dominio y hosting incluidos.</li>
             <li>• Soporte inicial por 30 días.</li>
           </ul>
 
@@ -306,10 +389,11 @@
             puedes añadir automatización avanzada con nuestros planes mensuales.
           </p>
 
-          <a href="#formulario"
+          <button
+             id="openFormModalPlanes"
              class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.8)] hover:-translate-y-[2px] hover:shadow-[0_24px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
             Aplicar ahora a Impulso Digital 360
-          </a>
+          </button>
         </div>
       </div>
 
@@ -317,7 +401,7 @@
       <div class="mb-6">
         <h3 class="text-lg md:text-xl font-semibold mb-2">¿Y si quiero seguir creciendo después?</h3>
         <p class="text-xs md:text-sm text-white/60 max-w-2xl">
-          Una vez que tengas tu web lista y funcionando, puedes pasar al siguiente nivel con nuestros planes
+          Una vez que tengas tu página web lista y funcionando, puedes pasar al siguiente nivel con nuestros planes
           mensuales de automatización y crecimiento. No son obligatorios, pero están pensados para negocios
           que ya están listos para vender más y delegar procesos.
         </p>
@@ -331,6 +415,7 @@
           <p class="text-2xl font-bold mb-1">$97<span class="text-xs text-white/50">/mes</span></p>
           <p class="text-xs text-white/50 mb-3">Para negocios que ya reciben mensajes diarios.</p>
           <ul class="space-y-1 text-white/80 mb-3">
+            <li>• Dominio y hosting incluidos.</li>
             <li>• Configuración de API WhatsApp.</li>
             <li>• Flujo de bienvenida automático.</li>
             <li>• Filtros básicos según tipo de cliente.</li>
@@ -349,6 +434,7 @@
           <p class="text-2xl font-bold mb-1">$197<span class="text-xs text-white/50">/mes</span></p>
           <p class="text-xs text-white/50 mb-3">Para negocios que quieren sistemas serios.</p>
           <ul class="space-y-1 text-white/80 mb-3">
+            <li>• Dominio y hosting incluidos.</li>
             <li>• Todo lo del plan básico.</li>
             <li>• Chatbot personalizado.</li>
             <li>• Múltiples flujos en n8n.</li>
@@ -368,7 +454,8 @@
           <p class="text-2xl font-bold mb-1">$297<span class="text-xs text-white/50">/mes</span></p>
           <p class="text-xs text-white/50 mb-3">Para empresas que quieren escalar serio.</p>
           <ul class="space-y-1 text-white/80 mb-3">
-            <li>• Web avanzada (hasta 5 secciones).</li>
+            <li>• Dominio y hosting incluidos.</li>
+            <li>• Página web avanzada (hasta 5 secciones).</li>
             <li>• Automatización PRO completa.</li>
             <li>• 4 posts + 2 reels mensuales.</li>
             <li>• Optimización continua del chatbot.</li>
@@ -387,17 +474,17 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl md:text-3xl font-semibold mb-3">Preguntas frecuentes</h2>
       <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
-        Si tienes dudas, es probable que estén aquí. Si no, puedes escribirnos directamente por WhatsApp.
+        Si tienes dudas, es probable que estén aquí. Si no, puedes escribirnos directamente por WhatsApp usando el botón flotante.
       </p>
 
       <div class="space-y-4 text-sm">
         <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
           <summary class="flex cursor-pointer list-none items-center justify-between">
-            <span class="font-semibold text-white/90">¿La web es mía o la pierdo después de un tiempo?</span>
+            <span class="font-semibold text-white/90">¿La página web es mía o la pierdo después de un tiempo?</span>
             <span class="text-clturq group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-white/70">
-            La web es tuya. El programa es de pago único. No te la quitamos ni se desactiva después.
+            La página web es tuya. El programa es de pago único. No te la quitamos ni se desactiva después.
           </p>
         </details>
 
@@ -407,7 +494,7 @@
             <span class="text-clturq group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-white/70">
-            No. Este programa incluye tu web profesional, botón a WhatsApp y una guía básica para mensajes de bienvenida.
+            No. Este programa incluye tu página web profesional, botón a WhatsApp y una guía básica para mensajes de bienvenida.
             La automatización avanzada (API, n8n, IA, chatbot) se contrata aparte con los planes mensuales.
           </p>
         </details>
@@ -441,73 +528,23 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="text-2xl md:text-3xl font-semibold mb-3">Aplica ahora a Impulso Digital 360</h2>
       <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl mx-auto">
-        Llena el formulario y revisaremos tu información para agendar la creación de tu web.
+        Haz clic en el botón y se abrirá un formulario seguro dentro de esta misma página.  
         Mientras más claro seas, más rápido avanzamos.
       </p>
 
-      <!-- BOTÓN QUE ABRE EL MODAL -->
       <div class="mb-8">
         <button
-          id="openFormModal"
-          type="button"
-          class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.9)] hover:-translate-y-[2px] hover:shadow-[0_22px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
+           id="openFormModalBottom"
+           class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.9)] hover:-translate-y-[2px] hover:shadow-[0_22px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
           Abrir formulario de aplicación
         </button>
       </div>
 
       <p class="text-xs text-white/50 mt-6">
-        Una vez envíes el formulario, nuestro equipo revisará tu aplicación y te contactará por WhatsApp para coordinar los siguientes pasos.
+        Si tienes dudas antes de aplicar, escríbenos por WhatsApp usando el botón flotante que ves en la pantalla.
       </p>
     </div>
   </section>
-
-  <!-- MODAL CON FORMULARIO GOOGLE EMBEBIDO -->
-  <div
-    id="formModal"
-    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm"
-  >
-    <div class="absolute inset-0" id="formModalOverlay"></div>
-
-    <div class="relative z-10 w-[95%] max-w-4xl h-[80vh] sm:h-[85vh] rounded-2xl border border-white/10 bg-gradient-to-br from-clgray/90 via-clblack to-black shadow-[0_24px_80px_rgba(0,0,0,0.9)] flex flex-col">
-      <div class="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-white/10">
-        <div class="text-left">
-          <p class="text-[11px] uppercase tracking-[0.22em] text-clturq font-semibold">
-            Formulario de aplicación
-          </p>
-          <p class="text-sm text-white/80">
-            Completa tus datos para aplicar a Impulso Digital 360
-          </p>
-        </div>
-        <button
-          id="closeFormModal"
-          type="button"
-          class="h-8 w-8 flex items-center justify-center rounded-full bg-white/10 text-white text-sm hover:bg-white/20 transition">
-          ✕
-        </button>
-      </div>
-
-      <div class="flex-1 px-2 sm:px-4 pb-4 pt-2 overflow-hidden">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSf4sAFruPMV7L7wnYLI55t4CRYSMw2BeCJlIC9XS-ABiqP8Cw/viewform?embedded=true"
-          class="w-full h-full rounded-xl bg-white"
-          frameborder="0">
-        </iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-  <a
-    href="https://wa.me/593999630862?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Impulso%20Digital%20360"
-    target="_blank"
-    aria-label="Escríbenos por WhatsApp"
-    class="fixed z-50 bottom-4 right-4 sm:bottom-6 sm:right-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-clturq flex items-center justify-center shadow-[0_18px_45px_rgba(17,215,227,0.9)] hover:scale-105 hover:shadow-[0_24px_60px_rgba(17,215,227,1)] transition"
-  >
-    <!-- Icono WhatsApp -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-8 h-8">
-      <path fill="#0C0E12" d="M16.04 2C9.27 2 3.8 7.3 3.8 13.82c0 2.03.6 4.01 1.73 5.74L4 26.4l7.08-1.49a12.3 12.3 0 0 0 5 1.1c6.77 0 12.24-5.3 12.24-11.82C28.32 7.3 22.8 2 16.04 2Zm6.86 16.96c-.29.82-1.7 1.6-2.37 1.7-.6.13-1.35.18-2.2-.14-.51-.2-1.17-.38-2.02-.75-3.56-1.54-5.86-5.13-6.04-5.37-.18-.25-1.44-1.9-1.44-3.62 0-1.72.9-2.56 1.22-2.9.32-.34.7-.43.94-.43h.68c.22 0 .51-.08.8.6.29.7 1 2.42 1.09 2.6.09.18.15.39.03.63-.12.25-.18.4-.35.61-.18.21-.37.47-.53.63-.18.18-.36.38-.16.72.2.34.87 1.43 1.87 2.32 1.29 1.15 2.37 1.5 2.72 1.66.35.17.55.15.76-.09.21-.25.88-1.03 1.12-1.38.24-.34.47-.29.8-.17.34.12 2.16 1.02 2.53 1.2.37.18.62.28.71.44.09.16.09.92-.2 1.74Z"/>
-    </svg>
-  </a>
 
   <!-- FOOTER -->
   <footer class="border-t border-white/10 py-6">
@@ -517,32 +554,82 @@
     </div>
   </footer>
 
+  <!-- MODAL FORMULARIO -->
+  <div id="formModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content">
+      <div class="flex items-center justify-between px-4 py-3 border-b border-white/10">
+        <div class="text-left">
+          <p class="text-xs uppercase tracking-[0.2em] text-clturq">Formulario de aplicación</p>
+          <p class="text-sm text-white/80">Impulso Digital 360 · CL Tech Solutions</p>
+        </div>
+        <button id="closeFormModal" class="h-8 w-8 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-sm text-white/80 hover:bg-white/10">
+          ✕
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto bg-white">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSf4sAFruPMV7L7wnYLI55t4CRYSMw2BeCJlIC9XS-ABiqP8Cw/viewform?embedded=true"
+          class="w-full h-[520px] sm:h-[620px]"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="px-4 py-3 border-t border-white/10 bg-clblack text-[11px] text-white/60 text-center">
+        Tus datos serán revisados por nuestro equipo y te contactaremos por WhatsApp para el siguiente paso.
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a
+    href="https://wa.me/593999630862?text=Hola%2C%20estoy%20interesado%2Fa%20en%20el%20programa%20Impulso%20Digital%20360%20de%20CL%20Tech%20Solutions.%20Quisiera%20hablar%20con%20un%20asesor%20para%20que%20me%20explique%20los%20planes%2C%20opciones%20y%20siguientes%20pasos.%20Vengo%20desde%20la%20p%C3%A1gina%20web."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn-whatsapp-float"
+    aria-label="Escríbenos por WhatsApp"
+  >
+    <!-- Icono WhatsApp -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+      <path
+        fill="#0C0E12"
+        d="M16.04 3C9.4 3 4 8.18 4 14.52c0 2.01.63 3.98 1.8 5.68L4 29l4.98-1.6A12.1 12.1 0 0 0 16.04 26C22.68 26 28 20.82 28 14.48 28.08 8.18 22.68 3 16.04 3Zm0 20.07c-1.7 0-3.34-.46-4.8-1.34l-.35-.2-3.9 1.26 1.28-3.76-.22-.36a8.8 8.8 0 0 1-1.37-4.15c0-4.93 4.07-8.94 9.1-8.94s9.1 4.01 9.1 8.94c0 4.93-4.07 8.95-9.1 8.95Zm4.99-6.65c-.27-.14-1.66-.9-1.91-.99-.25-.09-.43-.14-.6.14-.18.27-.69.9-.84 1.06-.15.16-.31.18-.57.06-.27-.14-1.13-.42-2.15-1.25-.79-.68-1.32-1.5-1.47-1.74-.15-.25-.02-.39.13-.53.13-.13.3-.34.43-.5.15-.18.2-.3.3-.5.09-.2.05-.37-.02-.51-.07-.14-.6-1.43-.83-1.96-.22-.52-.44-.46-.6-.46h-.51c-.18 0-.48.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.64 1.12 2.82.14.18 1.9 3.04 4.64 4.12 1.81.7 2.52.76 3.33.64.54-.08 1.8-.67 2.06-1.3.25-.64.25-1.16.17-1.28-.08-.12-.3-.2-.57-.34Z" />
+    </svg>
+  </a>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Modal formulario
-    const openFormModalBtn = document.getElementById("openFormModal");
     const formModal = document.getElementById("formModal");
-    const closeFormModalBtn = document.getElementById("closeFormModal");
-    const formModalOverlay = document.getElementById("formModalOverlay");
+    const openButtons = [
+      document.getElementById("openFormModalTop"),
+      document.getElementById("openFormModalHero"),
+      document.getElementById("openFormModalPlanes"),
+      document.getElementById("openFormModalBottom"),
+    ].filter(Boolean);
+    const closeButton = document.getElementById("closeFormModal");
 
-    function openFormModal() {
-      formModal.classList.remove("hidden");
-      formModal.classList.add("flex");
-    }
+    openButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        formModal.classList.add("open");
+        formModal.setAttribute("aria-hidden", "false");
+      });
+    });
 
-    function closeFormModal() {
-      formModal.classList.add("hidden");
-      formModal.classList.remove("flex");
-    }
+    closeButton.addEventListener("click", () => {
+      formModal.classList.remove("open");
+      formModal.setAttribute("aria-hidden", "true");
+    });
 
-    openFormModalBtn.addEventListener("click", openFormModal);
-    closeFormModalBtn.addEventListener("click", closeFormModal);
-    formModalOverlay.addEventListener("click", closeFormModal);
+    formModal.addEventListener("click", (e) => {
+      if (e.target === formModal) {
+        formModal.classList.remove("open");
+        formModal.setAttribute("aria-hidden", "true");
+      }
+    });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeFormModal();
+      if (e.key === "Escape" && formModal.classList.contains("open")) {
+        formModal.classList.remove("open");
+        formModal.setAttribute("aria-hidden", "true");
       }
     });
   </script>
