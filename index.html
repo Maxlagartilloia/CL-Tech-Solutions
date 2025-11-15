@@ -33,13 +33,12 @@
     }
   </script>
 
-  <!-- Fuente opcional -->
+  <!-- Fuente -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    /* Efecto de gradiente sutil en el fondo */
     .bg-grid {
       background-image:
         radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
@@ -53,7 +52,6 @@
   <header class="sticky top-0 z-40 border-b border-white/5 bg-clblack/80 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
       <div class="flex items-center gap-3">
-        <!-- Logo circular (puedes reemplazar por <img> si quieres) -->
         <div class="w-9 h-9 rounded-full border border-clturq flex items-center justify-center shadow-[0_0_20px_rgba(17,215,227,0.5)]">
           <span class="text-clturq font-semibold text-sm">CL</span>
         </div>
@@ -83,7 +81,6 @@
   <!-- HERO -->
   <section class="pt-14 pb-16 md:pt-24 md:pb-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
-      <!-- Texto -->
       <div>
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-[0.2em] text-clturq mb-4">
           Nuevo programa · Para emprendedores reales
@@ -115,7 +112,6 @@
           Programa diseñado para pequeños negocios, servicios, emprendimientos y profesionales independientes.
         </p>
 
-        <!-- Sellos -->
         <div class="mt-6 flex flex-wrap gap-3 text-[11px] text-white/60">
           <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Entrega en 48 horas</div>
           <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Pago único: sin mensualidades</div>
@@ -123,7 +119,6 @@
         </div>
       </div>
 
-      <!-- Card 3D -->
       <div class="relative">
         <div class="absolute -top-8 -left-5 w-28 h-28 bg-clturq/10 rounded-full blur-3xl"></div>
         <div class="absolute -bottom-10 -right-5 w-40 h-40 bg-clturq/10 rounded-full blur-3xl"></div>
@@ -268,16 +263,17 @@
     </div>
   </section>
 
-  <!-- PLAN / INVERSIÓN -->
+  <!-- PLAN / INVERSIÓN + PLANES MENSUALES -->
   <section id="planes" class="py-14 md:py-20 border-t border-white/5 bg-clgray/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl md:text-3xl font-semibold mb-3">Inversión: simple, clara y sin letras pequeñas</h2>
       <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
         Impulso Digital 360 es un programa de <strong>pago único</strong>. Pagas una vez, obtienes tu web y
-        luego decides si quieres seguir creciendo con planes mensuales de automatización.
+        luego puedes decidir si quieres seguir creciendo con planes mensuales de automatización y contenido.
       </p>
 
-      <div class="max-w-xl">
+      <!-- PROGRAMA IMPULSO DIGITAL 360 -->
+      <div class="max-w-xl mb-12">
         <div class="rounded-3xl border border-clturq/50 bg-gradient-to-br from-clgray/80 via-clblack to-black p-6 shadow-[0_20px_65px_rgba(0,0,0,0.8)]">
           <div class="flex items-center justify-between mb-4">
             <div>
@@ -301,14 +297,81 @@
           </ul>
 
           <p class="text-xs text-white/50 mb-4">
-            ¿Quieres automatización avanzada de WhatsApp, chatbots e IA? Eso va en planes mensuales separados,
-            para negocios que ya están listos para el siguiente nivel.
+            Este es el primer paso para tener presencia profesional. A partir de aquí, si tu negocio lo requiere,
+            puedes añadir automatización avanzada con nuestros planes mensuales.
           </p>
 
           <a href="#formulario"
              class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.8)] hover:-translate-y-[2px] hover:shadow-[0_24px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
             Aplicar ahora a Impulso Digital 360
           </a>
+        </div>
+      </div>
+
+      <!-- PLANES MENSUALES -->
+      <div class="mb-6">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">¿Y si quiero seguir creciendo después?</h3>
+        <p class="text-xs md:text-sm text-white/60 max-w-2xl">
+          Una vez que tengas tu web lista y funcionando, puedes pasar al siguiente nivel con nuestros planes
+          mensuales de automatización y crecimiento. No son obligatorios, pero están pensados para negocios
+          que ya están listos para vender más y delegar procesos.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 text-sm">
+        <!-- Plan 97/mes -->
+        <div class="rounded-2xl border border-white/15 bg-white/5 p-5 hover:border-clturq/60 hover:-translate-y-1 transition">
+          <p class="text-xs text-white/50 mb-1 uppercase tracking-[0.18em]">Plan mensual</p>
+          <h3 class="font-semibold mb-1 text-clturq">Automatización Básica</h3>
+          <p class="text-2xl font-bold mb-1">$97<span class="text-xs text-white/50">/mes</span></p>
+          <p class="text-xs text-white/50 mb-3">Para negocios que ya reciben mensajes diarios.</p>
+          <ul class="space-y-1 text-white/80 mb-3">
+            <li>• Configuración de API WhatsApp.</li>
+            <li>• Flujo de bienvenida automático.</li>
+            <li>• Filtros básicos según tipo de cliente.</li>
+            <li>• Seguimiento 24 horas.</li>
+            <li>• SEO local y ajustes de Google Maps.</li>
+          </ul>
+          <p class="text-[11px] text-white/50">
+            Ideal cuando ya no puedes responder manualmente a todos.
+          </p>
+        </div>
+
+        <!-- Plan 197/mes -->
+        <div class="rounded-2xl border border-clturq/60 bg-gradient-to-br from-clgray via-clblack to-black p-5 shadow-[0_18px_55px_rgba(0,0,0,0.8)] hover:-translate-y-1 transition">
+          <p class="text-xs text-white/60 mb-1 uppercase tracking-[0.18em]">Más vendido</p>
+          <h3 class="font-semibold mb-1 text-clturq">Automatización Completa</h3>
+          <p class="text-2xl font-bold mb-1">$197<span class="text-xs text-white/50">/mes</span></p>
+          <p class="text-xs text-white/50 mb-3">Para negocios que quieren sistemas serios.</p>
+          <ul class="space-y-1 text-white/80 mb-3">
+            <li>• Todo lo del plan básico.</li>
+            <li>• Chatbot personalizado.</li>
+            <li>• Múltiples flujos en n8n.</li>
+            <li>• Registro automático en CRM.</li>
+            <li>• Seguimiento 72h y 7 días.</li>
+            <li>• Reporte mensual simple.</li>
+          </ul>
+          <p class="text-[11px] text-white/50">
+            Convierte tu negocio en una máquina digital que trabaja incluso cuando duermes.
+          </p>
+        </div>
+
+        <!-- Plan 297/mes -->
+        <div class="rounded-2xl border border-white/15 bg-white/5 p-5 hover:border-clturq/60 hover:-translate-y-1 transition">
+          <p class="text-xs text-white/50 mb-1 uppercase tracking-[0.18em]">Plan completo</p>
+          <h3 class="font-semibold mb-1 text-clturq">Premium Crecimiento</h3>
+          <p class="text-2xl font-bold mb-1">$297<span class="text-xs text-white/50">/mes</span></p>
+          <p class="text-xs text-white/50 mb-3">Para empresas que quieren escalar serio.</p>
+          <ul class="space-y-1 text-white/80 mb-3">
+            <li>• Web avanzada (hasta 5 secciones).</li>
+            <li>• Automatización PRO completa.</li>
+            <li>• 4 posts + 2 reels mensuales.</li>
+            <li>• Optimización continua del chatbot.</li>
+            <li>• Soporte prioritario.</li>
+          </ul>
+          <p class="text-[11px] text-white/50">
+            Recomendado para marcas que quieren presencia, sistema y contenido constante.
+          </p>
         </div>
       </div>
     </div>
@@ -335,12 +398,22 @@
 
         <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
           <summary class="flex cursor-pointer list-none items-center justify-between">
-            <span class="font-semibold text-white/90">¿Esto incluye automatización completa de WhatsApp?</span>
+            <span class="font-semibold text-white/90">¿Impulso Digital 360 incluye automatización completa de WhatsApp?</span>
             <span class="text-clturq group-open:rotate-180 transition">▼</span>
           </summary>
           <p class="mt-3 text-white/70">
             No. Este programa incluye tu web profesional, botón a WhatsApp y una guía básica para mensajes de bienvenida.
-            La automatización avanzada (API, n8n, IA) se contrata aparte con planes mensuales.
+            La automatización avanzada (API, n8n, IA, chatbot) se contrata aparte con los planes mensuales.
+          </p>
+        </details>
+
+        <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between">
+            <span class="font-semibold text-white/90">¿Es obligatorio tomar un plan mensual después?</span>
+            <span class="text-clturq group-open:rotate-180 transition">▼</span>
+          </summary>
+          <p class="mt-3 text-white/70">
+            No. Puedes quedarte solo con tu web de pago único. Los planes mensuales son para negocios que ya necesitan automatizar y escalar.
           </p>
         </details>
 
@@ -352,16 +425,6 @@
           <p class="mt-3 text-white/70">
             Podemos trabajar con fotos simples que tengas del celular y un diseño limpio sin logo.
             Más adelante puedes mejorar tu identidad visual.
-          </p>
-        </details>
-
-        <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between">
-            <span class="font-semibold text-white/90">¿Puedo pagar después o en partes?</span>
-            <span class="text-clturq group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="mt-3 text-white/70">
-            Por ahora el programa es de pago único adelantado. Esto nos permite mantener el precio en $97.
           </p>
         </details>
       </div>
@@ -377,7 +440,6 @@
         Mientras más claro seas, más rápido avanzamos.
       </p>
 
-      <!-- BOTÓN HACIA FORMULARIO / O IFRAME -->
       <div class="mb-8">
         <a href="TU_LINK_DE_FORMULARIO"
            class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.9)] hover:-translate-y-[2px] hover:shadow-[0_22px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
@@ -385,7 +447,7 @@
         </a>
       </div>
 
-      <!-- Si quieres incrustar el formulario, reemplaza el href de arriba o habilita este iframe   
+      <!-- Si deseas incrustar el formulario:
       <div class="mt-6">
         <iframe src="TU_LINK_DE_FORMULARIO"
                 class="w-full h-[520px] rounded-2xl border border-white/15 bg-white"
