@@ -14,7 +14,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Impulso Digital 360 | Tu negocio listo para vender en 48 horas">
   <meta property="og:description" content="Web profesional + Google Maps + SEO inicial + botón de WhatsApp en un solo sistema.">
-  <meta property="og:image" content="https://i.postimg.cc/s2YtHvzB/IMG_0156.png" />
+  <meta property="og:image" content="URL_DE_TU_PREVIEW" />
   <meta property="og:url" content="https://tudominio.com/impulso-digital-360" />
 
   <!-- Tailwind CDN -->
@@ -52,19 +52,19 @@
 
   <!-- NAVBAR -->
   <header class="sticky top-0 z-40 border-b border-white/5 bg-clblack/80 backdrop-blur">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20 sm:h-20 md:h-24 gap-4">
-      <div class="flex items-center gap-3 sm:gap-4">
-        <!-- LOGO GRANDE Y RESPONSIVE -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <!-- LOGO GRANDE -->
+      <a href="#inicio" class="flex items-center gap-3">
         <img
           src="https://i.postimg.cc/s2YtHvzB/IMG_0156.png"
           alt="CL Tech Solutions"
-          class="h-14 sm:h-16 md:h-20 w-auto object-contain"
+          class="h-12 sm:h-14 md:h-16 w-auto drop-shadow-[0_0_25px_rgba(17,215,227,0.7)]"
         />
         <div class="leading-tight hidden sm:block">
-          <p class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-clturq">CL Tech Solutions</p>
-          <p class="text-sm text-white/80">Programa Impulso Digital 360</p>
+          <p class="text-xs uppercase tracking-[0.2em] text-clturq">CL Tech Solutions</p>
+          <p class="text-sm text-white/80">Impulso Digital 360</p>
         </div>
-      </div>
+      </a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm">
         <a href="#beneficios" class="text-white/70 hover:text-clturq transition">Beneficios</a>
@@ -74,7 +74,7 @@
         <a href="#faq" class="text-white/70 hover:text-clturq transition">Preguntas</a>
       </nav>
 
-      <div class="hidden md:flex items-center gap-4">
+      <div class="hidden md:flex">
         <a href="#formulario"
            class="px-4 py-2 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_12px_35px_rgba(17,215,227,0.45)] hover:-translate-y-[2px] hover:shadow-[0_18px_45px_rgba(17,215,227,0.7)] active:translate-y-0 active:shadow-none transition">
           Quiero mi web
@@ -84,7 +84,7 @@
   </header>
 
   <!-- HERO -->
-  <section class="pt-14 pb-16 md:pt-24 md:pb-24">
+  <section id="inicio" class="pt-14 pb-16 md:pt-24 md:pb-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-[0.2em] text-clturq mb-4">
@@ -144,7 +144,7 @@
           <div class="flex items-baseline justify-between">
             <div>
               <p class="text-xs text-white/50 mb-1">Inversión única</p>
-              <p class="text-2xl font-bold text-clturq mb-1">$97<span class="text-sm text-white/50"> USD</span></p>
+              <p class="text-2xl font-bold text-clturq">$97<span class="text-sm text-white/50"> USD</span></p>
               <p class="text-[11px] text-white/50">Sin mensualidades. Sin letras pequeñas.</p>
             </div>
             <div class="flex flex-col items-end gap-1 text-[11px] text-white/60">
@@ -367,7 +367,7 @@
           <h3 class="font-semibold mb-1 text-clturq">Premium Crecimiento</h3>
           <p class="text-2xl font-bold mb-1">$297<span class="text-xs text-white/50">/mes</span></p>
           <p class="text-xs text-white/50 mb-3">Para empresas que quieren escalar serio.</p>
-          <ul class="space-y-1 text-white/80.mb-3">
+          <ul class="space-y-1 text-white/80 mb-3">
             <li>• Web avanzada (hasta 5 secciones).</li>
             <li>• Automatización PRO completa.</li>
             <li>• 4 posts + 2 reels mensuales.</li>
@@ -392,7 +392,7 @@
 
       <div class="space-y-4 text-sm">
         <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
-          <summary class="flex cursor-pointer list-none.items-center justify-between">
+          <summary class="flex cursor-pointer list-none items-center justify-between">
             <span class="font-semibold text-white/90">¿La web es mía o la pierdo después de un tiempo?</span>
             <span class="text-clturq group-open:rotate-180 transition">▼</span>
           </summary>
@@ -445,38 +445,67 @@
         Mientras más claro seas, más rápido avanzamos.
       </p>
 
+      <!-- BOTÓN QUE ABRE EL MODAL -->
       <div class="mb-8">
-        <!-- REEMPLAZA ESTA URL POR TU LINK REAL DE FORMULARIO -->
-        <a href="PON_AQUI_TU_LINK_DE_FORMULARIO"
-           class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.9)] hover:-translate-y-[2px] hover:shadow-[0_22px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
-          Ir al formulario de aplicación
-        </a>
+        <button
+          id="openFormModal"
+          type="button"
+          class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.9)] hover:-translate-y-[2px] hover:shadow-[0_22px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
+          Abrir formulario de aplicación
+        </button>
       </div>
-
-      <!-- Si deseas incrustar el formulario:
-      <div class="mt-6">
-        <iframe src="PON_AQUI_TU_LINK_DE_FORMULARIO"
-                class="w-full h-[520px] rounded-2xl border border-white/15 bg-white"
-                loading="lazy"></iframe>
-      </div>
-      -->
 
       <p class="text-xs text-white/50 mt-6">
-        Una vez envíes el formulario, te contactaremos por WhatsApp usando los datos que nos compartas.
+        Una vez envíes el formulario, nuestro equipo revisará tu aplicación y te contactará por WhatsApp para coordinar los siguientes pasos.
       </p>
     </div>
   </section>
 
+  <!-- MODAL CON FORMULARIO GOOGLE EMBEBIDO -->
+  <div
+    id="formModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm"
+  >
+    <div class="absolute inset-0" id="formModalOverlay"></div>
+
+    <div class="relative z-10 w-[95%] max-w-4xl h-[80vh] sm:h-[85vh] rounded-2xl border border-white/10 bg-gradient-to-br from-clgray/90 via-clblack to-black shadow-[0_24px_80px_rgba(0,0,0,0.9)] flex flex-col">
+      <div class="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-white/10">
+        <div class="text-left">
+          <p class="text-[11px] uppercase tracking-[0.22em] text-clturq font-semibold">
+            Formulario de aplicación
+          </p>
+          <p class="text-sm text-white/80">
+            Completa tus datos para aplicar a Impulso Digital 360
+          </p>
+        </div>
+        <button
+          id="closeFormModal"
+          type="button"
+          class="h-8 w-8 flex items-center justify-center rounded-full bg-white/10 text-white text-sm hover:bg-white/20 transition">
+          ✕
+        </button>
+      </div>
+
+      <div class="flex-1 px-2 sm:px-4 pb-4 pt-2 overflow-hidden">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSf4sAFruPMV7L7wnYLI55t4CRYSMw2BeCJlIC9XS-ABiqP8Cw/viewform?embedded=true"
+          class="w-full h-full rounded-xl bg-white"
+          frameborder="0">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- BOTÓN FLOTANTE DE WHATSAPP -->
   <a
-    href="https://wa.me/593999630862?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20Impulso%20Digital%20360."
+    href="https://wa.me/593999630862?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Impulso%20Digital%20360"
     target="_blank"
-    class="fixed z-50 bottom-4 right-4 sm:bottom-6 sm:right-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-clturq text-clblack flex items-center justify-center shadow-[0_12px_35px_rgba(17,215,227,0.85)] hover:scale-105 active:scale-95 transition-transform"
     aria-label="Escríbenos por WhatsApp"
+    class="fixed z-50 bottom-4 right-4 sm:bottom-6 sm:right-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-clturq flex items-center justify-center shadow-[0_18px_45px_rgba(17,215,227,0.9)] hover:scale-105 hover:shadow-[0_24px_60px_rgba(17,215,227,1)] transition"
   >
-    <!-- Icono WhatsApp simple -->
+    <!-- Icono WhatsApp -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-8 h-8">
-      <path fill="#0C0E12" d="M16.04 2.67C9.76 2.67 4.67 7.76 4.67 14.04c0 2.02.54 3.98 1.57 5.71L4 28l8.47-2.16a11.6 11.6 0 0 0 3.57.55c6.28 0 11.37-5.09 11.37-11.37S22.32 2.67 16.04 2.67Zm0 20.7c-1.64 0-3.24-.44-4.63-1.28l-.33-.2-5.01 1.28 1.34-4.88-.22-.36a8.5 8.5 0 0 1-1.3-4.56c0-4.76 3.88-8.64 8.65-8.64 4.77 0 8.64 3.88 8.64 8.64s-3.87 8.64-8.64 8.64Zm4.37-6.47c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.16-.7-.62-1.18-1.38-1.32-1.61-.14-.24-.01-.37.12-.49.13-.12.3-.32.44-.48.15-.16.2-.28.3-.47.1-.2.05-.36-.02-.49-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.68 4.16 3.64 1.46.58 2.04.63 2.77.53.44-.06 1.42-.58 1.62-1.13.2-.55.2-1.03.14-1.13-.06-.1-.22-.16-.46-.29Z"/>
+      <path fill="#0C0E12" d="M16.04 2C9.27 2 3.8 7.3 3.8 13.82c0 2.03.6 4.01 1.73 5.74L4 26.4l7.08-1.49a12.3 12.3 0 0 0 5 1.1c6.77 0 12.24-5.3 12.24-11.82C28.32 7.3 22.8 2 16.04 2Zm6.86 16.96c-.29.82-1.7 1.6-2.37 1.7-.6.13-1.35.18-2.2-.14-.51-.2-1.17-.38-2.02-.75-3.56-1.54-5.86-5.13-6.04-5.37-.18-.25-1.44-1.9-1.44-3.62 0-1.72.9-2.56 1.22-2.9.32-.34.7-.43.94-.43h.68c.22 0 .51-.08.8.6.29.7 1 2.42 1.09 2.6.09.18.15.39.03.63-.12.25-.18.4-.35.61-.18.21-.37.47-.53.63-.18.18-.36.38-.16.72.2.34.87 1.43 1.87 2.32 1.29 1.15 2.37 1.5 2.72 1.66.35.17.55.15.76-.09.21-.25.88-1.03 1.12-1.38.24-.34.47-.29.8-.17.34.12 2.16 1.02 2.53 1.2.37.18.62.28.71.44.09.16.09.92-.2 1.74Z"/>
     </svg>
   </a>
 
@@ -490,6 +519,32 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Modal formulario
+    const openFormModalBtn = document.getElementById("openFormModal");
+    const formModal = document.getElementById("formModal");
+    const closeFormModalBtn = document.getElementById("closeFormModal");
+    const formModalOverlay = document.getElementById("formModalOverlay");
+
+    function openFormModal() {
+      formModal.classList.remove("hidden");
+      formModal.classList.add("flex");
+    }
+
+    function closeFormModal() {
+      formModal.classList.add("hidden");
+      formModal.classList.remove("flex");
+    }
+
+    openFormModalBtn.addEventListener("click", openFormModal);
+    closeFormModalBtn.addEventListener("click", closeFormModal);
+    formModalOverlay.addEventListener("click", closeFormModal);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeFormModal();
+      }
+    });
   </script>
 </body>
 </html>
