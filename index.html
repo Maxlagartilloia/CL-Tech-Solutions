@@ -3,475 +3,906 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impulso Digital 360 | CL Tech Solutions</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Impulso Digital 360 de CL Tech Solutions: página web profesional en 48 horas, lista para vender, con Google Maps, SEO inicial y botón de WhatsApp.">
-  <meta name="keywords" content="página web para emprendedores, web profesional, landing page Ecuador, CL Tech Solutions, Impulso Digital 360">
-  <meta name="author" content="CL Tech Solutions">
+  <title>Asados en Barril [CAMBIAR POR NOMBRE REAL] | Costillas de Cerdo y Parrilladas</title>
+  <meta name="description" content="Costillas de cerdo asadas en barril, carnes jugosas y combos parrilleros. Pide escaneando el QR en tu mesa o a domicilio por WhatsApp.">
 
-  <!-- OG / Redes -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Impulso Digital 360 | Tu negocio listo para vender en 48 horas">
-  <meta property="og:description" content="Web profesional + Google Maps + SEO inicial + botón de WhatsApp en un solo sistema.">
-  <meta property="og:image" content="URL_DE_TU_PREVIEW" />
-  <meta property="og:url" content="https://tudominio.com/impulso-digital-360" />
+  <meta property="og:title" content="Asados en Barril [CAMBIAR POR NOMBRE REAL]">
+  <meta property="og:description" content="Menú interactivo con pedidos por WhatsApp: consumo en local (QR) o a domicilio.">
+  <meta property="og:image" content="https://images.pexels.com/photos/4109136/pexels-photo-4109136.jpeg">
+  <meta property="og:url" content="https://tusitio.com">
 
-  <!-- Tailwind CDN -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clturq: "#11D7E3",
-            clblack: "#0C0E12",
-            clgray: "#1C1F25"
-          }
-        }
-      }
-    }
-  </script>
 
-  <!-- Fuente -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    .bg-grid {
+    :root {
+      --fire-orange: #ff6a00;
+      --fire-red: #ff3b2f;
+      --fire-yellow: #ffc857;
+      --coal-dark: #050608;
+      --coal-gray: #151515;
+    }
+
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f1f1f 0, #050505 50%, #000 100%);
+      color: #f9fafb;
+    }
+
+    .font-hero {
+      font-family: 'Bebas Neue', system-ui, sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    /* Fondo brasas y chispas */
+    .spark-bg {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .spark-bg::before,
+    .spark-bg::after {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255, 184, 108, 0.15) 0, transparent 50%),
+        radial-gradient(circle at 80% 10%, rgba(255, 106, 0, 0.18) 0, transparent 55%),
+        radial-gradient(circle at 30% 90%, rgba(255, 59, 47, 0.18) 0, transparent 55%);
+      opacity: 0.6;
+      mix-blend-mode: screen;
+      animation: sparksFloat 22s linear infinite;
+      z-index: -2;
+    }
+
+    .spark-bg::after {
+      animation-duration: 32s;
+      animation-direction: reverse;
+      opacity: 0.4;
+    }
+
+    @keyframes sparksFloat {
+      0% { transform: translateY(10%) scale(1); }
+      50% { transform: translateY(-10%) scale(1.05); }
+      100% { transform: translateY(10%) scale(1); }
+    }
+
+    .spark-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
       background-image:
-        radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
-      background-size: 32px 32px;
+        radial-gradient(2px 2px at 20% 10%, rgba(255, 200, 135, 0.9) 0, transparent 60%),
+        radial-gradient(2px 2px at 70% 30%, rgba(255, 106, 0, 0.95) 0, transparent 60%),
+        radial-gradient(2px 2px at 40% 80%, rgba(255, 59, 47, 0.9) 0, transparent 60%),
+        radial-gradient(1.5px 1.5px at 90% 60%, rgba(255, 250, 200, 0.9) 0, transparent 60%);
+      animation: sparkBlink 4s ease-in-out infinite alternate;
+      opacity: 0.7;
+    }
+
+    @keyframes sparkBlink {
+      0% { opacity: 0.2; transform: translateY(0px); }
+      50% { opacity: 0.8; transform: translateY(-4px); }
+      100% { opacity: 0.3; transform: translateY(2px); }
+    }
+
+    .glass {
+      background: linear-gradient(to bottom right, rgba(15, 15, 15, 0.9), rgba(5, 5, 5, 0.85));
+      border-radius: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.7),
+        0 0 0 0.5px rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(18px);
+    }
+
+    .btn-fire {
+      background-image: linear-gradient(135deg, var(--fire-orange), var(--fire-red));
+      box-shadow: 0 10px 25px rgba(255, 106, 0, 0.45);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    }
+
+    .btn-fire:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 14px 28px rgba(255, 106, 0, 0.6);
+      filter: brightness(1.05);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(249, 115, 22, 0.7);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+    }
+
+    .card-product {
+      background: radial-gradient(circle at top, #18181b 0, #050508 55%);
+      border-radius: 1.25rem;
+      border: 1px solid rgba(250, 250, 250, 0.05);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card-product:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
+      border-color: rgba(249, 115, 22, 0.6);
+    }
+
+    .badge-fire {
+      background: linear-gradient(135deg, rgba(255, 106, 0, 0.95), rgba(255, 59, 47, 0.95));
+    }
+
+    .cart-panel {
+      transform: translateX(100%);
+      transition: transform 0.25s ease-out;
+    }
+
+    .cart-panel.open {
+      transform: translateX(0%);
+    }
+
+    .field-error {
+      box-shadow: 0 0 0 1px #f97373;
     }
   </style>
 </head>
-<body class="bg-clblack text-white bg-grid">
-  
-    <!-- LOGO GRANDE SIN FONDO -->
-    <a href="#" class="flex items-center">
-      <img 
-        src="https://i.postimg.cc/L5ChBFj0/IMG-0156.png" 
-        alt="CL Tech Solutions" 
-        class="w-48 h-auto md:w-60 lg:w-72"
-      />
-    </a>
+<body class="min-h-screen text-slate-100">
 
-    <!-- NAVBAR -->
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-      <a href="#beneficios" class="text-white/70 hover:text-clturq transition">Beneficios</a>
-      <a href="#incluye" class="text-white/70 hover:text-clturq transition">Qué incluye</a>
-      <a href="#proceso" class="text-white/70 hover:text-clturq transition">Cómo funciona</a>
-      <a href="#planes" class="text-white/70 hover:text-clturq transition">Planes</a>
-      <a href="#faq" class="text-white/70 hover:text-clturq transition">Preguntas</a>
-    </nav>
+  <!-- NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-gradient-to-b from-black/85 via-black/70 to-transparent border-b border-white/5 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo / Nombre -->
+        <a href="#inicio" class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded-xl bg-gradient-to-br from-amber-500 via-orange-600 to-red-700 flex items-center justify-center shadow-lg shadow-orange-500/50">
+            <span class="font-hero text-xl text-black">AB</span>
+          </div>
+          <div class="leading-tight">
+            <p class="font-hero text-xl text-slate-50 uppercase">Asados en Barril</p>
+            <p class="text-xs text-slate-400">[CAMBIAR POR NOMBRE REAL]</p>
+          </div>
+        </a>
 
-    <!-- BOTÓN WHATSAPP -->
-    <div class="hidden md:flex">
-      <a href="https://wa.me/TU_NUMERO?text=Hola%20Cristian%2C%20quiero%20información%20sobre%20Impulso%20Digital%20360"
-         class="px-5 py-2.5 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_14px_40px_rgba(17,215,227,0.45)]
-                hover:-translate-y-[2px] hover:shadow-[0_20px_55px_rgba(17,215,227,0.85)] transition">
-        WhatsApp
-      </a>
+        <!-- Navegación -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-200">
+          <a href="#inicio" class="hover:text-amber-400 transition-colors">Inicio</a>
+          <a href="#menu" class="hover:text-amber-400 transition-colors">Menú</a>
+          <a href="#promos" class="hover:text-amber-400 transition-colors">Promos</a>
+          <a href="#como-pedir" class="hover:text-amber-400 transition-colors">Cómo pedir</a>
+          <a href="#opiniones" class="hover:text-amber-400 transition-colors">Opiniones</a>
+          <a href="#ubicacion" class="hover:text-amber-400 transition-colors">Ubicación</a>
+        </nav>
+
+        <!-- Acciones -->
+        <div class="flex items-center gap-3">
+          <a
+            href="https://wa.me/593999630862?text=Hola,%20acabo%20de%20ver%20el%20men%C3%BA%20de%20Asados%20en%20Barril%20y%20quiero%20hacer%20un%20pedido%20(consumo%20en%20local%20o%20a%20domicilio)."
+            target="_blank"
+            class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full btn-ghost"
+          >
+            <span class="text-green-400 text-sm">●</span>
+            Abrir WhatsApp (QR / domicilio)
+          </a>
+
+          <!-- Carrito -->
+          <button
+            id="cartButton"
+            type="button"
+            class="relative flex items-center justify-center h-10 w-10 rounded-2xl bg-slate-900/70 border border-white/10 hover:border-amber-400/80 hover:bg-slate-900/95 transition-colors"
+          >
+            <span class="sr-only">Ver carrito</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                d="M3 3h2l.4 2M7 13h10l3-7H6.4M7 13L5.4 5M7 13l-2 9m12-9l2 9m-8-5h4" />
+            </svg>
+            <span
+              id="cartCount"
+              class="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center text-[11px] font-semibold text-white h-4.5 min-w-[1.2rem] px-1 rounded-full badge-fire"
+            >0</span>
+          </button>
+
+          <!-- Mobile menu -->
+          <button id="mobileMenuBtn" class="md:hidden h-8 w-8 flex items-center justify-center rounded-lg bg-black/40 border border-white/10">
+            <span class="sr-only">Abrir menú</span>
+            <svg class="h-4 w-4 text-slate-100" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.8" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile nav -->
+      <nav id="mobileNav" class="md:hidden hidden pb-3 border-t border-white/5 mt-1 text-sm">
+        <div class="pt-3 flex flex-col gap-2 text-slate-100">
+          <a href="#inicio" class="hover:text-amber-400 transition-colors">Inicio</a>
+          <a href="#menu" class="hover:text-amber-400 transition-colors">Menú</a>
+          <a href="#promos" class="hover:text-amber-400 transition-colors">Promos</a>
+          <a href="#como-pedir" class="hover:text-amber-400 transition-colors">Cómo pedir</a>
+          <a href="#opiniones" class="hover:text-amber-400 transition-colors">Opiniones</a>
+          <a href="#ubicacion" class="hover:text-amber-400 transition-colors">Ubicación</a>
+          <a
+            href="https://wa.me/593999630862?text=Hola,%20acabo%20de%20ver%20el%20men%C3%BA%20de%20Asados%20en%20Barril%20y%20quiero%20hacer%20un%20pedido%20(consumo%20en%20local%20o%20a%20domicilio)."
+            target="_blank"
+            class="mt-1 inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full btn-ghost w-max"
+          >
+            <span class="text-green-400 text-sm">●</span>
+            Abrir WhatsApp
+          </a>
+        </div>
+      </nav>
     </div>
+  </header>
 
-  </div>
-</header>
+  <!-- PADDING TOP PARA NAV -->
+  <div class="pt-20"></div>
 
   <!-- HERO -->
-  <section class="pt-14 pb-16 md:pt-24 md:pb-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-[0.2em] text-clturq mb-4">
-          Nuevo programa · Para emprendedores reales
-        </span>
+  <section id="inicio" class="spark-bg relative">
+    <div class="spark-layer"></div>
 
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
-          Tu negocio listo para vender<br>
-          <span class="text-clturq">en 48 horas</span>
+    <div
+      class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18 lg:py-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+      <!-- Texto -->
+      <div class="w-full lg:w-1/2 space-y-7 text-center lg:text-left">
+        <p class="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-black/40 px-3 py-1 text-[11px] font-medium text-amber-200 shadow-sm shadow-amber-500/30 mx-auto lg:mx-0">
+          <span class="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+          Menú interactivo · Escanea el QR en tu mesa o pide a domicilio
+        </p>
+
+        <h1 class="font-hero text-4xl sm:text-5xl lg:text-6xl leading-tight text-slate-50 drop-shadow-[0_0_35px_rgba(0,0,0,0.9)]">
+          Costillas en Barril,<br>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-red-500 to-yellow-300">
+            jugosas por dentro,<br class="hidden sm:inline">
+            crocantes por fuera.
+          </span>
         </h1>
 
-        <p class="text-sm sm:text-base text-white/70 mb-6">
-          <strong>Impulso Digital 360</strong> es un programa de una sola vez donde creamos tu
-          página web profesional lista para vender: con diseño moderno, Google Maps, SEO inicial
-          y botón de WhatsApp, sin mensualidades ni complicaciones técnicas.
+        <p class="text-sm sm:text-base text-slate-200/90 max-w-xl mx-auto lg:mx-0">
+          Escanea el <span class="font-semibold text-amber-300">QR en tu mesa</span> para hacer tu pedido
+          desde el restaurante, o usa esta misma página para pedir
+          <span class="font-semibold text-amber-300">a domicilio</span> con entrega en tu casa.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-3 mb-4">
-          <a href="#formulario"
-             class="inline-flex items-center justify-center px-5 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_14px_40px_rgba(17,215,227,0.65)] hover:-translate-y-[2px] hover:shadow-[0_20px_60px_rgba(17,215,227,0.85)] active:translate-y-0 active:shadow-none transition">
-            Quiero aplicar a Impulso Digital 360
-          </a>
-          <a href="#incluye"
-             class="inline-flex items-center justify-center px-5 py-3 text-sm font-semibold rounded-full border border-white/15 hover:border-clturq hover:text-clturq transition">
-            Ver todo lo que incluye
-          </a>
-        </div>
-
-        <p class="text-xs text-white/50">
-          Programa diseñado para pequeños negocios, servicios, emprendimientos y profesionales independientes.
-        </p>
-
-        <div class="mt-6 flex flex-wrap gap-3 text-[11px] text-white/60">
-          <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Entrega en 48 horas</div>
-          <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Pago único: sin mensualidades</div>
-          <div class="px-3 py-1 rounded-full border border-white/10 bg-white/5">Diseño profesional responsive</div>
-        </div>
-      </div>
-
-      <div class="relative">
-        <div class="absolute -top-8 -left-5 w-28 h-28 bg-clturq/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-10 -right-5 w-40 h-40 bg-clturq/10 rounded-full blur-3xl"></div>
-
-        <div class="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 via-clgray/80 to-black/80 p-6 shadow-[0_25px_80px_rgba(0,0,0,0.75)] hover:-translate-y-1 hover:shadow-[0_32px_95px_rgba(0,0,0,0.9)] transition">
-          <p class="text-xs uppercase tracking-[0.22em] text-clturq mb-2">Programa Impulso Digital 360</p>
-          <h2 class="text-xl font-semibold mb-3">Lo que tendrás en 48 horas</h2>
-
-          <ul class="space-y-2 text-sm text-white/80 mb-4">
-            <li>• Landing page profesional (1–3 secciones).</li>
-            <li>• Diseño adaptado a tu marca y negocio.</li>
-            <li>• Botón directo a tu WhatsApp.</li>
-            <li>• Google Maps integrado para que te encuentren.</li>
-            <li>• SEO inicial para que Google te reconozca.</li>
-            <li>• Soporte básico por 30 días después de la entrega.</li>
-          </ul>
-
-          <div class="flex items-baseline justify-between">
-            <div>
-              <p class="text-xs text-white/50 mb-1">Inversión única</p>
-              <p class="text-2xl font-bold text-clturq">$97<span class="text-sm text-white/50"> USD</span></p>
-              <p class="text-[11px] text-white/50">Sin mensualidades. Sin letras pequeñas.</p>
-            </div>
-            <div class="flex flex-col items-end gap-1 text-[11px] text-white/60">
-              <span class="px-2 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/40 text-emerald-200">Ideal para tu primera web</span>
-              <span class="px-2 py-1 rounded-full bg-yellow-500/10 border border-yellow-400/40 text-yellow-100">Sube tu negocio a otro nivel</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFICIOS -->
-  <section id="beneficios" class="py-14 md:py-20 border-t border-white/5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Por qué Impulso Digital 360 cambia el juego?</h2>
-      <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
-        No es “solo una página web”. Es la base mínima profesional para que tu negocio deje de perder clientes
-        por no existir en Internet. Diseñamos la web pensando en que vendas, no en que se vea bonita solamente.
-      </p>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-clturq/60 hover:-translate-y-1 transition">
-          <h3 class="text-sm font-semibold mb-2 text-clturq">Presencia profesional inmediata</h3>
-          <p class="text-sm text-white/70">
-            Tus clientes podrán ver quién eres, qué ofreces, dónde estás y cómo contactarte en un solo lugar.
-          </p>
-        </div>
-        <div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-clturq/60 hover:-translate-y-1 transition">
-          <h3 class="text-sm font-semibold mb-2 text-clturq">Pensado para vender</h3>
-          <p class="text-sm text-white/70">
-            Estructura basada en llamada a la acción, claridad y confianza para que los visitantes te escriban o te compren.
-          </p>
-        </div>
-        <div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-clturq/60 hover:-translate-y-1 transition">
-          <h3 class="text-sm font-semibold mb-2 text-clturq">Listo para escalar</h3>
-          <p class="text-sm text-white/70">
-            Más adelante, si quieres automatización avanzada de WhatsApp e IA, tu web ya estará lista para conectarla.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUÉ INCLUYE -->
-  <section id="incluye" class="py-14 md:py-20 border-t border-white/5 bg-clgray/50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Qué incluye Impulso Digital 360?</h2>
-      <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
-        Esto es exactamente lo que recibes con tu inversión de <strong>$97 USD</strong>, sin cargos ocultos ni mensualidades.
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-3 text-sm text-white/80">
-          <h3 class="text-sm font-semibold text-clturq">Web Express Profesional</h3>
-          <ul class="space-y-1">
-            <li>• 1–3 secciones (inicio, servicios/productos, contacto).</li>
-            <li>• Diseño moderno, limpio y adaptable a celular.</li>
-            <li>• Carga de hasta 10 fotos de tu negocio.</li>
-            <li>• Colores alineados a tu marca o rubro.</li>
-            <li>• Textos base redactados de forma persuasiva.</li>
-          </ul>
-
-          <h3 class="pt-5 text-sm font-semibold text-clturq">Visibilidad y confianza</h3>
-          <ul class="space-y-1">
-            <li>• Integración con Google Maps para que te encuentren fácil.</li>
-            <li>• SEO inicial (títulos y descripciones básicas para Google).</li>
-            <li>• Sección de testimonios (si ya tienes).</li>
-            <li>• Datos de contacto claros (teléfono, redes, dirección).</li>
-          </ul>
-        </div>
-        <div class="space-y-3 text-sm text-white/80">
-          <h3 class="text-sm font-semibold text-clturq">WhatsApp conectado</h3>
-          <ul class="space-y-1">
-            <li>• Botón “Escríbeme por WhatsApp” directo a tu número.</li>
-            <li>• Mensaje pre-redactado para que el cliente no dude qué decir.</li>
-            <li>• Guía sencilla para configurar mensajes de bienvenida en WhatsApp Business.</li>
-          </ul>
-
-          <h3 class="pt-5 text-sm font-semibold text-clturq">Acompañamiento inicial</h3>
-          <ul class="space-y-1">
-            <li>• Soporte básico por 30 días (corrección de textos e imágenes).</li>
-            <li>• Video corto explicando cómo usar tu web.</li>
-            <li>• Recomendaciones para tu siguiente paso digital.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESO -->
-  <section id="proceso" class="py-14 md:py-20 border-t border-white/5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Cómo funciona el proceso?</h2>
-      <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
-        Queremos que todo sea claro, rápido y sin estrés. Así trabajamos contigo:
-      </p>
-
-      <div class="grid md:grid-cols-4 gap-5 text-sm">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <p class="text-xs text-white/50 mb-1">Paso 1</p>
-          <h3 class="font-semibold mb-1 text-clturq">Aplicación</h3>
-          <p class="text-white/70">Llenas el formulario con los datos de tu negocio y tus objetivos.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <p class="text-xs text-white/50 mb-1">Paso 2</p>
-          <h3 class="font-semibold mb-1 text-clturq">Material</h3>
-          <p class="text-white/70">Nos envías tu logo, fotos y la información clave para el diseño.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <p class="text-xs text-white/50 mb-1">Paso 3</p>
-          <h3 class="font-semibold mb-1 text-clturq">Diseño & montaje</h3>
-          <p class="text-white/70">En máximo 48 horas construimos tu web y la dejamos funcionando.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <p class="text-xs text-white/50 mb-1">Paso 4</p>
-          <h3 class="font-semibold mb-1 text-clturq">Entrega & ajustes</h3>
-          <p class="text-white/70">Te entregamos acceso, hacemos los ajustes finales y listo.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLAN / INVERSIÓN + PLANES MENSUALES -->
-  <section id="planes" class="py-14 md:py-20 border-t border-white/5 bg-clgray/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-3">Inversión: simple, clara y sin letras pequeñas</h2>
-      <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
-        Impulso Digital 360 es un programa de <strong>pago único</strong>. Pagas una vez, obtienes tu web y
-        luego puedes decidir si quieres seguir creciendo con planes mensuales de automatización y contenido.
-      </p>
-
-      <!-- PROGRAMA IMPULSO DIGITAL 360 -->
-      <div class="max-w-xl mb-12">
-        <div class="rounded-3xl border border-clturq/50 bg-gradient-to-br from-clgray/80 via-clblack to-black p-6 shadow-[0_20px_65px_rgba(0,0,0,0.8)]">
-          <div class="flex items-center justify-between mb-4">
-            <div>
-              <p class="text-xs uppercase tracking-[0.22em] text-clturq mb-1">Programa único</p>
-              <h3 class="text-xl font-semibold">Impulso Digital 360</h3>
-            </div>
-            <span class="px-3 py-1 rounded-full bg-clturq/10 text-[11px] text-clturq border border-clturq/50">
-              Recomendado para emprendedores
+        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm text-slate-100/90 max-w-xl mx-auto lg:mx-0">
+          <li class="flex items-center gap-2 justify-center sm:justify-start">
+            <span class="h-5 w-5 rounded-full flex items-center justify-center bg-amber-500/20 text-amber-300">
+              ✓
             </span>
-          </div>
+            Marinado por horas con receta secreta
+          </li>
+          <li class="flex items-center gap-2 justify-center sm:justify-start">
+            <span class="h-5 w-5 rounded-full flex items-center justify-center bg-amber-500/20 text-amber-300">
+              ✓
+            </span>
+            Pide por QR en el local o desde tu casa
+          </li>
+          <li class="flex items-center gap-2 justify-center sm:justify-start">
+            <span class="h-5 w-5 rounded-full flex items-center justify-center bg-amber-500/20 text-amber-300">
+              ✓
+            </span>
+            Pedido y confirmación por WhatsApp
+          </li>
+        </ul>
 
-          <p class="text-3xl font-bold text-clturq mb-1">$97<span class="text-sm text-white/50"> USD</span></p>
-          <p class="text-xs text-white/50 mb-4">Pago único · Sin mensualidades · Sin costos ocultos.</p>
-
-          <ul class="text-sm text-white/80 space-y-1 mb-5">
-            <li>• Web profesional en 48 horas.</li>
-            <li>• Diseño adaptado a tu negocio.</li>
-            <li>• Google Maps y SEO inicial.</li>
-            <li>• Botón a WhatsApp y guía de configuración básica.</li>
-            <li>• Soporte inicial por 30 días.</li>
-          </ul>
-
-          <p class="text-xs text-white/50 mb-4">
-            Este es el primer paso para tener presencia profesional. A partir de aquí, si tu negocio lo requiere,
-            puedes añadir automatización avanzada con nuestros planes mensuales.
-          </p>
-
-          <a href="#formulario"
-             class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.8)] hover:-translate-y-[2px] hover:shadow-[0_24px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
-            Aplicar ahora a Impulso Digital 360
+        <div class="flex flex-col sm:flex-row gap-3 pt-2 justify-center lg:justify-start">
+          <a href="#menu"
+            class="btn-fire inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-slate-900">
+            Ver Menú y Hacer Pedido
+          </a>
+          <a
+            href="https://wa.me/593999630862?text=Hola,%20acabo%20de%20ver%20el%20men%C3%BA%20de%20Asados%20en%20Barril%20y%20quiero%20hacer%20un%20pedido%20(consumo%20en%20local%20o%20a%20domicilio)."
+            target="_blank"
+            class="btn-ghost inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-50"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12.04 2C6.56 2 2.2 6.18 2.2 11.52c0 1.86.54 3.6 1.47 5.07L2 22l5.6-1.8a9.9 9.9 0 0 0 4.44 1.04c5.48 0 9.84-4.18 9.84-9.52C21.88 6.18 17.52 2 12.04 2Zm0 17.07c-1.5 0-2.9-.4-4.1-1.16l-.3-.18-3.32 1.07 1.08-3.2-.2-.32a7.7 7.7 0 0 1-1.2-4.06c0-4.28 3.54-7.76 7.84-7.76 4.3 0 7.84 3.48 7.84 7.76s-3.54 7.75-7.84 7.75Zm4.3-5.76c-.24-.13-1.42-.73-1.64-.81-.22-.09-.38-.13-.54.13-.16.25-.62.81-.76.97-.14.16-.28.18-.52.06-.24-.13-1-.37-1.9-1.16-.7-.62-1.18-1.38-1.32-1.61-.14-.24-.01-.37.12-.5.12-.12.24-.28.36-.42.12-.14.16-.23.24-.38.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.25-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.68 4.16 3.64 1.46.58 2.04.63 2.77.53.44-.06 1.42-.58 1.62-1.13.2-.55.2-1.03.14-1.13-.06-.1-.22-.16-.46-.29Z" />
+            </svg>
+            Abrir WhatsApp ahora
           </a>
         </div>
-      </div>
 
-      <!-- PLANES MENSUALES -->
-      <div class="mb-6">
-        <h3 class="text-lg md:text-xl font-semibold mb-2">¿Y si quiero seguir creciendo después?</h3>
-        <p class="text-xs md:text-sm text-white/60 max-w-2xl">
-          Una vez que tengas tu web lista y funcionando, puedes pasar al siguiente nivel con nuestros planes
-          mensuales de automatización y crecimiento. No son obligatorios, pero están pensados para negocios
-          que ya están listos para vender más y delegar procesos.
+        <p class="text-[11px] text-slate-400 max-w-xs mx-auto lg:mx-0">
+          *Funciona como menú digital dentro del restaurante (escaneando un QR) y también para pedidos a domicilio.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-5 text-sm">
-        <!-- Plan 97/mes -->
-        <div class="rounded-2xl border border-white/15 bg-white/5 p-5 hover:border-clturq/60 hover:-translate-y-1 transition">
-          <p class="text-xs text-white/50 mb-1 uppercase tracking-[0.18em]">Plan mensual</p>
-          <h3 class="font-semibold mb-1 text-clturq">Automatización Básica</h3>
-          <p class="text-2xl font-bold mb-1">$97<span class="text-xs text-white/50">/mes</span></p>
-          <p class="text-xs text-white/50 mb-3">Para negocios que ya reciben mensajes diarios.</p>
-          <ul class="space-y-1 text-white/80 mb-3">
-            <li>• Configuración de API WhatsApp.</li>
-            <li>• Flujo de bienvenida automático.</li>
-            <li>• Filtros básicos según tipo de cliente.</li>
-            <li>• Seguimiento 24 horas.</li>
-            <li>• SEO local y ajustes de Google Maps.</li>
-          </ul>
-          <p class="text-[11px] text-white/50">
-            Ideal cuando ya no puedes responder manualmente a todos.
+      <!-- Imagen / Card -->
+      <div class="w-full lg:w-1/2">
+        <div class="relative glass p-4 sm:p-5 lg:p-6">
+          <div
+            class="relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3] shadow-[0_24px_60px_rgba(0,0,0,0.9)]">
+            <img
+              src="https://images.pexels.com/photos/4109136/pexels-photo-4109136.jpeg"
+              alt="Costillas de cerdo asadas en barril"
+              class="h-full w-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.24em] text-amber-300 font-semibold">
+                  Modo QR · Modo Domicilio
+                </p>
+                <p class="mt-1 text-sm font-semibold text-slate-50">
+                  Escanea el código en tu mesa o comparte el link para pedir desde casa.
+                </p>
+              </div>
+              <div class="text-right bg-black/50 px-3 py-2 rounded-xl border border-white/10">
+                <p class="text-[11px] text-slate-300">Desde</p>
+                <p class="text-base font-semibold text-amber-300">$[PRECIO_BASE] / ración</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="text-xs text-slate-300 space-y-1">
+              <p>
+                📍 Dirección:
+                <span class="text-slate-100 font-medium">[DIRECCIÓN COMPLETA]</span>
+              </p>
+              <p>
+                🏦 Cuenta:
+                <span class="text-slate-100 font-medium">[BANCO · TIPO DE CUENTA · N° · TITULAR]</span>
+              </p>
+            </div>
+            <a
+              href="[URL_GOOGLE_MAPS_LOCAL]"
+              target="_blank"
+              class="inline-flex items-center justify-center px-3 py-2 rounded-xl bg-slate-900/80 border border-white/10 hover:border-amber-400/80 text-[11px] font-semibold text-slate-100"
+            >
+              Ver en Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN POR QUÉ -->
+  <section id="porque" class="py-12 sm:py-16 lg:py-18 bg-gradient-to-b from-black/40 via-black/60 to-black/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400 mb-2">
+            Técnica en barril
+          </p>
+          <h2 class="font-hero text-3xl sm:text-4xl text-slate-50 mb-4">
+            ¿Por qué nuestro asado en barril sabe diferente?
+          </h2>
+          <p class="text-sm sm:text-base text-slate-200/90 mb-4">
+            No es solo una parrillada más. Es un sistema de cocción en barril pensado para mesas felices:
+            tanto si pides desde tu mesa con un QR como si pides a domicilio.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-200">
+            <div class="flex items-start gap-3">
+              <div class="mt-1 h-7 w-7 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-300">
+                🔥
+              </div>
+              <div>
+                <p class="font-semibold">Cocción lenta y controlada</p>
+                <p class="text-xs text-slate-400">
+                  Fuego estable para que la carne se cocine parejo, sin resecarse.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="mt-1 h-7 w-7 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-300">
+                📱
+              </div>
+              <div>
+                <p class="font-semibold">Menú digital por QR</p>
+                <p class="text-xs text-slate-400">
+                  Los clientes piden desde la mesa y tú recibes todo por WhatsApp.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="mt-1 h-7 w-7 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-300">
+                🧂
+              </div>
+              <div>
+                <p class="font-semibold">Marinados caseros</p>
+                <p class="text-xs text-slate-400">
+                  Recetas propias con ajo, especias y tiempo de reposo real.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="mt-1 h-7 w-7 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-300">
+                🚚
+              </div>
+              <div>
+                <p class="font-semibold">También a domicilio</p>
+                <p class="text-xs text-slate-400">
+                  Empacado para que llegue caliente y listo para servir.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini cards -->
+        <div class="grid gap-4 md:gap-5">
+          <div class="card-product p-4 flex gap-3 items-center">
+            <div class="flex-1">
+              <p class="text-xs uppercase tracking-[0.25em] text-amber-400 mb-1">Escanea y pide</p>
+              <p class="text-sm text-slate-200">
+                Coloca este link en un QR en cada mesa y tus clientes piden directamente desde su celular.
+              </p>
+            </div>
+            <div class="text-right text-xs text-slate-400">
+              <p>Uso</p>
+              <p class="text-amber-300 font-semibold text-base">En local + delivery</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="card-product p-3">
+              <p class="text-xs font-semibold text-amber-300 mb-1">Consumo en local</p>
+              <p class="text-xs text-slate-300">Seleccionan “Consumo en local (QR)” y añaden el número de mesa.</p>
+            </div>
+            <div class="card-product p-3">
+              <p class="text-xs font-semibold text-amber-300 mb-1">Pedido a domicilio</p>
+              <p class="text-xs text-slate-300">Seleccionan “Domicilio” y completan dirección y referencias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENÚ -->
+  <!-- AQUÍ VA TU SECCIÓN DE MENÚ COMPLETA (PRODUCTOS Y COMBOS).
+       SI YA TENÍAS UNA, SOLO PÉGALA AQUÍ TAL CUAL LA TENÍAS EN TU ARCHIVO ANTERIOR. -->
+
+  <!-- CÓMO PEDIR -->
+  <section id="como-pedir" class="py-12 sm:py-16 lg:py-18 bg-gradient-to-b from-black via-slate-950 to-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">
+          Pedido Simple
+        </p>
+        <h2 class="font-hero text-3xl sm:text-4xl text-slate-50 mt-1">
+          ¿Cómo funciona tu pedido?
+        </h2>
+        <p class="text-sm text-slate-200/90 mt-2">
+          Funciona igual si estás en el restaurante (escaneando un QR en la mesa) o pidiendo desde tu casa.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-5">
+        <div class="card-product p-5 text-center">
+          <div
+            class="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-300">
+            1
+          </div>
+          <h3 class="text-sm font-semibold text-slate-50">
+            Elige tus costillas y cortes
+          </h3>
+          <p class="text-xs text-slate-300 mt-2">
+            Entra con el QR de tu mesa o desde el enlace y arma tu pedido desde el menú.
           </p>
         </div>
 
-        <!-- Plan 197/mes -->
-        <div class="rounded-2xl border border-clturq/60 bg-gradient-to-br from-clgray via-clblack to-black p-5 shadow-[0_18px_55px_rgba(0,0,0,0.8)] hover:-translate-y-1 transition">
-          <p class="text-xs text-white/60 mb-1 uppercase tracking-[0.18em]">Más vendido</p>
-          <h3 class="font-semibold mb-1 text-clturq">Automatización Completa</h3>
-          <p class="text-2xl font-bold mb-1">$197<span class="text-xs text-white/50">/mes</span></p>
-          <p class="text-xs text-white/50 mb-3">Para negocios que quieren sistemas serios.</p>
-          <ul class="space-y-1 text-white/80 mb-3">
-            <li>• Todo lo del plan básico.</li>
-            <li>• Chatbot personalizado.</li>
-            <li>• Múltiples flujos en n8n.</li>
-            <li>• Registro automático en CRM.</li>
-            <li>• Seguimiento 72h y 7 días.</li>
-            <li>• Reporte mensual simple.</li>
-          </ul>
-          <p class="text-[11px] text-white/50">
-            Convierte tu negocio en una máquina digital que trabaja incluso cuando duermes.
+        <div class="card-product p-5 text-center">
+          <div
+            class="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-300">
+            2
+          </div>
+          <h3 class="text-sm font-semibold text-slate-50">
+            Elige “Consumo en local” o “Domicilio”
+          </h3>
+          <p class="text-xs text-slate-300 mt-2">
+            Completa tus datos, tu número de mesa si estás en el local, o tu dirección si es a domicilio.
           </p>
         </div>
 
-        <!-- Plan 297/mes -->
-        <div class="rounded-2xl border border-white/15 bg-white/5 p-5 hover:border-clturq/60 hover:-translate-y-1 transition">
-          <p class="text-xs text-white/50 mb-1 uppercase tracking-[0.18em]">Plan completo</p>
-          <h3 class="font-semibold mb-1 text-clturq">Premium Crecimiento</h3>
-          <p class="text-2xl font-bold mb-1">$297<span class="text-xs text-white/50">/mes</span></p>
-          <p class="text-xs text-white/50 mb-3">Para empresas que quieren escalar serio.</p>
-          <ul class="space-y-1 text-white/80 mb-3">
-            <li>• Web avanzada (hasta 5 secciones).</li>
-            <li>• Automatización PRO completa.</li>
-            <li>• 4 posts + 2 reels mensuales.</li>
-            <li>• Optimización continua del chatbot.</li>
-            <li>• Soporte prioritario.</li>
-          </ul>
-          <p class="text-[11px] text-white/50">
-            Recomendado para marcas que quieren presencia, sistema y contenido constante.
+        <div class="card-product p-5 text-center">
+          <div
+            class="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-300">
+            3
+          </div>
+          <h3 class="text-sm font-semibold text-slate-50">
+            Confirma por WhatsApp
+          </h3>
+          <p class="text-xs text-slate-300 mt-2">
+            Haz clic en “Pagar y enviar pedido por WhatsApp”, adjunta el comprobante y listo.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-14 md:py-20 border-t border-white/5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-3">Preguntas frecuentes</h2>
-      <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl">
-        Si tienes dudas, es probable que estén aquí. Si no, puedes escribirnos directamente por WhatsApp.
-      </p>
+  <!-- PANEL CARRITO -->
+  <aside
+    id="cartPanel"
+    class="cart-panel fixed inset-y-0 right-0 z-50 w-full max-w-md bg-gradient-to-b from-black via-slate-950 to-black border-l border-white/10 shadow-[0_0_60px_rgba(0,0,0,0.9)] flex flex-col"
+  >
+    <div class="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-white/10">
+      <div>
+        <p class="text-xs uppercase tracking-[0.32em] text-amber-400 font-semibold">
+          Tu pedido
+        </p>
+        <p class="text-sm text-slate-50 font-semibold">Carrito de asados en barril</p>
+        <p class="text-[11px] text-slate-400">
+          Funciona para pedidos en mesa (QR) y pedidos a domicilio.
+        </p>
+      </div>
+      <button id="closeCart" class="h-8 w-8 flex items-center justify-center rounded-full bg-slate-900/80 border border-white/15 text-slate-200 text-sm">
+        ✕
+      </button>
+    </div>
 
-      <div class="space-y-4 text-sm">
-        <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between">
-            <span class="font-semibold text-white/90">¿La web es mía o la pierdo después de un tiempo?</span>
-            <span class="text-clturq group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="mt-3 text-white/70">
-            La web es tuya. El programa es de pago único. No te la quitamos ni se desactiva después.
-          </p>
-        </details>
+    <!-- Contenido scroll -->
+    <div class="flex-1 overflow-y-auto px-4 sm:px-5 py-4 space-y-5">
+      <!-- Lista de productos -->
+      <div>
+        <p class="text-xs font-semibold text-slate-200 mb-2">Resumen de productos</p>
+        <div id="cartItems" class="space-y-3 text-xs text-slate-100"></div>
+        <p id="emptyCartText" class="text-xs text-slate-400 mt-1">Tu carrito está vacío. Agrega productos desde el menú.</p>
+      </div>
 
-        <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between">
-            <span class="font-semibold text-white/90">¿Impulso Digital 360 incluye automatización completa de WhatsApp?</span>
-            <span class="text-clturq group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="mt-3 text-white/70">
-            No. Este programa incluye tu web profesional, botón a WhatsApp y una guía básica para mensajes de bienvenida.
-            La automatización avanzada (API, n8n, IA, chatbot) se contrata aparte con los planes mensuales.
-          </p>
-        </details>
+      <!-- Totales -->
+      <div class="glass p-3 text-xs text-slate-100 space-y-1">
+        <div class="flex justify-between">
+          <span class="text-slate-400">Subtotal</span>
+          <span id="cartSubtotal" class="font-semibold">$0.00</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Envío</span>
+          <span id="cartShipping" class="text-slate-300 text-[11px]">Por definir según ubicación</span>
+        </div>
+        <div class="border-t border-white/5 pt-2 mt-1 flex justify-between items-center">
+          <span class="text-slate-200 font-semibold text-[13px]">Total estimado</span>
+          <span id="cartTotal" class="text-amber-300 font-bold text-sm">$0.00</span>
+        </div>
+      </div>
 
-        <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between">
-            <span class="font-semibold text-white/90">¿Es obligatorio tomar un plan mensual después?</span>
-            <span class="text-clturq group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="mt-3 text-white/70">
-            No. Puedes quedarte solo con tu web de pago único. Los planes mensuales son para negocios que ya necesitan automatizar y escalar.
-          </p>
-        </details>
+      <!-- FORM DATOS CLIENTE -->
+      <div>
+        <p class="text-xs font-semibold text-slate-200 mb-2">Paso 1: Tus datos y tipo de servicio</p>
+        <div class="space-y-2 text-xs">
+          <div>
+            <label for="clientName" class="block text-slate-300 mb-1">Nombre completo *</label>
+            <input id="clientName" type="text" class="w-full rounded-xl bg-black/70 border border-white/10 px-3 py-2 text-xs text-slate-100 outline-none focus:border-amber-400" placeholder="Ej. Juan Pérez">
+          </div>
+          <div>
+            <label for="clientPhone" class="block text-slate-300 mb-1">Celular / WhatsApp *</label>
+            <input id="clientPhone" type="tel" class="w-full rounded-xl bg-black/70 border border-white/10 px-3 py-2 text-xs text-slate-100 outline-none focus:border-amber-400" placeholder="Ej. 09XXXXXXXX">
+          </div>
+          <div>
+            <p class="block text-slate-300 mb-1">Tipo de servicio *</p>
+            <div class="flex flex-col gap-1">
+              <label class="inline-flex items-center gap-2 text-slate-200">
+                <input type="radio" name="deliveryType" value="Consumo en local (QR)" class="accent-amber-500">
+                <span class="text-xs">Consumo en local (escaneando el QR en la mesa)</span>
+              </label>
+              <label class="inline-flex items-center gap-2 text-slate-200">
+                <input type="radio" name="deliveryType" value="Domicilio" class="accent-amber-500">
+                <span class="text-xs">Domicilio (entrega en tu casa u oficina)</span>
+              </label>
+            </div>
+          </div>
 
-        <details class="group border border-white/10 rounded-2xl bg-white/5 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between">
-            <span class="font-semibold text-white/90">¿Qué pasa si no tengo logo ni fotos?</span>
-            <span class="text-clturq group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="mt-3 text-white/70">
-            Podemos trabajar con fotos simples que tengas del celular y un diseño limpio sin logo.
-            Más adelante puedes mejorar tu identidad visual.
+          <div>
+            <label for="clientTable" class="block text-slate-300 mb-1">Número de mesa (solo si estás en el local)</label>
+            <input id="clientTable" type="text" class="w-full rounded-xl bg-black/70 border border-white/10 px-3 py-2 text-xs text-slate-100 outline-none focus:border-amber-400" placeholder="Ej. Mesa 4, terraza, etc.">
+          </div>
+
+          <div>
+            <label for="clientCity" class="block text-slate-300 mb-1">Ciudad / Sector *</label>
+            <input id="clientCity" type="text" class="w-full rounded-xl bg-black/70 border border-white/10 px-3 py-2 text-xs text-slate-100 outline-none focus:border-amber-400" placeholder="Ej. [CIUDAD], barrio o sector">
+          </div>
+          <div>
+            <label for="clientAddress" class="block text-slate-300 mb-1">Dirección completa para entrega *</label>
+            <textarea id="clientAddress" rows="2" class="w-full rounded-xl bg-black/70 border border-white/10 px-3 py-2 text-xs text-slate-100 outline-none focus:border-amber-400" placeholder="Si es consumo en local puedes escribir 'En restaurante' / 'En mesa'. Si es domicilio, pon la dirección."></textarea>
+          </div>
+          <div>
+            <label for="clientRef" class="block text-slate-300 mb-1">Referencias de ubicación</label>
+            <textarea id="clientRef" rows="2" class="w-full rounded-xl bg-black/70 border border-white/10 px-3 py-2 text-xs text-slate-100 outline-none focus:border-amber-400" placeholder="Ej. Casa verde junto a la tienda, portón negro, etc."></textarea>
+          </div>
+          <div>
+            <label for="clientMapsLink" class="block text-slate-300 mb-1">Pega aquí tu ubicación de Google Maps (solo domicilios, opcional)</label>
+            <input id="clientMapsLink" type="url" class="w-full rounded-xl bg-black/70 border border-white/10 px-3 py-2 text-xs text-slate-100 outline-none focus:border-amber-400" placeholder="https://maps.app.goo.gl/...">
+          </div>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <a
+              href="[URL_GOOGLE_MAPS_LOCAL]"
+              target="_blank"
+              class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-semibold bg-slate-900/80 border border-amber-400/60 text-amber-200"
+            >
+              Abrir ubicación del local en Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGO -->
+      <div>
+        <p class="text-xs font-semibold text-slate-200 mb-2">Paso 2: Realiza tu pago</p>
+        <div class="glass p-3 text-xs text-slate-100 space-y-1">
+          <p class="text-slate-300">
+            Realiza tu transferencia o depósito a la siguiente cuenta:
           </p>
-        </details>
+          <p class="text-[11px] text-amber-200 font-semibold mt-1">
+            [BANCO, TIPO DE CUENTA, NÚMERO, TITULAR, CÉDULA/RUC SI APLICA]
+          </p>
+          <p class="text-[11px] text-slate-400 mt-1">
+            Después, haz clic en el botón de abajo y envíanos tu comprobante por WhatsApp junto con los
+            datos de tu pedido.
+          </p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- FORMULARIO / CTA FINAL -->
-  <section id="formulario" class="py-16 border-t border-white/5 bg-clgray/60">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-3">Aplica ahora a Impulso Digital 360</h2>
-      <p class="text-white/70 text-sm md:text-base mb-8 max-w-2xl mx-auto">
-        Llena el formulario y revisaremos tu información para agendar la creación de tu web.
-        Mientras más claro seas, más rápido avanzamos.
-      </p>
-
-      <div class="mb-8">
-        <a href="TU_LINK_DE_FORMULARIO"
-           class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_16px_55px_rgba(17,215,227,0.9)] hover:-translate-y-[2px] hover:shadow-[0_22px_70px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
-          Ir al formulario de aplicación
-        </a>
-      </div>
-
-      <!-- Si deseas incrustar el formulario:
-      <div class="mt-6">
-        <iframe src="TU_LINK_DE_FORMULARIO"
-                class="w-full h-[520px] rounded-2xl border border-white/15 bg-white"
-                loading="lazy"></iframe>
-      </div>
-      -->
-
-      <p class="text-xs text-white/50 mt-6">
-        Si tienes dudas antes de aplicar, puedes escribirnos a:<br>
-        <span class="text-clturq font-semibold">+593 XX XXX XXXX (WhatsApp)</span>
+    <!-- CTA FINAL -->
+    <div class="border-t border-white/10 px-4 sm:px-5 py-3 bg-black/80">
+      <button
+        id="checkoutButton"
+        class="btn-fire w-full rounded-full py-2.5 text-xs sm:text-sm font-semibold text-slate-900 flex items-center justify-center gap-2"
+      >
+        <span>🧾 Pagar y enviar pedido por WhatsApp</span>
+      </button>
+      <p id="formError" class="mt-1 text-[11px] text-red-400 hidden">
+        Revisa: debes tener al menos un producto en el carrito y completar todos los campos marcados con *.
       </p>
     </div>
-  </section>
+  </aside>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-white/10 py-6">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/50">
-      <p>© <span id="year"></span> CL Tech Solutions · Todos los derechos reservados.</p>
-      <p class="text-[11px]">Programa: Impulso Digital 360 · Diseñado por CL Tech Solutions.</p>
+  <!-- FOOTER SIMPLE -->
+  <footer class="py-4 border-t border-white/10 bg-black/90">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-[11px] text-slate-400">
+      © <span id="yearSpan"></span> Asados en Barril · Menú digital y pedidos por WhatsApp.
     </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // CONFIG BÁSICA
+    const WHATSAPP_NUMBER = "593999630862"; // 0999630862 en formato internacional
+    const BANK_DATA = "[BANCO, TIPO DE CUENTA, NÚMERO, TITULAR, CÉDULA/RUC]";
+    const BUSINESS_NAME = "Asados en Barril [CAMBIAR POR NOMBRE REAL]";
+
+    document.getElementById("yearSpan").textContent = new Date().getFullYear();
+
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileNav = document.getElementById("mobileNav");
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("hidden");
+    });
+
+    // Carrito
+    let cart = [];
+    const cartButton = document.getElementById("cartButton");
+    const cartPanel = document.getElementById("cartPanel");
+    const closeCartBtn = document.getElementById("closeCart");
+    const cartCount = document.getElementById("cartCount");
+    const cartItemsContainer = document.getElementById("cartItems");
+    const emptyCartText = document.getElementById("emptyCartText");
+    const cartSubtotal = document.getElementById("cartSubtotal");
+    const cartTotal = document.getElementById("cartTotal");
+
+    function openCart() { cartPanel.classList.add("open"); }
+    function closeCart() { cartPanel.classList.remove("open"); }
+    cartButton.addEventListener("click", openCart);
+    closeCartBtn.addEventListener("click", closeCart);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeCart(); });
+
+    function attachQtyListeners(scope = document) {
+      scope.querySelectorAll(".qty-plus").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const input = btn.parentElement.querySelector(".qty-input");
+          const current = parseInt(input.value || "1", 10);
+          input.value = current + 1;
+        });
+      });
+
+      scope.querySelectorAll(".qty-minus").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const input = btn.parentElement.querySelector(".qty-input");
+          let current = parseInt(input.value || "1", 10);
+          current = isNaN(current) ? 1 : current;
+          if (current > 1) input.value = current - 1;
+        });
+      });
+    }
+
+    attachQtyListeners(document);
+
+    function addToCart(productId, name, price, qty) {
+      price = parseFloat(price);
+      qty = parseInt(qty, 10);
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        cart.push({ id: productId, name, price, qty });
+      }
+      renderCart();
+      openCart();
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest("[data-id]");
+        const id = card.getAttribute("data-id");
+        const name = card.getAttribute("data-name");
+        const price = card.getAttribute("data-price");
+        const qtyInput = card.querySelector(".qty-input");
+        const qty = qtyInput ? qtyInput.value : 1;
+        addToCart(id, name, price, qty);
+      });
+    });
+
+    function renderCart() {
+      cartItemsContainer.innerHTML = "";
+      if (cart.length === 0) {
+        emptyCartText.classList.remove("hidden");
+      } else {
+        emptyCartText.classList.add("hidden");
+      }
+
+      let subtotal = 0;
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+
+        const row = document.createElement("div");
+        row.className = "flex items-start justify-between gap-3 border border-white/5 rounded-xl px-3 py-2";
+        row.innerHTML = `
+          <div class="flex-1">
+            <p class="text-[11px] font-semibold text-slate-50 line-clamp-2">${item.name}</p>
+            <p class="text-[11px] text-slate-400 mt-0.5">$${item.price.toFixed(2)} c/u</p>
+            <div class="flex items-center gap-2 mt-1.5">
+              <button class="cart-item-minus h-6 w-6 rounded-full bg-slate-900/80 border border-white/15 text-slate-200 text-xs">−</button>
+              <span class="text-[11px] text-slate-100">${item.qty}</span>
+              <button class="cart-item-plus h-6 w-6 rounded-full bg-slate-900/80 border border-white/15 text-slate-200 text-xs">+</button>
+            </div>
+          </div>
+          <div class="flex flex-col items-end gap-1">
+            <button class="cart-item-remove text-[10px] text-slate-400 hover:text-red-400">Eliminar</button>
+            <p class="text-[11px] font-semibold text-amber-300">$${itemTotal.toFixed(2)}</p>
+          </div>
+        `;
+
+        const minusBtn = row.querySelector(".cart-item-minus");
+        const plusBtn = row.querySelector(".cart-item-plus");
+        const removeBtn = row.querySelector(".cart-item-remove");
+
+        minusBtn.addEventListener("click", () => {
+          if (item.qty > 1) {
+            item.qty -= 1;
+          } else {
+            cart.splice(index, 1);
+          }
+          renderCart();
+        });
+
+        plusBtn.addEventListener("click", () => {
+          item.qty += 1;
+          renderCart();
+        });
+
+        removeBtn.addEventListener("click", () => {
+          cart.splice(index, 1);
+          renderCart();
+        });
+
+        cartItemsContainer.appendChild(row);
+      });
+
+      cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+      cartTotal.textContent = `$${subtotal.toFixed(2)}`;
+
+      const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+      cartCount.textContent = totalItems.toString();
+    }
+
+    const checkoutButton = document.getElementById("checkoutButton");
+    const formError = document.getElementById("formError");
+
+    function resetFieldError(el) {
+      el.classList.remove("field-error");
+    }
+
+    function setFieldError(el) {
+      el.classList.add("field-error");
+    }
+
+    checkoutButton.addEventListener("click", () => {
+      formError.classList.add("hidden");
+      document.querySelectorAll(".field-error").forEach(el => el.classList.remove("field-error"));
+
+      if (cart.length === 0) {
+        formError.textContent = "Tu carrito está vacío. Agrega productos antes de continuar.";
+        formError.classList.remove("hidden");
+        return;
+      }
+
+      const name = document.getElementById("clientName");
+      const phone = document.getElementById("clientPhone");
+      const city = document.getElementById("clientCity");
+      const address = document.getElementById("clientAddress");
+      const ref = document.getElementById("clientRef");
+      const mapsLink = document.getElementById("clientMapsLink");
+      const table = document.getElementById("clientTable");
+      const deliveryType = document.querySelector("input[name='deliveryType']:checked");
+
+      let hasError = false;
+
+      if (!name.value.trim()) { setFieldError(name); hasError = true; }
+      if (!phone.value.trim()) { setFieldError(phone); hasError = true; }
+      if (!city.value.trim()) { setFieldError(city); hasError = true; }
+      if (!address.value.trim()) { setFieldError(address); hasError = true; }
+      if (!deliveryType) { hasError = true; }
+
+      if (hasError) {
+        formError.textContent = "Revisa: debes tener al menos un producto en el carrito y completar todos los campos marcados con *.";
+        formError.classList.remove("hidden");
+        return;
+      }
+
+      let message = `Hola, soy ${name.value.trim()}.\n`;
+      message += `Quiero confirmar mi pedido de asados en barril de ${BUSINESS_NAME}:\n\n`;
+
+      cart.forEach(item => {
+        const subtotalItem = item.price * item.qty;
+        message += `• ${item.qty} x ${item.name} = $${subtotalItem.toFixed(2)}\n`;
+      });
+
+      const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+      message += `\nTotal estimado: $${subtotal.toFixed(2)}\n`;
+      message += `Tipo de servicio: ${deliveryType.value}\n`;
+
+      if (table.value.trim()) {
+        message += `Mesa / ubicación dentro del local: ${table.value.trim()}\n`;
+      }
+
+      message += `Ciudad / Sector: ${city.value.trim()}\n`;
+      message += `Dirección / referencia principal: ${address.value.trim()}\n`;
+
+      if (ref.value.trim()) {
+        message += `Referencias adicionales: ${ref.value.trim()}\n`;
+      }
+
+      if (mapsLink.value.trim()) {
+        message += `Ubicación en Google Maps (cliente): ${mapsLink.value.trim()}\n`;
+      }
+
+      message += `\nMi número de contacto es: ${phone.value.trim()}.\n`;
+      message += `\nYa realicé la transferencia o depósito a la cuenta:\n${BANK_DATA}\n`;
+      message += `Adjunto el comprobante de pago. ✅🔥`;
+
+      const encodedMessage = encodeURIComponent(message);
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+      window.open(waUrl, "_blank");
+    });
+
+    ["clientName", "clientPhone", "clientCity", "clientAddress"].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener("input", () => resetFieldError(el));
+    });
   </script>
 </body>
 </html>
