@@ -77,7 +77,8 @@
         />
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm">
+      <!-- Menú escritorio (solo en pantallas grandes) -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm">
         <a href="#beneficios" class="text-white/70 hover:text-clturq transition">Beneficios</a>
         <a href="#modelos" class="text-white/70 hover:text-clturq transition">Modelos</a>
         <a href="#planes" class="text-white/70 hover:text-clturq transition">Planes para escalar</a>
@@ -86,12 +87,12 @@
       </nav>
 
       <button id="openFormBtnDesktop"
-        class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_12px_40px_rgba(17,215,227,0.75)] hover:-translate-y-[2px] hover:shadow-[0_18px_60px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
+        class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_12px_40px_rgba(17,215,227,0.75)] hover:-translate-y-[2px] hover:shadow-[0_18px_60px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
         Quiero mi página web
       </button>
 
-      <!-- Menu móvil simple (solo anclas) -->
-      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/20">
+      <!-- Menu móvil / tablet -->
+      <button id="mobileMenuBtn" class="lg:hidden inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/20">
         <span class="sr-only">Abrir menú</span>
         <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h12"/>
@@ -99,7 +100,7 @@
       </button>
     </div>
 
-    <nav id="mobileNav" class="md:hidden max-w-6xl mx-auto px-4 sm:px-6 pb-4 hidden text-sm">
+    <nav id="mobileNav" class="lg:hidden max-w-6xl mx-auto px-4 sm:px-6 pb-4 hidden text-sm">
       <div class="flex flex-col gap-2 text-white/80">
         <a href="#beneficios" class="hover:text-clturq transition">Beneficios</a>
         <a href="#modelos" class="hover:text-clturq transition">Modelos</a>
@@ -357,6 +358,71 @@
       </div>
     </section>
 
+    <!-- SECCIÓN CRISS LOMBEIDA / CASOS REALES -->
+    <section id="criss" class="py-16 md:py-20 border-t border-white/10 bg-clgray/70">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1.2fr,1fr] gap-8 items-center">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold mb-3">Casos reales y comunidad <span class="text-clturq">Criss Lombeida</span></h2>
+          <p class="text-sm md:text-base text-white/75 mb-4">
+            Impulso Digital 360 no es solo una oferta comercial. Nace del proyecto social
+            <strong>Criss Lombeida</strong>, donde regalamos páginas web y ayudamos a emprendedores reales:
+            heladerías, cerrajerías, tiendas pequeñas, negocios familiares y más.
+          </p>
+          <p class="text-sm md:text-base text-white/70 mb-4">
+            En la página de <strong>Criss Lombeida</strong> llevamos un directorio vivo de todos los
+            emprendedores a quienes vamos apoyando. Ahí podrás ver ejemplos reales de páginas creadas,
+            historias de negocio y resultados que se están logrando.
+          </p>
+          <p class="text-sm text-white/70 mb-6">
+            Si quieres inspirarte o comprobar cómo se ve una página de ventas ya funcionando en otros negocios,
+            entra a este directorio y mira los casos reales antes de tomar tu decisión.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://chrislombeida.com"
+              target="_blank"
+              class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full bg-clturq text-clblack shadow-[0_18px_60px_rgba(17,215,227,0.95)] hover:-translate-y-[2px] hover:shadow-[0_24px_80px_rgba(17,215,227,1)] active:translate-y-0 active:shadow-none transition">
+              Ver directorio de emprendedores
+            </a>
+            <button
+              id="openFormBtnCriss"
+              class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full border border-white/20 text-white/80 hover:border-clturq hover:text-clturq transition">
+              Quiero que mi negocio sea el siguiente caso
+            </button>
+          </div>
+
+          <p class="text-[11px] text-white/55 mt-3">
+            *En el directorio se muestran solo los negocios que nos autorizaron a compartir su historia.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-4">
+          <!-- LOGO CRISS LOMBEIDA (REEMPLAZA LA URL) -->
+          <div class="rounded-3xl border border-white/15 bg-black/60 px-6 py-8 w-full flex flex-col items-center text-center shadow-[0_20px_70px_rgba(0,0,0,0.9)]">
+            <img
+              src="URL_DEL_LOGO_CRISS"
+              alt="Criss Lombeida"
+              class="h-14 sm:h-16 md:h-20 w-auto object-contain mb-4"
+            />
+            <p class="text-sm text-white/75 mb-2 font-semibold">
+              Criss Lombeida · Solidaridad Digital
+            </p>
+            <p class="text-xs text-white/60 mb-4">
+              Proyecto social donde usamos tecnología y páginas web para impulsar
+              a emprendedores que tal vez nunca hubieran podido pagar una.
+            </p>
+            <a
+              href="https://chrislombeida.com"
+              target="_blank"
+              class="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold rounded-full bg-clturq/10 text-clturq border border-clturq/60 hover:bg-clturq hover:text-clblack transition">
+              Ver historias completas en Criss Lombeida
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PLANES MENSUALES PARA ESCALAR -->
     <section id="planes" class="py-16 md:py-20 border-t border-white/10 bg-clgray/70">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -441,7 +507,7 @@
     <!-- CÓMO FUNCIONA -->
     <section id="proceso" class="py-16 md:py-20 border-t border-white/10 bg-clblack/95">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Cómo es el flujo completo?</h2>
+        <h2 class="text-2xl md:3xl font-semibold mb-3">¿Cómo es el flujo completo?</h2>
         <p class="text-sm md:text-base text-white/75 mb-8 max-w-3xl">
           El objetivo es que pases de “no tener nada” a tener una página web de ventas funcionando,
           y luego, si quieres, escales con automatización.
@@ -528,7 +594,7 @@
     class="fixed z-40 bottom-4 right-4 sm:bottom-5 sm:right-5 h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-clturq shadow-[0_18px_70px_rgba(17,215,227,0.95)] flex items-center justify-center">
     <span class="sr-only">Escríbenos por WhatsApp</span>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7 text-clblack">
-      <path fill="currentColor" d="M16.04 2C9.4 2 4 7.16 4 13.7c0 2.16.64 4.16 1.75 5.87L4 30l6.7-1.74A12.2 12.2 0 0 0 16.04 25c6.64 0 12.04-5.16 12.04-11.6C28.08 7.16 22.68 2 16.04 2Zm0 20.8c-1.84 0-3.54-.5-5.02-1.4l-.36-.21-3.74.97.99-3.63-.24-.38a8.3 8.3 0 0 1-1.3-4.46C7.37 8.2 11.24 4.7 16.04 4.7s8.67 3.5 8.67 7.97c0 4.46-3.87 8.13-8.67 8.13Zm4.22-6.1c-.23-.12-1.36-.7-1.57-.78-.2-.07-.35-.12-.5.12-.15.23-.57.7-.69.85-.13.15-.25.16-.47.06-.23-.12-.96-.35-1.83-1.12-.."/>
+      <path fill="currentColor" d="M16.04 2C9.4 2 4 7.16 4 13.7c0 2.16.64 4.16 1.75 5.87L4 30l6.7-1.74A12.2 12.2 0 0 0 16.04 25c6.64 0 12.04-5.16 12.04-11.6C28.08 7.16 22.68 2 16.04 2Zm0 20.8c-1.84 0-3.54-.5-5.02-1.4l-.36-.21-3.74.97.99-3.63-.24-.38a8.3 8.3 0 0 1-1.3-4.46C7.37 8.2 11.24 4.7 16.04 4.7s8.67 3.5 8.67 7.97c0 4.46-3.87 8.13-8.67 8.13Zm4.22-6.1c-.23-.12-1.36-.7-1.57-.78-.2-.07-.35-.12-.5.12-.15.23-.57.7-.69.85-.13.15-.25.16-.47.06-.23-.12-.96-.35-1.83-1.12-.68-.6-1.13-1.34-1.26-1.57-.13-.23-.01-.35.1-.47.1-.1.23-.27.35-.4.12-.13.16-.23.23-.38.08-.15.04-.29-.02-.41-.07-.12-.5-1.2-.69-1.65-.18-.44-.37-.38-.5-.39h-.43c-.15 0-.4.06-.61.29-.21.23-.8.78-.8 1.9 0 1.12.82 2.2.94 2.35.12.15 1.61 2.46 3.94 3.35 1.47.58 2.04.63 2.77.53.45-.06 1.36-.55 1.55-1.08.19-.53.19-.99.13-1.08-.06-.09-.21-.15-.44-.27Z"/>
     </svg>
   </a>
 
@@ -544,7 +610,7 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Menú móvil
+    // Menú móvil / tablet
     const mobileBtn = document.getElementById("mobileMenuBtn");
     const mobileNav = document.getElementById("mobileNav");
     mobileBtn?.addEventListener("click", () => {
@@ -558,6 +624,7 @@
       document.getElementById("openFormBtnMobile"),
       document.getElementById("openFormBtnHero"),
       document.getElementById("openFormBtnSection"),
+      document.getElementById("openFormBtnCriss"),
     ].filter(Boolean);
     const closeFormModal = document.getElementById("closeFormModal");
 
