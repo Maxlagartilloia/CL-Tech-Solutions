@@ -744,7 +744,37 @@
         </div>
       </div>
     </section>
+    // --- Manejo del formulario con Netlify sin cambiar de página ---
+    const leadForm = document.getElementById("lead-form");
+    const formSuccess = document.getElementById("form-success");
+    const formError = document.getElementById("form-error");
 
+    function encodeFormData(form) {
+      const formData = new FormData(form);
+      return new URLSearchParams(formData).toString();
+    }
+
+    if (leadForm) {
+      leadForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Evita que el navegador cambie de página
+
+        formSuccess.classList.add("hidden");
+        formError.classList.add("hidden");
+
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encodeFormData(leadForm),
+        })
+          .then(() => {
+            leadForm.reset();
+            formSuccess.classList.remove("hidden");
+          })
+          .catch(() => {
+            formError.classList.remove("hidden");
+          });
+      });
+    }
     <!-- SECCIÓN FINAL -->
     <section id="final" class="bg-section-dark py-16 border-t border-white/10">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
