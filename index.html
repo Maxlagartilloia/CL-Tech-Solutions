@@ -28,7 +28,7 @@
             clturq: "#11D7E3",
             clblack: "#05060A",
             clgray: "#11141B",
-            claccent: "#F97316" /* naranja estilo botón Hotmart */
+            claccent: "#F97316"
           }
         }
       }
@@ -41,6 +41,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    html{
+      scroll-behavior:smooth;
+    }
     body{
       font-family:'Montserrat',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background: radial-gradient(circle at top, #11141B 0, #05060A 45%, #000 100%);
@@ -57,14 +60,12 @@
       letter-spacing:0.18em;
       text-transform:uppercase;
     }
-    /* Contenedor "tipo tarjeta Hotmart" */
     .card-hotmart{
       border-radius:1.25rem;
       border:1px solid rgba(255,255,255,0.08);
       background:rgba(5,6,10,0.92);
       box-shadow:0 24px 70px rgba(0,0,0,0.85);
     }
-    /* Simulación de “mockup” de página web */
     .mockup-page{
       border-radius:1rem;
       border:1px solid rgba(255,255,255,0.12);
@@ -86,15 +87,11 @@
       border-radius:999px;
       background:#4b5563;
     }
-
-    /* Precio grande tipo Hotmart */
     .price-main{
       font-size:2.3rem;
       font-weight:700;
       line-height:1.1;
     }
-
-    /* Botones principales tipo Hotmart */
     .btn-primary-hotmart{
       display:inline-flex;
       align-items:center;
@@ -119,7 +116,6 @@
       box-shadow:none;
       filter:brightness(0.98);
     }
-
     .btn-ghost{
       border-radius:999px;
       border:1px solid rgba(255,255,255,0.2);
@@ -135,8 +131,6 @@
       color:#11D7E3;
       background:rgba(17,215,227,0.08);
     }
-
-    /* Countdown 15 min */
     .count-pill{
       font-size:1.1rem;
       font-weight:600;
@@ -147,11 +141,8 @@
       min-width:56px;
       text-align:center;
     }
-
-    /* FAQ */
     details summary::-webkit-details-marker{display:none;}
     details summary::marker{display:none;}
-
   </style>
 </head>
 <body class="overflow-x-hidden">
@@ -159,7 +150,6 @@
   <!-- NAVBAR -->
   <header class="sticky top-0 z-40 border-b border-white/10 bg-black/80 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
-      <!-- Logo grande -->
       <a href="#inicio" class="flex items-center gap-2">
         <img
           src="https://i.postimg.cc/s2YtHvzB/IMG_0156.png"
@@ -168,13 +158,12 @@
         />
       </a>
 
-      <!-- CTA escritorio -->
+      <!-- CTA escritorio → formulario -->
       <a
-        href="https://wa.me/593990945636?text=Hola%2C%20acabo%20de%20ver%20la%20oferta%20de%20la%20p%C3%A1gina%20de%20480%20gratis%20y%20quiero%20aprovechar%20pagando%20solo%20los%2097%20USD%20de%20dominio%20y%20hosting."
-        target="_blank"
+        href="#formulario"
         class="hidden md:inline-flex btn-primary-hotmart"
       >
-        Sí, quiero aprovechar la oferta ahora
+        Sí, quiero aplicar a mi página ahora
       </a>
 
       <!-- Menu móvil -->
@@ -195,20 +184,20 @@
         <a href="#modelos" class="hover:text-clturq transition">Modelos incluidos</a>
         <a href="#pasos" class="hover:text-clturq transition">Cómo funciona</a>
         <a href="#faq" class="hover:text-clturq transition">Preguntas frecuentes</a>
+        <a href="#formulario" class="hover:text-clturq transition">Formulario</a>
         <a href="#final" class="hover:text-clturq transition">Último paso</a>
         <a
-          href="https://wa.me/593990945636?text=Hola%2C%20quiero%20aprovechar%20la%20oferta%20de%20la%20p%C3%A1gina%20de%20480%20gratis.%20Estoy%20listo%20para%20pagar%20solo%20los%2097%20USD%20del%20dominio%20y%20hosting."
-          target="_blank"
+          href="#formulario"
           class="mt-2 btn-primary-hotmart justify-center"
         >
-          Quiero mi página ahora
+          Quiero aplicar a mi página
         </a>
       </div>
     </nav>
   </header>
 
   <main id="inicio">
-    <!-- HERO: TITULAR + BARRA HOTMART + MOCKUP -->
+    <!-- HERO -->
     <section class="bg-section-dark pt-10 pb-14 md:pt-16 md:pb-18">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1.15fr,0.95fr] gap-10 items-center">
         <!-- Columna texto -->
@@ -224,20 +213,20 @@
 
           <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
             Te diseño una página web profesional de
-            <span class="line-through text-red-400">$480</span><br>
+            <span class="line-through text-red-400"> $480</span><br>
             <span class="text-clturq">TOTALMENTE GRATIS.</span>
           </h1>
 
           <p class="text-sm sm:text-base text-white/75 mb-3">
             Solo por haber dado el primer paso y estar aquí, el diseño completo de tu
-            <strong>página web de ventas</strong> va por cuenta de <strong>CL Tech Solutions</strong>.
+            <strong> página web de ventas</strong> va por cuenta de <strong>CL Tech Solutions</strong>.
           </p>
           <p class="text-sm sm:text-base text-white/75 mb-4">
             Tú solo cubres el <strong class="text-clturq text-base">$97 USD</strong> del dominio y hosting por 1 año.
             Nada más. Sin mensualidades ocultas, sin letras pequeñas.
           </p>
 
-          <!-- Barra estilo Hotmart: valor, ahorro, countdown -->
+          <!-- Barra estilo Hotmart -->
           <div class="card-hotmart px-4 py-4 mb-5">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div class="text-xs text-white/75">
@@ -268,21 +257,20 @@
             </div>
           </div>
 
-          <!-- CTAs principales -->
+          <!-- CTAs -->
           <div class="flex flex-col sm:flex-row gap-3 mb-3">
             <a
-              href="https://wa.me/593990945636?text=Hola%2C%20quiero%20aprovechar%20la%20oferta%20de%20la%20p%C3%A1gina%20de%20480%20gratis%20de%20CL%20Tech%20Solutions.%20Estoy%20listo%20para%20pagar%20solo%20los%2097%20USD%20del%20dominio%20y%20hosting."
-              target="_blank"
+              href="#formulario"
               class="btn-primary-hotmart"
             >
-              Sí, quiero mi página web ahora
+              Sí, quiero aplicar a mi página web ahora
             </a>
-            <button
-              onclick="document.getElementById('para-quien').scrollIntoView({behavior:'smooth'});"
+            <a
+              href="#para-quien"
               class="btn-ghost"
             >
               Quiero entender si esto es para mí
-            </button>
+            </a>
           </div>
 
           <p class="text-[11px] text-white/60">
@@ -291,7 +279,7 @@
           </p>
         </div>
 
-        <!-- Columna mockup “tipo Hotmart” -->
+        <!-- Columna mockup -->
         <div class="space-y-4">
           <div class="mockup-page">
             <div class="mockup-bar">
@@ -307,11 +295,10 @@
                 Así se ve una página de ventas real cuando la dejamos lista
               </h2>
               <p class="text-xs text-white/70 mb-3">
-                Título claro, oferta directa, secciones simples, botones a WhatsApp visibles y un diseño que no distrae:
+                Título claro, oferta directa, secciones simples, botones visibles y un diseño que no distrae:
                 hace que la gente te escriba, no que se pierda.
               </p>
 
-              <!-- 3 mini "pantallas" como si fueran ejemplos -->
               <div class="grid grid-cols-3 gap-2 text-[10px] text-white/70">
                 <div class="rounded-lg bg-gradient-to-br from-sky-500/40 via-sky-700/60 to-slate-900 p-2 flex flex-col justify-between">
                   <span class="font-semibold text-[11px] mb-1">Servicios</span>
@@ -340,6 +327,106 @@
       </div>
     </section>
 
+    <!-- FORMULARIO PRINCIPAL -->
+    <section id="formulario" class="bg-section-dark py-16 border-t border-white/10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-3">
+          Cuéntame de tu emprendimiento y te respondo por WhatsApp
+        </h2>
+        <p class="text-sm md:text-base text-white/75 mb-6">
+          Este formulario llega directo al equipo de <strong>CL Tech Solutions</strong>.  
+          Llénalo solo si realmente quieres avanzar con tu página web.
+        </p>
+
+        <form
+          name="lead-impulso"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="card-hotmart px-5 py-6 grid gap-4 text-sm"
+        >
+          <input type="hidden" name="form-name" value="lead-impulso" />
+          <p class="hidden">
+            <label>No llenar:
+              <input name="bot-field" />
+            </label>
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Nombre y apellido</label>
+              <input
+                type="text"
+                name="nombre"
+                required
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">WhatsApp (con código de país)</label>
+              <input
+                type="tel"
+                name="whatsapp"
+                required
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs text-white/70">Nombre de tu negocio o emprendimiento</label>
+            <input
+              type="text"
+              name="negocio"
+              required
+              class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs text-white/70">¿Qué vendes actualmente y cómo consigues clientes?</label>
+            <textarea
+              name="que-vendes"
+              rows="3"
+              class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+            ></textarea>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs text-white/70">¿Qué modelo te interesa más?</label>
+            <select
+              name="modelo-interes"
+              class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+            >
+              <option value="servicios">Modelo 1 · Servicios profesionales</option>
+              <option value="restaurante">Modelo 2 · Restaurante / comida</option>
+              <option value="heladeria">Modelo 3 · Heladería / postres</option>
+              <option value="otro">Otro / No estoy seguro aún</option>
+            </select>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs text-white/70">¿Algo más que debamos saber antes de contactarte?</label>
+            <textarea
+              name="mensaje"
+              rows="2"
+              class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+            ></textarea>
+          </div>
+
+          <div class="mt-4 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <button type="submit" class="btn-primary-hotmart justify-center">
+              Enviar mis datos · Quiero que me contacten
+            </button>
+            <p class="text-[11px] text-white/60">
+              Al enviar, autorizas a CL Tech Solutions a escribirte por WhatsApp para seguir el proceso de tu página web.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <!-- PARA QUIÉN ES / PARA QUIÉN NO ES -->
     <section id="para-quien" class="bg-section-gray py-14 border-t border-white/10">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -365,18 +452,17 @@
               <li>• Quieres todo gratis, pero no estás dispuesto a moverte ni responder.</li>
               <li>• Solo quieres “ver cómo es” sin intención real de usar la página.</li>
               <li>• Piensas que una página sola va a hacer milagros sin que tú hagas nada.</li>
-              <li>• Te da pereza incluso escribir un mensaje por WhatsApp.</li>
+              <li>• Te da pereza incluso escribir un mensaje.</li>
             </ul>
           </div>
         </div>
 
         <div class="mt-7 flex flex-col items-center gap-3">
           <a
-            href="https://wa.me/593990945636?text=Hola%2C%20me%20identifico%20con%20la%20parte%20de%20emprendedor%20luchador%20y%20s%C3%A9%20que%20esta%20oferta%20de%20CL%20Tech%20Solutions%20es%20para%20m%C3%AD.%20Quiero%20mi%20p%C3%A1gina%20de%20480%20gratis%2C%20pagando%20solo%20los%2097%20USD."
-            target="_blank"
+            href="#formulario"
             class="btn-primary-hotmart"
           >
-            Sí, soy de los que se mueven · Quiero mi página
+            Sí, soy de los que se mueven · Quiero aplicar
           </a>
           <p class="text-[11px] text-white/60">
             Si sigues leyendo, el contador sigue bajando. No digas luego que no tuviste oportunidad.
@@ -385,7 +471,7 @@
       </div>
     </section>
 
-    <!-- LO QUE RECIBES EXACTAMENTE -->
+    <!-- LO QUE RECIBES -->
     <section id="lo-que-recibes" class="bg-section-dark py-14 border-t border-white/10">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1.1fr,0.9fr] gap-10 items-start">
         <div>
@@ -399,7 +485,7 @@
             <li>• <strong>Diseño completo valorado en $480</strong>, incluido sin costo para ti en esta oferta.</li>
             <li>• <strong>Dominio</strong> (.com u otro disponible) registrado por 1 año a tu nombre.</li>
             <li>• <strong>Hosting 1 año</strong>, para que la página esté en línea 24/7.</li>
-            <li>• <strong>Botón directo a tu WhatsApp</strong> visible en la página.</li>
+            <li>• <strong>Botón de contacto</strong> visible en toda la página.</li>
             <li>• <strong>Integración con Google Maps</strong> si tienes local físico (para que te encuentren fácil).</li>
             <li>• <strong>Estructura lista</strong> para conectar automatizaciones y bots cuando llegue el momento.</li>
           </ul>
@@ -420,8 +506,7 @@
           </div>
 
           <a
-            href="https://wa.me/593990945636?text=Hola%2C%20ya%20entend%C3%AD%20lo%20que%20recibo%20por%20los%2097%20USD%20y%20quiero%20que%20CL%20Tech%20Solutions%20haga%20mi%20p%C3%A1gina%20de%20480%20gratis."
-            target="_blank"
+            href="#formulario"
             class="btn-primary-hotmart"
           >
             Listo, quiero esto para mi negocio
@@ -464,12 +549,12 @@
       </div>
     </section>
 
-    <!-- MODELOS INCLUIDOS: SERVICIOS, RESTAURANTE, HELADERÍA -->
+    <!-- MODELOS -->
     <section id="modelos" class="bg-section-gray py-16 border-t border-white/10">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">
           3 tipos de página incluidos en la misma inversión de
-          <span class="text-clturq">$97</span>
+          <span class="text-clturq"> $97</span>
         </h2>
         <p class="text-sm md:text-base text-white/75 mb-7 max-w-3xl">
           No pagas extra por el tipo de negocio. Con la misma inversión de <strong>$97</strong> eliges
@@ -488,12 +573,11 @@
               <li>• Sección “Quién soy / Quiénes somos”.</li>
               <li>• Servicios claros, con beneficios y no solo títulos.</li>
               <li>• Bloque de testimonios (si ya tienes).</li>
-              <li>• Botones “Escríbeme por WhatsApp” en toda la página.</li>
+              <li>• Botones de contacto visibles en toda la página.</li>
               <li>• Google Maps si atiendes en un lugar físico.</li>
             </ul>
             <a
-              href="https://wa.me/593990945636?text=Hola%2C%20quiero%20aprovechar%20la%20oferta%20con%20el%20MODELO%201%20para%20SERVICIOS%20PROFESIONALES.%20S%C3%A9%20que%20el%20dise%C3%B1o%20de%20CL%20Tech%20Solutions%20vale%20480%20pero%20est%C3%A1%20gratis%20y%20solo%20pago%20los%2097%20USD."
-              target="_blank"
+              href="#formulario"
               class="btn-primary-hotmart mt-auto justify-center"
             >
               Quiero la página para servicios
@@ -511,12 +595,11 @@
               <li>• Menú digital con tus platos principales y combos.</li>
               <li>• Sección de promos o “menú del día”.</li>
               <li>• Ubicación en Google Maps y horarios claros.</li>
-              <li>• Botón “Pedir por WhatsApp” listo para recibir pedidos.</li>
+              <li>• Botón listo para recibir pedidos.</li>
               <li>• Estructura lista para poner QR en mesas y para delivery.</li>
             </ul>
             <a
-              href="https://wa.me/593990945636?text=Hola%2C%20quiero%20aprovechar%20la%20oferta%20con%20el%20MODELO%202%20para%20RESTAURANTE%20O%20COMIDA.%20S%C3%A9%20que%20el%20dise%C3%B1o%20de%20CL%20Tech%20Solutions%20vale%20480%20pero%20est%C3%A1%20gratis%20y%20solo%20pago%20los%2097%20USD."
-              target="_blank"
+              href="#formulario"
               class="btn-primary-hotmart mt-auto justify-center"
             >
               Quiero la página para mi restaurante
@@ -534,12 +617,11 @@
               <li>• Catálogo de sabores o postres principales.</li>
               <li>• Sección de combos, conos, vasos especiales.</li>
               <li>• Google Maps para que te encuentren rápido.</li>
-              <li>• Botón “Pedir por WhatsApp” para pedidos inmediatos.</li>
+              <li>• Botón listo para pedidos inmediatos.</li>
               <li>• Preparada para mostrar fotos muy llamativas.</li>
             </ul>
             <a
-              href="https://wa.me/593990945636?text=Hola%2C%20quiero%20aprovechar%20la%20oferta%20con%20el%20MODELO%203%20para%20HELADER%C3%8DA%20O%20POSTRES.%20S%C3%A9%20que%20el%20dise%C3%B1o%20de%20CL%20Tech%20Solutions%20vale%20480%20pero%20est%C3%A1%20gratis%20y%20solo%20pago%20los%2097%20USD."
-              target="_blank"
+              href="#formulario"
               class="btn-primary-hotmart mt-auto justify-center"
             >
               Quiero la página para mi heladería
@@ -549,7 +631,7 @@
       </div>
     </section>
 
-    <!-- CÓMO FUNCIONA (3 PASOS) -->
+    <!-- CÓMO FUNCIONA -->
     <section id="pasos" class="bg-section-dark py-16 border-t border-white/10">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Cómo es el proceso práctico?</h2>
@@ -560,34 +642,33 @@
         <div class="grid sm:grid-cols-3 gap-4 text-sm text-left">
           <div class="card-hotmart px-4 py-4">
             <p class="text-[11px] text-white/60 mb-1">Paso 1</p>
-            <p class="font-semibold text-clturq mb-1">Escribes por WhatsApp</p>
+            <p class="font-semibold text-clturq mb-1">Llenas el formulario</p>
             <p class="text-xs text-white/80">
-              El equipo te pregunta qué vendes, qué modelo te sirve más y aclara dudas. Ahí decides si avanzas.
+              Nos cuentas quién eres, qué vendes y qué modelo te interesa. Con eso ya podemos ayudarte mejor.
             </p>
           </div>
           <div class="card-hotmart px-4 py-4">
             <p class="text-[11px] text-white/60 mb-1">Paso 2</p>
-            <p class="font-semibold text-clturq mb-1">Envías lo básico</p>
+            <p class="font-semibold text-clturq mb-1">Te escribimos por WhatsApp</p>
             <p class="text-xs text-white/80">
-              Nombre del negocio, datos de contacto, logo y fotos (si tienes). Si no tienes logo, igual se empieza.
+              El equipo de CL Tech Solutions se comunica contigo, aclara dudas y te pide lo mínimo para arrancar.
             </p>
           </div>
           <div class="card-hotmart px-4 py-4">
             <p class="text-[11px] text-white/60 mb-1">Paso 3</p>
             <p class="font-semibold text-clturq mb-1">Ves tu página en 48h</p>
             <p class="text-xs text-white/80">
-              Revisan contigo, ajustan detalles y te explican cómo usarla para vender desde el primer día.
+              Revisamos contigo, ajustamos detalles y te explicamos cómo usarla para vender desde el primer día.
             </p>
           </div>
         </div>
 
         <div class="mt-7 flex flex-col items-center gap-3">
           <a
-            href="https://wa.me/593990945636?text=Hola%2C%20ya%20entend%C3%AD%20los%203%20pasos%20y%20quiero%20que%20CL%20Tech%20Solutions%20empiece%20con%20mi%20p%C3%A1gina%20de%20480%20gratis%2C%20pagando%20solo%20los%2097%20USD."
-            target="_blank"
+            href="#formulario"
             class="btn-primary-hotmart"
           >
-            Ya entendí · Quiero que mi página sea la siguiente
+            Ya entendí · Quiero llenar el formulario
           </a>
           <p class="text-[11px] text-white/60">
             Si esto te parece complicado, el problema no es la página. Es que sigues pensando en pequeño.
@@ -664,7 +745,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN FINAL / ÚLTIMO PASO -->
+    <!-- SECCIÓN FINAL -->
     <section id="final" class="bg-section-dark py-16 border-t border-white/10">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <h2 class="text-2xl md:text-3xl font-semibold mb-4">Aquí decides si sigues jugando en pequeño o no</h2>
@@ -681,7 +762,7 @@
             </p>
           </div>
           <div class="card-hotmart px-4 py-4 border-claccent/60 border">
-            <p class="font-semibold text-clturq mb-1">Opción 2 · Escribir ahora</p>
+            <p class="font-semibold text-clturq mb-1">Opción 2 · Llenar el formulario ahora</p>
             <p class="text-xs text-white/80">
               Asegurar tu página web de <span class="line-through text-red-400">$480</span>
               pagando solo los <strong class="text-clturq">$97 de dominio y hosting</strong>,
@@ -691,11 +772,10 @@
         </div>
 
         <a
-          href="https://wa.me/593990945636?text=Hola%2C%20no%20quiero%20seguir%20en%20lo%20mismo.%20Quiero%20mi%20p%C3%A1gina%20web%20de%20480%20gratis%20con%20CL%20Tech%20Solutions%2C%20pagando%20solo%20los%2097%20USD%20de%20dominio%20y%20hosting.%20Ay%C3%BAdenme%20a%20empezar."
-          target="_blank"
+          href="#formulario"
           class="btn-primary-hotmart"
         >
-          No quiero seguir igual · Quiero mi página ahora
+          No quiero seguir igual · Quiero llenar el formulario
         </a>
 
         <p class="mt-3 text-[11px] text-white/60">
@@ -705,13 +785,12 @@
     </section>
   </main>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <!-- BOTÓN FLOTANTE → FORMULARIO -->
   <a
-    href="https://wa.me/593990945636?text=Hola%2C%20acabo%20de%20ver%20la%20p%C3%A1gina%20de%20Impulso%20Digital%20360%20de%20CL%20Tech%20Solutions%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20para%20aprovechar%20la%20oferta%20de%2097%20USD."
-    target="_blank"
+    href="#formulario"
     class="fixed z-40 bottom-4 right-4 sm:bottom-5 sm:right-5 h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-emerald-500 flex items-center justify-center shadow-[0_18px_70px_rgba(16,185,129,0.9)]"
   >
-    <span class="sr-only">Escríbenos por WhatsApp</span>
+    <span class="sr-only">Ir al formulario</span>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7 text-white">
       <path fill="currentColor" d="M16.04 2C9.4 2 4 7.16 4 13.7c0 2.16.64 4.16 1.75 5.87L4 30l6.7-1.74A12.2 12.2 0 0 0 16.04 25c6.64 0 12.04-5.16 12.04-11.6C28.08 7.16 22.68 2 16.04 2Zm0 20.8c-1.84 0-3.54-.5-5.02-1.4l-.36-.21-3.74.97.99-3.63-.24-.38a8.3 8.3 0 0 1-1.3-4.46C7.37 8.2 11.24 4.7 16.04 4.7s8.67 3.5 8.67 7.97c0 4.46-3.87 8.13-8.67 8.13Zm4.22-6.1c-.23-.12-1.36-.7-1.57-.78-.2-.07-.35-.12-.5.12-.15.23-.57.7-.69.85-.13.15-.25.16-.47.06-.23-.12-.96-.35-1.83-1.12-.68-.6-1.13-1.34-1.26-1.57-.13-.23-.01-.35.1-.47.1-.1.23-.27.35-.4.12-.13.16-.23.23-.38.08-.15.04-.29-.02-.41-.07-.12-.5-1.2-.69-1.65-.18-.44-.37-.38-.5-.39h-.43c-.15 0-.4.06-.61.29-.21.23-.8.78-.8 1.9 0 1.12.82 2.2.94 2.35.12.15 1.61 2.46 3.94 3.35 1.47.58 2.04.63 2.77.53.45-.06 1.36-.55 1.55-1.08.19-.53.19-.99.13-1.08-.06-.09-.21-.15-.44-.27Z"/>
     </svg>
@@ -727,6 +806,7 @@
 
   <!-- SCRIPTS -->
   <script>
+    // Año footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Menú móvil con cierre al hacer clic fuera
@@ -748,7 +828,7 @@
       });
     }
 
-    // Cuenta regresiva 15 minutos (minutos:segundos)
+    // Cuenta regresiva 15 minutos
     (function() {
       let remaining = 15 * 60; // 15 minutos en segundos
       const minsEl = document.getElementById("cd-mins");
@@ -775,4 +855,4 @@
     })();
   </script>
 </body>
-</html>      
+</html>
