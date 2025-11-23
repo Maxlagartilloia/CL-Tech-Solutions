@@ -158,7 +158,7 @@
         />
       </a>
 
-      <!-- CTA escritorio → formulario -->
+      <!-- CTA escritorio → modal formulario -->
       <a
         href="#formulario"
         class="hidden md:inline-flex btn-primary-hotmart"
@@ -327,105 +327,26 @@
       </div>
     </section>
 
-    <!-- FORMULARIO PRINCIPAL -->
+    <!-- SECCIÓN "FORMULARIO" (AHORA SOLO INTRO + BOTÓN) -->
     <section id="formulario" class="bg-section-dark py-16 border-t border-white/10">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">
-          Cuéntame de tu emprendimiento y te respondo por WhatsApp
+          Completa tu solicitud para que diseñemos tu página
         </h2>
-        <p class="text-sm md:text-base text-white/75 mb-6">
-          Este formulario llega directo al equipo de <strong>CL Tech Solutions</strong>.  
-          Llénalo solo si realmente quieres avanzar con tu página web.
+        <p class="text-sm md:text-base text-white/75 mb-4">
+          El formulario se abre en una ventana especial para que puedas llenarlo con calma.
+          Mientras más claro seas, más rápido podremos avanzar con el diseño de tu proyecto.
         </p>
-
-        <!-- IMPORTANTE PARA NETLIFY: name, method, data-netlify, netlify-honeypot, action="/gracias" -->
-        <form
-          name="lead-impulso"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          action="/gracias"
-          class="card-hotmart px-5 py-6 grid gap-4 text-sm"
+        <p class="text-xs md:text-sm text-white/60 mb-6">
+          No te preocupes, solo usamos esta información para evaluar tu caso, contactarte por WhatsApp y preparar tu página.
+        </p>
+        <button
+          type="button"
+          class="btn-primary-hotmart justify-center"
+          data-open-modal="form"
         >
-          <input type="hidden" name="form-name" value="lead-impulso" />
-          <p class="hidden">
-            <label>No llenar:
-              <input name="bot-field" />
-            </label>
-          </p>
-
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="space-y-1">
-              <label class="text-xs text-white/70">Nombre y apellido</label>
-              <input
-                type="text"
-                name="nombre"
-                required
-                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
-              />
-            </div>
-
-            <div class="space-y-1">
-              <label class="text-xs text-white/70">WhatsApp (con código de país)</label>
-              <input
-                type="tel"
-                name="whatsapp"
-                required
-                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
-              />
-            </div>
-          </div>
-
-          <div class="space-y-1">
-            <label class="text-xs text-white/70">Nombre de tu negocio o emprendimiento</label>
-            <input
-              type="text"
-              name="negocio"
-              required
-              class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
-            />
-          </div>
-
-          <div class="space-y-1">
-            <label class="text-xs text-white/70">¿Qué vendes actualmente y cómo consigues clientes?</label>
-            <textarea
-              name="que-vendes"
-              rows="3"
-              class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
-            ></textarea>
-          </div>
-
-          <div class="space-y-1">
-            <label class="text-xs text-white/70">¿Qué modelo te interesa más?</label>
-            <select
-              name="modelo-interes"
-              class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
-            >
-              <option value="servicios">Modelo 1 · Servicios profesionales</option>
-              <option value="restaurante">Modelo 2 · Restaurante / comida</option>
-              <option value="heladeria">Modelo 3 · Heladería / postres</option>
-              <option value="otro">Otro / No estoy seguro aún</option>
-            </select>
-          </div>
-
-          <div class="space-y-1">
-            <label class="text-xs text-white/70">¿Algo más que debamos saber antes de contactarte?</label>
-            <textarea
-              name="mensaje"
-              rows="2"
-              class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
-            ></textarea>
-          </div>
-
-          <div class="mt-4 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            <button type="submit" class="btn-primary-hotmart justify-center">
-              Enviar mis datos · Quiero que me contacten
-            </button>
-            <p class="text-[11px] text-white/60">
-              Al enviar, autorizas a CL Tech Solutions a escribirte por WhatsApp para seguir el proceso de tu página web.
-            </p>
-          </div>
-        </form>
+          Abrir formulario de solicitud
+        </button>
       </div>
     </section>
 
@@ -787,7 +708,7 @@
     </section>
   </main>
 
-  <!-- BOTÓN FLOTANTE → FORMULARIO -->
+  <!-- BOTÓN FLOTANTE → FORMULARIO (MODAL) -->
   <a
     href="#formulario"
     class="fixed z-40 bottom-4 right-4 sm:bottom-5 sm:right-5 h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-emerald-500 flex items-center justify-center shadow-[0_18px_70px_rgba(16,185,129,0.9)]"
@@ -805,6 +726,338 @@
       <p>Página web de $480 gratis · Solo pagas dominio y hosting.</p>
     </div>
   </footer>
+
+  <!-- MODAL DEL FORMULARIO (NETLIFY) -->
+  <div
+    id="formModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center px-4 sm:px-0"
+    aria-hidden="true"
+  >
+    <!-- Fondo oscuro -->
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" data-close-modal="form"></div>
+
+    <!-- Tarjeta -->
+    <div
+      id="formModalCard"
+      class="relative max-w-3xl w-full mx-auto transform bg-[#05060A] border border-white/10 rounded-2xl shadow-2xl
+             scale-95 opacity-0 translate-y-4 transition-all duration-200"
+    >
+      <div class="flex items-center justify-between px-5 sm:px-6 pt-4 pb-2 border-b border-white/10">
+        <div>
+          <p class="badge px-2.5 py-1 rounded-full border border-white/15 bg-white/5 text-clturq mb-1">
+            Impulso Digital 360 · Formulario
+          </p>
+          <h2 class="text-base sm:text-lg font-semibold">Solicitud para tu página web profesional</h2>
+        </div>
+        <button
+          type="button"
+          class="h-8 w-8 flex items-center justify-center rounded-full border border-white/20 text-white/70 hover:text-white hover:border-white/50 text-sm"
+          data-close-modal="form"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div class="max-h-[80vh] overflow-y-auto px-5 sm:px-6 pb-5 sm:pb-6 mt-3 text-sm">
+        <p class="text-xs sm:text-sm text-white/70 mb-4">
+          Gracias por tu interés en recibir tu página web profesional.
+          Completa la siguiente información. Mientras más claro seas, más rápido podremos diseñar tu proyecto.
+        </p>
+
+        <!-- FORMULARIO NETLIFY -->
+        <form
+          name="lead-impulso"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/gracias"
+          class="space-y-5"
+        >
+          <input type="hidden" name="form-name" value="lead-impulso" />
+          <p class="hidden">
+            <label>No llenar:
+              <input name="bot-field" />
+            </label>
+          </p>
+
+          <!-- SECCIÓN 1 — Datos del Negocio -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-semibold text-clturq">
+              SECCIÓN 1 — Datos del Negocio
+            </h3>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Nombre del dueño o representante del negocio *</label>
+              <input
+                type="text"
+                name="nombre_dueno"
+                required
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Número de WhatsApp de contacto *</label>
+              <input
+                type="tel"
+                name="whatsapp"
+                required
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Nombre de tu negocio o emprendimiento *</label>
+              <input
+                type="text"
+                name="nombre_negocio"
+                required
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">¿En qué ciudad te encuentras? *</label>
+              <input
+                type="text"
+                name="ciudad"
+                required
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              />
+            </div>
+          </div>
+
+          <!-- SECCIÓN 2 — Tipo de Página -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-semibold text-claccent">
+              SECCIÓN 2 — Tipo de Página que deseas
+            </h3>
+
+            <div class="space-y-2">
+              <p class="text-xs text-white/70 mb-1">¿Qué tipo de página necesitas? *</p>
+              <div class="space-y-1.5 text-xs sm:text-sm text-white/80">
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="tipo_pagina" value="Pagina web profesional" required class="mt-1">
+                  <span>Página web profesional (servicios, negocios, marcas)</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="tipo_pagina" value="Pagina restaurante/comida" class="mt-1">
+                  <span>Página web para restaurantes/comida rápida (menú + pedidos por WhatsApp)</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="tipo_pagina" value="Pagina tienda pequena" class="mt-1">
+                  <span>Página web para tiendas pequeñas (hasta 20 productos + carrito + entrega por ubicación)</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="tipo_pagina" value="Pagina servicios profesionales" class="mt-1">
+                  <span>Página para abogados, médicos, servicios profesionales</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="tipo_pagina" value="Otra" class="mt-1">
+                  <span>Otra (explicar abajo)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Si elegiste “Otra”, descríbela brevemente (opcional)</label>
+              <textarea
+                name="tipo_pagina_otra"
+                rows="2"
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- SECCIÓN 3 — Información del Contenido -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-semibold text-yellow-300">
+              SECCIÓN 3 — Información del Contenido
+            </h3>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">¿Qué servicios o productos ofreces? *</label>
+              <textarea
+                name="servicios_productos"
+                rows="3"
+                required
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              ></textarea>
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Redes sociales (si tienes)</label>
+              <input
+                type="text"
+                name="redes_sociales"
+                placeholder="@miinstagram, página de Facebook, etc."
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Describe brevemente qué te diferencia de otros (opcional)</label>
+              <textarea
+                name="diferenciacion"
+                rows="2"
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- SECCIÓN 4 — Dominio y Hosting -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-semibold text-sky-300">
+              SECCIÓN 4 — Dominio y Hosting
+            </h3>
+            <p class="text-xs text-white/70">
+              Incluimos un subdominio GRATIS en el formato:
+              <strong>tunegocio.crisslombeida.com</strong>.  
+              Esta es la opción que utilizamos para entregar las páginas web gratuitas del proyecto social.
+            </p>
+            <p class="text-xs text-white/65">
+              Opcionalmente puedes solicitar tu dominio propio (ejemplo: <strong>www.tunegocio.com</strong>) por 79 USD/año,
+              incluye: 1 año de dominio, hosting incluido y configuración completa.
+            </p>
+
+            <div class="space-y-2 mt-1">
+              <p class="text-xs text-white/70 mb-1">¿Qué tipo de dominio deseas? *</p>
+              <div class="space-y-1.5 text-xs sm:text-sm text-white/80">
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="tipo_dominio" value="Subdominio gratis" required class="mt-1">
+                  <span>Subdominio GRATIS: tunegocio.crisslombeida.com</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="tipo_dominio" value="Dominio propio" class="mt-1">
+                  <span>Dominio propio (79 USD/año, incluye Hosting)</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="tipo_dominio" value="Tengo dudas" class="mt-1">
+                  <span>Tengo dudas, necesito asesoría</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECCIÓN 5 — Material para la página -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-semibold text-purple-300">
+              SECCIÓN 5 — Material para la página web
+            </h3>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Sube tu logo (si tienes)</label>
+              <input
+                type="file"
+                name="logo"
+                class="w-full text-xs text-white/70"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Sube fotos de tu negocio o productos (hasta 10 fotos)</label>
+              <input
+                type="file"
+                name="fotos"
+                multiple
+                class="w-full text-xs text-white/70"
+              />
+            </div>
+          </div>
+
+          <!-- SECCIÓN 6 — Objetivo -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-semibold text-orange-300">
+              SECCIÓN 6 — ¿Qué esperas lograr con esta página web?
+            </h3>
+
+            <div class="space-y-2">
+              <p class="text-xs text-white/70 mb-1">¿Cuál es tu objetivo principal con la página? *</p>
+              <div class="space-y-1.5 text-xs sm:text-sm text-white/80">
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="objetivo" value="Aumentar clientes" required class="mt-1">
+                  <span>Aumentar clientes</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="objetivo" value="Mas pedidos por WhatsApp" class="mt-1">
+                  <span>Recibir más pedidos por WhatsApp</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="objetivo" value="Presencia profesional" class="mt-1">
+                  <span>Tener presencia profesional</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="objetivo" value="Aumentar ventas con carrito" class="mt-1">
+                  <span>Aumentar ventas con carrito de compras</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="objetivo" value="Otra" class="mt-1">
+                  <span>Otra (describir abajo)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs text-white/70">Describe tu objetivo si elegiste “Otra” (opcional)</label>
+              <textarea
+                name="objetivo_otro"
+                rows="2"
+                class="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- SECCIÓN 7 — Confirmación -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-semibold text-white">
+              SECCIÓN 7 — Confirmación
+            </h3>
+
+            <div class="space-y-2">
+              <p class="text-xs text-white/70 mb-1">¿Confirmas que deseas que iniciemos con el diseño de tu página web? *</p>
+              <div class="space-y-1.5 text-xs sm:text-sm text-white/80">
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="confirmacion" value="Si, confirmo" required class="mt-1">
+                  <span>Sí, confirmo.</span>
+                </label>
+                <label class="flex items-start gap-2">
+                  <input type="radio" name="confirmacion" value="Tengo dudas, quiero hablar con un asesor" class="mt-1">
+                  <span>Aún tengo dudas, quiero hablar con un asesor.</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECCIÓN 8 — Mensaje final -->
+          <div class="space-y-2 text-xs sm:text-sm text-white/70">
+            <p>
+              Gracias por completar tu solicitud.
+              Nuestro equipo revisará tu información y se comunicará contigo en las próximas horas vía WhatsApp.
+            </p>
+            <p>
+              Por favor asegúrate de tener tu WhatsApp disponible.
+            </p>
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+            <button
+              type="submit"
+              class="btn-primary-hotmart justify-center w-full sm:w-auto"
+            >
+              Enviar solicitud ahora
+            </button>
+            <button
+              type="button"
+              class="btn-ghost w-full sm:w-auto text-center"
+              data-close-modal="form"
+            >
+              Cerrar sin enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- SCRIPTS -->
   <script>
@@ -855,6 +1108,71 @@
       updateCountdown();
       const timer = setInterval(updateCountdown, 1000);
     })();
+
+    // MODAL FORM LOGIC
+    const formModal = document.getElementById("formModal");
+    const formModalCard = document.getElementById("formModalCard");
+
+    function openFormModal() {
+      if (!formModal || !formModalCard) return;
+      formModal.classList.remove("hidden");
+      formModal.setAttribute("aria-hidden", "false");
+      // Animación "plup"
+      requestAnimationFrame(() => {
+        formModalCard.classList.remove("scale-95", "opacity-0", "translate-y-4");
+        formModalCard.classList.add("scale-100", "opacity-100", "translate-y-0");
+      });
+    }
+
+    function closeFormModal() {
+      if (!formModal || !formModalCard) return;
+      formModalCard.classList.remove("scale-100", "opacity-100", "translate-y-0");
+      formModalCard.classList.add("scale-95", "opacity-0", "translate-y-4");
+      setTimeout(() => {
+        formModal.classList.add("hidden");
+        formModal.setAttribute("aria-hidden", "true");
+      }, 180);
+    }
+
+    // Abrir modal desde cualquier enlace que apunte a #formulario o botón con data-open-modal="form"
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest("a, button");
+      if (!target) return;
+
+      // Abrir por href="#formulario"
+      if (target.tagName === "A" && target.getAttribute("href") === "#formulario") {
+        e.preventDefault();
+        openFormModal();
+      }
+
+      // Abrir por data-open-modal
+      if (target.dataset.openModal === "form") {
+        e.preventDefault();
+        openFormModal();
+      }
+
+      // Cerrar por data-close-modal
+      if (target.dataset.closeModal === "form") {
+        e.preventDefault();
+        closeFormModal();
+      }
+    });
+
+    // Cerrar si se hace clic en el fondo oscuro
+    if (formModal) {
+      formModal.addEventListener("click", (e) => {
+        if (e.target.dataset.closeModal === "form") {
+          closeFormModal();
+        }
+      });
+    }
+
+    // Cerrar con ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !formModal.classList.contains("hidden")) {
+        closeFormModal();
+      }
+    });
   </script>
 </body>
 </html>
