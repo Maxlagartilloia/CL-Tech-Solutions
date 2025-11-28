@@ -1,24 +1,15 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth scroll-pt-24">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Impulso Digital 360 | Página web de $480 gratis (solo pagas dominio)</title>
+  
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/s2YtHvzB/IMG_0156.png">
 
-  <!-- SEO básico -->
   <meta name="description" content="Te diseño una página web profesional de ventas valorada en $480 totalmente gratis. Solo pagas $97 por dominio y hosting 1 año. Oferta especial para emprendedores luchadores en Ecuador." />
-  <meta name="keywords" content="página web gratis, página web para emprendedores, solo dominio y hosting, landing de ventas Ecuador, CL Tech Solutions, Impulso Digital 360" />
-  <meta name="author" content="CL Tech Solutions">
-
-  <!-- OG / Redes -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Tu página de $480 gratis · Solo pagas dominio y hosting" />
-  <meta property="og:description" content="Si eres emprendedor luchador, diseñamos tu página web de ventas (valor real $480) totalmente gratis. Solo pagas $97 por dominio y hosting 1 año." />
   <meta property="og:image" content="https://i.postimg.cc/s2YtHvzB/IMG_0156.png" />
-  <meta property="og:url" content="https://www.crisslombeida.com/impulso-digital-360" />
-  <meta property="og:site_name" content="CL Tech Solutions" />
 
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -35,37 +26,27 @@
     }
   </script>
 
-  <!-- Fuente -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    html{
-      scroll-behavior:smooth;
-    }
     body{
       font-family:'Montserrat',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background: radial-gradient(circle at top, #11141B 0, #05060A 45%, #000 100%);
       color:#fff;
     }
-    .bg-section-dark{
-      background: radial-gradient(circle at top, #11141B 0, #05060A 50%, #000 100%);
-    }
-    .bg-section-gray{
-      background: linear-gradient(to bottom, #11141B, #05060A);
-    }
-    .badge{
-      font-size:11px;
-      letter-spacing:0.18em;
-      text-transform:uppercase;
-    }
+    .bg-section-dark{ background: radial-gradient(circle at top, #11141B 0, #05060A 50%, #000 100%); }
+    .bg-section-gray{ background: linear-gradient(to bottom, #11141B, #05060A); }
+    .badge{ font-size:11px; letter-spacing:0.18em; text-transform:uppercase; }
+    
     .card-hotmart{
       border-radius:1.25rem;
       border:1px solid rgba(255,255,255,0.08);
       background:rgba(5,6,10,0.92);
       box-shadow:0 24px 70px rgba(0,0,0,0.85);
     }
+    
     .mockup-page{
       border-radius:1rem;
       border:1px solid rgba(255,255,255,0.12);
@@ -81,93 +62,65 @@
       gap:6px;
       padding:0 10px;
     }
-    .mockup-dot{
-      width:7px;
-      height:7px;
-      border-radius:999px;
-      background:#4b5563;
-    }
-    .price-main{
-      font-size:2.3rem;
-      font-weight:700;
-      line-height:1.1;
-    }
+    .mockup-dot{ width:7px; height:7px; border-radius:999px; background:#4b5563; }
+
+    .price-main{ font-size:2.3rem; font-weight:700; line-height:1.1; }
+
     .btn-primary-hotmart{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:0.4rem;
-      border-radius:999px;
-      padding:0.9rem 1.8rem;
-      font-size:0.9rem;
-      font-weight:600;
-      background:linear-gradient(135deg,#F97316,#EA580C);
-      color:#0b0b0b;
+      display:inline-flex; align-items:center; justify-content:center; gap:0.4rem;
+      border-radius:999px; padding:0.9rem 1.8rem; font-size:0.9rem; font-weight:600;
+      background:linear-gradient(135deg,#F97316,#EA580C); color:#0b0b0b;
       box-shadow:0 14px 40px rgba(249,115,22,0.6);
       transition:transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      cursor: pointer; border: none; text-decoration: none;
     }
     .btn-primary-hotmart:hover{
-      transform:translateY(-2px);
-      box-shadow:0 20px 55px rgba(249,115,22,0.9);
-      filter:brightness(1.05);
+      transform:translateY(-2px); box-shadow:0 20px 55px rgba(249,115,22,0.9); filter:brightness(1.05);
     }
-    .btn-primary-hotmart:active{
-      transform:translateY(0);
-      box-shadow:none;
-      filter:brightness(0.98);
-    }
+    .btn-primary-hotmart:active{ transform:translateY(0); box-shadow:none; filter:brightness(0.98); }
+
     .btn-ghost{
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.2);
-      padding:0.9rem 1.7rem;
-      font-size:0.9rem;
-      font-weight:500;
-      color:rgba(255,255,255,0.85);
-      background:transparent;
-      transition:all 0.15s ease;
+      border-radius:999px; border:1px solid rgba(255,255,255,0.2);
+      padding:0.9rem 1.7rem; font-size:0.9rem; font-weight:500;
+      color:rgba(255,255,255,0.85); background:transparent; transition:all 0.15s ease;
     }
-    .btn-ghost:hover{
-      border-color:#11D7E3;
-      color:#11D7E3;
-      background:rgba(17,215,227,0.08);
-    }
+    .btn-ghost:hover{ border-color:#11D7E3; color:#11D7E3; background:rgba(17,215,227,0.08); }
+
     .count-pill{
-      font-size:1.1rem;
-      font-weight:600;
-      padding:0.35rem 0.8rem;
-      border-radius:999px;
-      background:#020617;
-      border:1px solid rgba(248,250,252,0.1);
-      min-width:56px;
-      text-align:center;
+      font-size:1.1rem; font-weight:600; padding:0.35rem 0.8rem;
+      border-radius:999px; background:#020617; border:1px solid rgba(248,250,252,0.1);
+      min-width:56px; text-align:center;
     }
+
+    .input-field {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      color: white;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .input-field:focus {
+      border-color: #11D7E3;
+      background: rgba(17,215,227,0.05);
+    }
+
     details summary::-webkit-details-marker{display:none;}
     details summary::marker{display:none;}
   </style>
 </head>
 <body class="overflow-x-hidden">
 
-  <!-- NAVBAR -->
   <header class="sticky top-0 z-40 border-b border-white/10 bg-black/80 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
       <a href="#inicio" class="flex items-center gap-2">
-        <img
-          src="https://i.postimg.cc/s2YtHvzB/IMG_0156.png"
-          alt="CL Tech Solutions"
-          class="h-16 sm:h-20 md:h-24 w-auto object-contain"
-        />
+        <img src="https://i.postimg.cc/s2YtHvzB/IMG_0156.png" alt="CL Tech Solutions" class="h-16 sm:h-20 md:h-24 w-auto object-contain" />
       </a>
-
-      <!-- CTA escritorio → formulario (abre modal) -->
-      <button
-        type="button"
-        id="openFormModalDesktop"
-        class="hidden md:inline-flex btn-primary-hotmart"
-      >
-        Sí, quiero aplicar a mi página ahora
-      </button>
-
-      <!-- Menu móvil -->
+      <a href="#formulario-final" class="hidden md:inline-flex btn-primary-hotmart">
+        Sí, quiero aprovechar la oferta
+      </a>
       <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/25">
         <span class="sr-only">Abrir menú</span>
         <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -176,75 +129,58 @@
       </button>
     </div>
 
-    <!-- Menu móvil -->
     <nav id="mobileNav" class="md:hidden max-w-6xl mx-auto px-4 sm:px-6 pb-4 hidden text-sm">
       <div class="flex flex-col gap-2 text-white/85">
         <a href="#inicio" class="hover:text-clturq transition">Inicio</a>
         <a href="#para-quien" class="hover:text-clturq transition">¿Para quién es?</a>
         <a href="#lo-que-recibes" class="hover:text-clturq transition">Lo que recibes</a>
         <a href="#modelos" class="hover:text-clturq transition">Modelos incluidos</a>
-        <a href="#pasos" class="hover:text-clturq transition">Cómo funciona</a>
-        <a href="#faq" class="hover:text-clturq transition">Preguntas frecuentes</a>
-        <a href="#final" class="hover:text-clturq transition">Último paso</a>
-        <button
-          type="button"
-          id="openFormModalMobile"
-          class="mt-2 btn-primary-hotmart justify-center"
-        >
-          Quiero aplicar a mi página
-        </button>
+        <a href="#formulario-final" class="mt-2 btn-primary-hotmart justify-center">
+          Quiero mi página ahora
+        </a>
       </div>
     </nav>
   </header>
 
   <main id="inicio">
-    <!-- HERO -->
     <section class="bg-section-dark pt-10 pb-14 md:pt-16 md:pb-18">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1.15fr,0.95fr] gap-10 items-center">
-        <!-- Columna texto -->
         <div>
           <div class="flex flex-wrap items-center gap-2 mb-4">
             <span class="badge px-3 py-1 rounded-full border border-white/15 bg-white/5 text-clturq">
-              Impulso Digital 360 · CL Tech Solutions
+              Impulso Digital 360
             </span>
             <span class="badge px-3 py-1 rounded-full border border-claccent/40 bg-claccent/15 text-claccent font-semibold">
-              Oferta especial para emprendedores luchadores
+              Oferta Especial
             </span>
           </div>
 
           <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
             Te diseño una página web profesional de
-            <span class="line-through text-red-400"> 480</span><br>
+            <span class="line-through text-red-400">$480</span><br>
             <span class="text-clturq">TOTALMENTE GRATIS.</span>
           </h1>
 
           <p class="text-sm sm:text-base text-white/75 mb-3">
-            Solo por haber dado el primer paso y estar aquí, el diseño completo de tu
-            <strong> página web de ventas</strong> va por cuenta de <strong>CL Tech Solutions</strong>.
+            El diseño completo va por mi cuenta.
           </p>
           <p class="text-sm sm:text-base text-white/75 mb-4">
-            Tú solo cubres el <strong class="text-clturq text-base">valor del dominio y hosting por 1 año</strong>.
-            Nada más. Sin mensualidades ocultas, sin letras pequeñas.
+            Tú solo cubres el <strong class="text-clturq text-base">$97 USD</strong> del dominio y hosting por 1 año.
           </p>
 
-          <!-- Barra estilo Hotmart -->
           <div class="card-hotmart px-4 py-4 mb-5">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div class="text-xs text-white/75">
                 <p class="font-semibold text-clturq mb-1">
-                  Lo que normalmente pagarías:
-                  <span class="line-through text-red-400 font-bold text-base ml-1">480</span>
+                  Valor normal: <span class="line-through text-red-400 font-bold text-base ml-1">$480</span>
                 </p>
                 <p>
-                  Hoy el diseño te sale <strong class="text-emerald-400">en 0</strong>.
-                  Solo pagas el dominio y hosting por un año.
-                </p>
-                <p class="mt-1 text-[11px] text-white/60">
-                  Si cierras esta página y vuelves “después”, puede que la oferta ya no esté igual.
+                  Hoy diseño <strong class="text-emerald-400">en $0</strong>.
+                  Solo pagas <strong class="text-clturq">$97</strong>.
                 </p>
               </div>
               <div class="flex flex-col items-center gap-1 text-[11px]">
-                <span class="text-white/70 mb-1">Tiempo restante de esta pantalla:</span>
+                <span class="text-white/70 mb-1">Oferta expira en:</span>
                 <div class="flex items-center gap-2">
                   <div class="count-pill">
                     <span id="cd-mins">15</span><span class="text-xs ml-1">min</span>
@@ -253,1007 +189,253 @@
                     <span id="cd-secs">00</span><span class="text-xs ml-1">seg</span>
                   </div>
                 </div>
-                <span class="text-claccent mt-1">⏳ Cuando llegue a 00:00 no prometo mantener lo mismo.</span>
               </div>
             </div>
           </div>
 
-          <!-- CTAs -->
           <div class="flex flex-col sm:flex-row gap-3 mb-3">
-            <button
-              type="button"
-              id="openFormModalHero"
-              class="btn-primary-hotmart"
-            >
-              Sí, quiero aplicar a mi página web ahora
-            </button>
-            <a
-              href="#para-quien"
-              class="btn-ghost"
-            >
-              Quiero entender si esto es para mí
+            <a href="#formulario-final" class="btn-primary-hotmart">
+              Sí, quiero mi página web ahora
             </a>
+            <button onclick="document.getElementById('para-quien').scrollIntoView({behavior:'smooth'});" class="btn-ghost">
+              Más información
+            </button>
           </div>
-
-          <p class="text-[11px] text-white/60">
-            Ideal para restaurantes, heladerías, comida rápida, servicios profesionales, tiendas pequeñas y negocios
-            que venden todos los días pero aún no tienen página de ventas.
-          </p>
         </div>
 
-        <!-- Columna mockup -->
         <div class="space-y-4">
           <div class="mockup-page">
             <div class="mockup-bar">
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
             </div>
             <div class="p-4 sm:p-5">
-              <p class="text-[11px] uppercase tracking-[0.18em] text-clturq mb-1">
-                Ejemplo visual de tu página
-              </p>
-              <h2 class="text-base sm:text-lg font-semibold mb-2">
-                Así se ve una página de ventas real cuando la dejamos lista
-              </h2>
-              <p class="text-xs text-white/70 mb-3">
-                Título claro, oferta directa, secciones simples, botones visibles y un diseño que no distrae:
-                hace que la gente te escriba, no que se pierda.
-              </p>
-
+              <p class="text-[11px] uppercase tracking-[0.18em] text-clturq mb-1">Ejemplo visual</p>
+              <h2 class="text-base sm:text-lg font-semibold mb-2">Diseño profesional que vende</h2>
               <div class="grid grid-cols-3 gap-2 text-[10px] text-white/70">
-                <div class="rounded-lg bg-gradient-to-br from-sky-500/40 via-sky-700/60 to-slate-900 p-2 flex flex-col justify-between">
-                  <span class="font-semibold text-[11px] mb-1">Servicios</span>
-                  <p class="mb-2">Página para abogado, contador, técnico, etc.</p>
-                  <span class="text-[10px] text-slate-100/80">Botón: “Agenda por WhatsApp”</span>
+                <div class="rounded-lg bg-gradient-to-br from-sky-500/40 via-sky-700/60 to-slate-900 p-2">
+                  <span class="font-semibold text-[11px] block mb-1">Servicios</span>
                 </div>
-                <div class="rounded-lg bg-gradient-to-br from-amber-400/40 via-amber-600/60 to-slate-900 p-2 flex flex-col justify-between">
-                  <span class="font-semibold text-[11px] mb-1">Restaurante</span>
-                  <p class="mb-2">Menú, combos y ubicación en un solo lugar.</p>
-                  <span class="text-[10px] text-slate-100/80">Botón: “Pedir ahora”</span>
+                <div class="rounded-lg bg-gradient-to-br from-amber-400/40 via-amber-600/60 to-slate-900 p-2">
+                  <span class="font-semibold text-[11px] block mb-1">Restaurante</span>
                 </div>
-                <div class="rounded-lg bg-gradient-to-br from-pink-400/40 via-pink-600/60 to-slate-900 p-2 flex flex-col justify-between">
-                  <span class="font-semibold text-[11px] mb-1">Heladería</span>
-                  <p class="mb-2">Sabores, fotos y pedidos rápidos.</p>
-                  <span class="text-[10px] text-slate-100/80">Botón: “Quiero mi helado”</span>
+                <div class="rounded-lg bg-gradient-to-br from-pink-400/40 via-pink-600/60 to-slate-900 p-2">
+                  <span class="font-semibold text-[11px] block mb-1">Heladería</span>
                 </div>
               </div>
             </div>
           </div>
-
-          <p class="text-[11px] text-white/60 text-center px-2">
-            No te vamos a llenar de efectos raros. Te vamos a dejar una página <strong>sencilla, limpia y vendedora</strong>,
-            como las que hacen que la gente saque la tarjeta en los embudos de Hotmart.
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- FORMULARIO PRINCIPAL (texto + botón que abre modal) -->
-    <section id="formulario" class="bg-section-dark py-16 border-t border-white/10">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center md:text-left">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-3">
-          Cuéntame de tu emprendimiento y te respondo por WhatsApp
-        </h2>
-        <p class="text-sm md:text-base text-white/75 mb-6 max-w-2xl">
-          Este formulario llega directo al equipo de <strong>CL Tech Solutions</strong>.  
-          Llénalo solo si realmente quieres avanzar con tu página web.  
-          Mientras más claro seas, más rápido podemos diseñar tu proyecto.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
-          <button
-            type="button"
-            id="openFormModalSection"
-            class="btn-primary-hotmart justify-center"
-          >
-            Abrir formulario completo ahora
-          </button>
-          <p class="text-[11px] text-white/60 sm:text-left">
-            Tardarás unos minutos, pero estarás dando un paso que muchos siguen posponiendo.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PARA QUIÉN ES / PARA QUIÉN NO ES -->
     <section id="para-quien" class="bg-section-gray py-14 border-t border-white/10">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Es realmente para ti esta oferta?</h2>
-        <p class="text-sm md:text-base text-white/75 mb-7 max-w-3xl">
-          No es para “curiosos”. Es para quienes ya están en la calle, cocinando, atendiendo, vendiendo,
-          pero todavía no tienen una página que trabaje por ellos 24/7.
-        </p>
-
         <div class="grid md:grid-cols-2 gap-6 text-sm">
           <div class="card-hotmart px-5 py-5">
             <h3 class="font-semibold text-emerald-400 mb-2 text-base">✅ Sí es para ti si...</h3>
             <ul class="space-y-2 text-white/80">
-              <li>• Ya vendes algo (comida, servicios, productos), aunque sea solo por WhatsApp o redes.</li>
-              <li>• Te sientes emprendedor luchador: madrugas, trabajas, y no estás esperando que “alguien te rescate”.</li>
-              <li>• Sabes que tu tiempo vale más que seguir posponiendo esto un año más.</li>
-              <li>• Estás dispuesto a enviar la información que te pida el equipo y responder mensajes.</li>
+              <li>• Ya vendes algo y quieres profesionalizarte.</li>
+              <li>• Te sientes emprendedor luchador.</li>
+              <li>• Sabes que tu tiempo vale más que $97.</li>
             </ul>
           </div>
           <div class="card-hotmart px-5 py-5">
             <h3 class="font-semibold text-red-400 mb-2 text-base">⛔ No es para ti si...</h3>
             <ul class="space-y-2 text-white/80">
-              <li>• Quieres todo gratis, pero no estás dispuesto a moverte ni responder.</li>
-              <li>• Solo quieres “ver cómo es” sin intención real de usar la página.</li>
-              <li>• Piensas que una página sola va a hacer milagros sin que tú hagas nada.</li>
-              <li>• Te da pereza incluso escribir un mensaje.</li>
+              <li>• Quieres todo regalado sin esfuerzo.</li>
+              <li>• No tienes $97 para invertir en tu negocio.</li>
+              <li>• Crees que la web hace magia sin que tú trabajes.</li>
             </ul>
           </div>
-        </div>
-
-        <div class="mt-7 flex flex-col items-center gap-3">
-          <button
-            type="button"
-            id="openFormModalParaQuien"
-            class="btn-primary-hotmart"
-          >
-            Sí, soy de los que se mueven · Quiero aplicar
-          </button>
-          <p class="text-[11px] text-white/60">
-            Si sigues leyendo, el contador sigue bajando. No digas luego que no tuviste oportunidad.
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- LO QUE RECIBES -->
     <section id="lo-que-recibes" class="bg-section-dark py-14 border-t border-white/10">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1.1fr,0.9fr] gap-10 items-start">
         <div>
-          <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Qué vas a tener exactamente?</h2>
-          <p class="text-sm md:text-base text-white/75 mb-5 max-w-3xl">
-            Nada de humo. Esto es lo que realmente vas a tener online cuando terminemos:
-          </p>
-
+          <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Qué recibes por los $97?</h2>
           <ul class="space-y-2.5 text-sm text-white/85 mb-6">
-            <li>• <strong>Página web de ventas</strong> de una sola página, pensada para que la gente entienda rápido y te escriba.</li>
-            <li>• <strong>Diseño completo valorado en 480</strong>, incluido sin costo para ti en esta oferta.</li>
-            <li>• <strong>Dominio</strong> (.com u otro disponible) registrado por 1 año a tu nombre (si eliges dominio propio).</li>
-            <li>• <strong>Hosting 1 año</strong>, para que la página esté en línea 24/7.</li>
-            <li>• <strong>Botón de contacto</strong> visible en toda la página.</li>
-            <li>• <strong>Integración con Google Maps</strong> si tienes local físico (para que te encuentren fácil).</li>
-            <li>• <strong>Estructura lista</strong> para conectar automatizaciones y bots cuando llegue el momento.</li>
+            <li>• <strong>Página web de ventas</strong> (One Page).</li>
+            <li>• <strong>Diseño valorado en $480</strong> incluido GRATIS.</li>
+            <li>• <strong>Dominio y Hosting</strong> por 1 año.</li>
+            <li>• <strong>Botón a WhatsApp</strong> y Google Maps.</li>
           </ul>
-
-          <div class="grid sm:grid-cols-3 gap-3 text-xs text-white/80 mb-6">
-            <div class="card-hotmart px-3 py-3">
-              <p class="font-semibold text-clturq mb-1">No necesitas saber de webs</p>
-              <p>CL Tech Solutions se encarga de lo técnico. Tú solo dices qué vendes y con qué nombre.</p>
-            </div>
-            <div class="card-hotmart px-3 py-3">
-              <p class="font-semibold text-clturq mb-1">En poco tiempo ves tu página</p>
-              <p>Una vez que envíes la información, no te vas a quedar esperando semanas.</p>
-            </div>
-            <div class="card-hotmart px-3 py-3">
-              <p class="font-semibold text-clturq mb-1">Pensada para vender</p>
-              <p>No es una tarjeta de presentación. Es un lugar al que la gente llega a pedirte.</p>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            id="openFormModalLoQueRecibes"
-            class="btn-primary-hotmart"
-          >
+          <a href="#formulario-final" class="btn-primary-hotmart">
             Listo, quiero esto para mi negocio
-          </button>
+          </a>
         </div>
-
-        <!-- “Valor real vs lo que pagas” -->
         <div class="card-hotmart px-5 py-6">
           <p class="text-xs text-white/60 mb-1">Comparación honesta</p>
-          <h3 class="text-lg font-semibold mb-4">Si fueras a pagar todo por separado...</h3>
-
           <div class="space-y-3 text-sm">
             <div class="flex items-center justify-between">
-              <span>Diseño y desarrollo de página de ventas</span>
-              <span class="line-through text-red-400 font-semibold">480</span>
+              <span>Diseño Web</span> <span class="line-through text-red-400 font-semibold">$480</span>
             </div>
             <div class="flex items-center justify-between">
-              <span>Dominio 1 año</span>
-              <span class="text-white/80">20 - 25</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span>Hosting 1 año</span>
-              <span class="text-white/80">60 - 80</span>
-            </div>
-            <div class="border-t border-white/10 pt-3 mt-2 flex items-center justify-between">
-              <span class="font-semibold text-white/85">Lo que te tocaría pagar normalmente:</span>
-              <span class="line-through text-red-400 font-semibold">560+</span>
+              <span>Dominio y Hosting (1 año)</span> <span class="text-white/80">$80+</span>
             </div>
             <div class="border-t border-clturq/50 pt-3 mt-2 flex items-center justify-between">
-              <span class="font-semibold text-clturq">Lo que inviertes en esta oferta:</span>
-              <span class="price-main text-clturq">Dominio + hosting</span>
+              <span class="font-semibold text-clturq">Tu precio hoy:</span>
+              <span class="price-main text-clturq">$97</span>
             </div>
           </div>
-
-          <p class="mt-3 text-[11px] text-white/60">
-            La única razón por la que CL Tech Solutions hace esto así es porque quiere que más emprendedores entren al juego digital,
-            y a la vez posicionar la marca en todo el país con casos reales.
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- MODELOS -->
-    <section id="modelos" class="bg-section-gray py-16 border-t border-white/10">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-3">
-          3 tipos de página incluidos en la misma oportunidad
-        </h2>
-        <p class="text-sm md:text-base text-white/75 mb-7 max-w-3xl">
-          No pagas extra por el tipo de negocio. Con la misma inversión eliges
-          el modelo que más te sirve hoy.
-        </p>
-
-        <div class="grid md:grid-cols-3 gap-6 text-sm">
-          <!-- Servicios profesionales -->
-          <article class="card-hotmart px-5 py-5 flex flex-col h-full">
-            <p class="text-[11px] uppercase tracking-[0.2em] text-white/55 mb-1">Modelo 1</p>
-            <h3 class="text-lg font-semibold text-clturq mb-1">Página para servicios profesionales</h3>
-            <p class="text-xs text-white/70 mb-3">
-              Para abogados, contadores, cerrajeros, técnicos, consultorios, belleza, entrenadores, clases, etc.
-            </p>
-            <ul class="space-y-1.5 text-white/85 mb-4">
-              <li>• Sección “Quién soy / Quiénes somos”.</li>
-              <li>• Servicios claros, con beneficios y no solo títulos.</li>
-              <li>• Bloque de testimonios (si ya tienes).</li>
-              <li>• Botones de contacto visibles en toda la página.</li>
-              <li>• Google Maps si atiendes en un lugar físico.</li>
-            </ul>
-            <button
-              type="button"
-              id="openFormModalModelo1"
-              class="btn-primary-hotmart mt-auto justify-center"
-            >
-              Quiero la página para servicios
-            </button>
-          </article>
-
-          <!-- Restaurante -->
-          <article class="card-hotmart px-5 py-5 flex flex-col h-full border-clturq/70 border">
-            <p class="text-[11px] uppercase tracking-[0.2em] text-white/70 mb-1">Modelo 2 · Recomendado</p>
-            <h3 class="text-lg font-semibold text-clturq mb-1">Página para restaurantes y comida</h3>
-            <p class="text-xs text-white/70 mb-3">
-              Para hamburguesas, papas, pizzas, hot dogs, cafeterías, cevicherías, comida rápida y locales pequeños.
-            </p>
-            <ul class="space-y-1.5 text-white/85 mb-4">
-              <li>• Menú digital con tus platos principales y combos.</li>
-              <li>• Sección de promos o “menú del día”.</li>
-              <li>• Ubicación en Google Maps y horarios claros.</li>
-              <li>• Botón listo para recibir pedidos.</li>
-              <li>• Estructura lista para poner QR en mesas y para delivery.</li>
-            </ul>
-            <button
-              type="button"
-              id="openFormModalModelo2"
-              class="btn-primary-hotmart mt-auto justify-center"
-            >
-              Quiero la página para mi restaurante
-            </button>
-          </article>
-
-          <!-- Heladería -->
-          <article class="card-hotmart px-5 py-5 flex flex-col h-full">
-            <p class="text-[11px] uppercase tracking-[0.2em] text-white/55 mb-1">Modelo 3</p>
-            <h3 class="text-lg font-semibold text-clturq mb-1">Página para heladerías y postres</h3>
-            <p class="text-xs text-white/70 mb-3">
-              Ideal para heladerías, malteadas, postres fríos, cafeterías dulces y negocios de antojos.
-            </p>
-            <ul class="space-y-1.5 text-white/85 mb-4">
-              <li>• Catálogo de sabores o postres principales.</li>
-              <li>• Sección de combos, conos, vasos especiales.</li>
-              <li>• Google Maps para que te encuentren rápido.</li>
-              <li>• Botón listo para pedidos inmediatos.</li>
-              <li>• Preparada para mostrar fotos muy llamativas.</li>
-            </ul>
-            <button
-              type="button"
-              id="openFormModalModelo3"
-              class="btn-primary-hotmart mt-auto justify-center"
-            >
-              Quiero la página para mi heladería
-            </button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CÓMO FUNCIONA -->
-    <section id="pasos" class="bg-section-dark py-16 border-t border-white/10">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-3">¿Cómo es el proceso práctico?</h2>
-        <p class="text-sm md:text-base text-white/75 mb-8 max-w-3xl mx-auto">
-          No vas a programar nada. No vas a pelearte con plataformas. Si sabes usar WhatsApp, ya puedes con este proceso.
-        </p>
-
-        <div class="grid sm:grid-cols-3 gap-4 text-sm text-left">
-          <div class="card-hotmart px-4 py-4">
-            <p class="text-[11px] text-white/60 mb-1">Paso 1</p>
-            <p class="font-semibold text-clturq mb-1">Llenas el formulario</p>
-            <p class="text-xs text-white/80">
-              Nos cuentas quién eres, qué vendes y qué modelo te interesa. Con eso ya podemos ayudarte mejor.
-            </p>
-          </div>
-          <div class="card-hotmart px-4 py-4">
-            <p class="text-[11px] text-white/60 mb-1">Paso 2</p>
-            <p class="font-semibold text-clturq mb-1">Nos escribes por WhatsApp</p>
-            <p class="text-xs text-white/80">
-              Tú das el primer paso y nos escribes. Así evitamos mensajes fríos y la conversación empieza con intención real.
-            </p>
-          </div>
-          <div class="card-hotmart px-4 py-4">
-            <p class="text-[11px] text-white/60 mb-1">Paso 3</p>
-            <p class="font-semibold text-clturq mb-1">Definimos pago y diseño</p>
-            <p class="text-xs text-white/80">
-              Te pasamos el link de pago y los detalles. Con la información clara, tu página entra a producción.
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-7 flex flex-col items-center gap-3">
-          <button
-            type="button"
-            id="openFormModalPasos"
-            class="btn-primary-hotmart"
-          >
-            Ya entendí · Quiero llenar el formulario
-          </button>
-          <p class="text-[11px] text-white/60">
-            Si esto te parece complicado, el problema no es la página. Es que sigues pensando en pequeño.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
     <section id="faq" class="bg-section-gray py-16 border-t border-white/10">
       <div class="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Preguntas que ya sé que vas a tener</h2>
-        <p class="text-sm md:text-base text-white/75 mb-6">
-          Te las respondo antes de que las uses como excusa para seguir posponiendo.
-        </p>
-
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Preguntas frecuentes</h2>
         <div class="space-y-3 text-sm">
           <details class="card-hotmart px-4 py-3" open>
             <summary class="flex items-center justify-between cursor-pointer">
-              <span>¿Qué pasa después del primer año?</span>
-              <span class="text-clturq text-lg ml-3">+</span>
+              <span>¿Qué pasa después del primer año?</span> <span class="text-clturq">+</span>
             </summary>
             <div class="mt-2 text-white/80 text-xs">
-              Después del primer año, si quieres seguir usando la página, solo renuevas el dominio/hosting.
-              Si decides no renovar, simplemente la página deja de estar en línea. No hay multa, no hay castigo.
+              Solo renuevas dominio y hosting ($97/año). El diseño ya es tuyo.
             </div>
           </details>
-
           <details class="card-hotmart px-4 py-3">
             <summary class="flex items-center justify-between cursor-pointer">
-              <span>¿Puedo pagar en partes?</span>
-              <span class="text-clturq text-lg ml-3">+</span>
+              <span>¿Y si no tengo logo?</span> <span class="text-clturq">+</span>
             </summary>
             <div class="mt-2 text-white/80 text-xs">
-              No. Justamente el trato es: tú haces un esfuerzo una sola vez, inviertes en tu dominio y hosting,
-              y CL Tech Solutions hace el esfuerzo de regalarte el diseño completo. Si esto ya te parece imposible,
-              no estás listo para dar el siguiente paso.
-            </div>
-          </details>
-
-          <details class="card-hotmart px-4 py-3">
-            <summary class="flex items-center justify-between cursor-pointer">
-              <span>¿Y si todavía no tengo logo o fotos profesionales?</span>
-              <span class="text-clturq text-lg ml-3">+</span>
-            </summary>
-            <div class="mt-2 text-white/80 text-xs">
-              No es excusa. Se puede arrancar con un diseño limpio, colores base y fotos sencillas. Luego,
-              cuando tengas logo/fotos, se cambian. Lo importante es que empieces.
-            </div>
-          </details>
-
-          <details class="card-hotmart px-4 py-3">
-            <summary class="flex items-center justify-between cursor-pointer">
-              <span>¿Solo funciona para Shushufindi o Sucumbíos?</span>
-              <span class="text-clturq text-lg ml-3">+</span>
-            </summary>
-            <div class="mt-2 text-white/80 text-xs">
-              No. CL Tech Solutions atiende a emprendedores de todo Ecuador. Todo se coordina por WhatsApp,
-              y tu página funciona desde cualquier ciudad.
-            </div>
-          </details>
-
-          <details class="card-hotmart px-4 py-3">
-            <summary class="flex items-center justify-between cursor-pointer">
-              <span>¿Qué pasa si no vendo nada con la página?</span>
-              <span class="text-clturq text-lg ml-3">+</span>
-            </summary>
-            <div class="mt-2 text-white/80 text-xs">
-              Una página sola no hace magia. Lo que sí hace es darte un lugar profesional donde mandar
-              a la gente que ya te está viendo en redes, en la calle o por recomendación. Si no publicas, no compartes
-              tu página, no respondes, no sigues, ningún embudo del mundo te va a salvar.
+              No te preocupes, empezamos con el nombre en texto y fotos de stock hasta que tengas uno.
             </div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN FINAL -->
-    <section id="final" class="bg-section-dark py-16 border-t border-white/10">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Aquí decides si sigues jugando en pequeño o no</h2>
-        <p class="text-sm md:text-base text-white/75 mb-6">
-          Tienes dos opciones muy claras:
-        </p>
-
-        <div class="grid md:grid-cols-2 gap-4 text-sm text-left mb-7">
-          <div class="card-hotmart px-4 py-4">
-            <p class="font-semibold text-white mb-1">Opción 1 · Cerrar la página</p>
-            <p class="text-xs text-white/80">
-              Seguir vendiendo solo por WhatsApp y redes, sin un lugar profesional donde mandar a la gente.
-              Volver en 6 meses, ver a otros con página, QR, pedidos más constantes... y decir “yo también quería”.
-            </p>
-          </div>
-          <div class="card-hotmart px-4 py-4 border-claccent/60 border">
-            <p class="font-semibold text-clturq mb-1">Opción 2 · Llenar el formulario ahora</p>
-            <p class="text-xs text-white/80">
-              Asegurar tu página web con diseño profesional
-              y en poco tiempo tener un lugar serio donde cerrar ventas.
-            </p>
-          </div>
+    <section id="formulario-final" class="bg-section-dark py-16 border-t border-white/10">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-3">Reserva tu página de $480 GRATIS</h2>
+          <p class="text-white/70 text-sm">
+            Llena este formulario para asegurar tu cupo. Solo pagas los $97 una vez confirmemos los datos.
+          </p>
         </div>
 
-        <button
-          type="button"
-          id="openFormModalFinal"
-          class="btn-primary-hotmart"
-        >
-          No quiero seguir igual · Quiero llenar el formulario
-        </button>
+        <div class="card-hotmart p-6 sm:p-8">
+          <form 
+            name="lead-impulso" 
+            method="POST" 
+            data-netlify="true" 
+            class="space-y-4"
+          >
+            <input type="hidden" name="form-name" value="lead-impulso" />
 
-        <p class="mt-3 text-[11px] text-white/60">
-          El contador no se va a detener porque tengas miedo. Tus clientes tampoco.
-        </p>
+            <div>
+              <label class="block text-xs font-semibold text-white/80 mb-1">Tu Nombre Completo</label>
+              <input type="text" name="nombre" required placeholder="Ej: Cristian Lombeida" class="input-field" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-white/80 mb-1">WhatsApp (Importante)</label>
+              <input type="tel" name="whatsapp" required placeholder="Ej: 0999630862" class="input-field" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-white/80 mb-1">¿Qué tipo de negocio tienes?</label>
+              <select name="tipo_negocio" class="input-field text-white bg-black">
+                <option value="servicios">Servicios (Abogado, Técnico, etc)</option>
+                <option value="restaurante">Restaurante / Comida</option>
+                <option value="heladeria">Heladería / Postres</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-white/80 mb-1">Nombre del Negocio (si tienes)</label>
+              <input type="text" name="negocio_nombre" placeholder="Ej: Liss Fashion" class="input-field" />
+            </div>
+
+            <button type="submit" class="w-full btn-primary-hotmart text-base py-3 mt-2">
+              Quiero asegurar mi cupo ahora
+            </button>
+            
+            <p class="text-[10px] text-center text-white/50 mt-3">
+              Al enviar, te contactaré por WhatsApp para coordinar el pago.
+            </p>
+          </form>
+        </div>
       </div>
     </section>
+
   </main>
 
-  <!-- BOTÓN FLOTANTE → FORMULARIO -->
-  <button
-    type="button"
-    id="openFormModalFloating"
-    class="fixed z-40 bottom-4 right-4 sm:bottom-5 sm:right-5 h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-emerald-500 flex items-center justify-center shadow-[0_18px_70px_rgba(16,185,129,0.9)]"
-  >
-    <span class="sr-only">Abrir formulario</span>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7 text-white">
-      <path fill="currentColor" d="M16.04 2C9.4 2 4 7.16 4 13.7c0 2.16.64 4.16 1.75 5.87L4 30l6.7-1.74A12.2 12.2 0 0 0 16.04 25c6.64 0 12.04-5.16 12.04-11.6C28.08 7.16 22.68 2 16.04 2Zm0 20.8c-1.84 0-3.54-.5-5.02-1.4l-.36-.21-3.74.97.99-3.63-.24-.38a8.3 8.3 0 0 1-1.3-4.46C7.37 8.2 11.24 4.7 16.04 4.7s8.67 3.5 8.67 7.97c0 4.46-3.87 8.13-8.67 8.13Zm4.22-6.1c-.23-.12-1.36-.7-1.57-.78-.2-.07-.35-.12-.5.12-.15.23-.57.7-.69.85-.13.15-.25.16-.47.06-.23-.12-.96-.35-1.83-1.12-.68-.6-1.13-1.34-1.26-1.57-.13-.23-.01-.35.1-.47.1-.1.23-.27.35-.4.12-.13.16-.23.23-.38.08-.15.04-.29-.02-.41-.07-.12-.5-1.2-.69-1.65-.18-.44-.37-.38-.5-.39h-.43c-.15 0-.4.06-.61.29-.21.23-.8.78-.8 1.9 0 1.12.82 2.2.94 2.35.12.15 1.61 2.46 3.94 3.35 1.47.58 2.04.63 2.77.53.45-.06 1.36-.55 1.55-1.08.19-.53.19-.99.13-1.08-.06-.09-.21-.15-.44-.27Z"/>
-    </svg>
-  </button>
-
-  <!-- MODAL FORMULARIO COMPLETO -->
-  <div
-    id="formModal"
-    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm px-4"
-  >
-    <div class="relative max-w-3xl w-full bg-clblack border border-white/10 rounded-2xl shadow-2xl overflow-y-auto max-h-[90vh]">
-      <!-- Header modal -->
-      <div class="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-clgray/80 sticky top-0 z-10">
-        <div>
-          <p class="text-xs text-clturq tracking-[0.18em] uppercase">Formulario oficial · Impulso Digital 360</p>
-          <h3 class="text-lg font-semibold">Completa tu solicitud para tu página web profesional</h3>
-        </div>
-        <button
-          type="button"
-          id="closeFormModal"
-          class="h-8 w-8 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-clturq hover:border-clturq"
-        >
-          ✕
-        </button>
-      </div>
-
-      <!-- Contenido formulario -->
-      <div class="px-5 py-6 text-sm space-y-6">
-        <p class="text-white/70 text-xs mb-2">
-          Mientras más claro seas en tus respuestas, más fácil será para el equipo de CL Tech Solutions
-          diseñar una página alineada a tu negocio.
-        </p>
-
-        <form
-          name="lead-impulso"
-          method="POST"
-          action="https://TU_DOMINIO_N8N/webhook/impulso-form"
-          enctype="multipart/form-data"
-          class="space-y-5"
-        >
-          <!-- SECCIÓN 1 -->
-          <div class="border border-white/10 rounded-xl p-4 bg-black/40 space-y-3">
-            <h4 class="text-sm font-semibold text-clturq flex items-center gap-2">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-clturq text-xs font-bold text-clblack">1</span>
-              Datos del negocio
-            </h4>
-
-            <div class="grid md:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs text-white/70 mb-1">
-                  Nombre del dueño o representante <span class="text-red-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="nombre_representante"
-                  required
-                  class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                  placeholder="Ej. Juan Pérez"
-                />
-              </div>
-
-              <div>
-                <label class="block text-xs text-white/70 mb-1">
-                  Número de WhatsApp de contacto <span class="text-red-400">*</span>
-                </label>
-                <input
-                  type="tel"
-                  name="whatsapp_contacto"
-                  required
-                  class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                  placeholder="Ej. +593 99 123 4567"
-                />
-              </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs text-white/70 mb-1">
-                  Nombre de tu negocio o emprendimiento <span class="text-red-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="nombre_negocio"
-                  required
-                  class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                  placeholder="Ej. Comedor La Bendición"
-                />
-              </div>
-
-              <div>
-                <label class="block text-xs text-white/70 mb-1">
-                  ¿En qué ciudad te encuentras? <span class="text-red-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="ciudad"
-                  required
-                  class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                  placeholder="Ej. Shushufindi, Lago Agrio..."
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- SECCIÓN 2 -->
-          <div class="border border-white/10 rounded-xl p-4 bg-black/40 space-y-3">
-            <h4 class="text-sm font-semibold text-clturq flex items-center gap-2">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-clturq text-xs font-bold text-clblack">2</span>
-              Tipo de página que deseas
-            </h4>
-
-            <p class="text-xs text-white/70">
-              ¿Qué tipo de página necesitas? <span class="text-red-400">*</span>
-            </p>
-
-            <div class="space-y-2 text-xs">
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="tipo_pagina" value="Página web profesional (servicios, negocios, marcas)" required class="mt-1" />
-                <span>
-                  <strong>Página web profesional</strong> (servicios, negocios, marcas).
-                </span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="tipo_pagina" value="Página web para restaurantes/comida rápida" class="mt-1" />
-                <span>
-                  <strong>Página web para restaurantes/comida rápida</strong> (menú + pedidos por WhatsApp).
-                </span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="tipo_pagina" value="Página web para tiendas pequeñas (hasta 20 productos)" class="mt-1" />
-                <span>
-                  <strong>Página web para tiendas pequeñas</strong> (hasta 20 productos + carrito + entrega por ubicación).
-                </span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="tipo_pagina" value="Página para abogados, médicos, servicios profesionales" class="mt-1" />
-                <span>
-                  <strong>Página para abogados, médicos, servicios profesionales</strong>.
-                </span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="tipo_pagina" value="Otra" class="mt-1" />
-                <span>
-                  <strong>Otra</strong> (descríbela brevemente abajo).
-                </span>
-              </label>
-            </div>
-
-            <div>
-              <label class="block text-xs text-white/70 mb-1">
-                Si elegiste “Otra”, descríbela brevemente (opcional)
-              </label>
-              <textarea
-                name="tipo_pagina_otra"
-                rows="2"
-                class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                placeholder="Cuéntanos qué tienes en mente..."
-              ></textarea>
-            </div>
-          </div>
-
-          <!-- SECCIÓN 3 -->
-          <div class="border border-white/10 rounded-xl p-4 bg-black/40 space-y-3">
-            <h4 class="text-sm font-semibold text-clturq flex items-center gap-2">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-clturq text-xs font-bold text-clblack">3</span>
-              Información del contenido
-            </h4>
-
-            <div>
-              <label class="block text-xs text-white/70 mb-1">
-                ¿Qué servicios o productos ofreces? <span class="text-red-400">*</span>
-              </label>
-              <textarea
-                name="servicios_productos"
-                rows="3"
-                required
-                class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                placeholder="Enumera tus principales productos o servicios..."
-              ></textarea>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-3">
-              <div>
-                <label class="block text-xs text-white/70 mb-1">Facebook (si tienes)</label>
-                <input
-                  type="url"
-                  name="facebook_link"
-                  class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                  placeholder="Enlace de tu Facebook"
-                />
-              </div>
-              <div>
-                <label class="block text-xs text-white/70 mb-1">Instagram (si tienes)</label>
-                <input
-                  type="url"
-                  name="instagram_link"
-                  class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                  placeholder="Enlace de tu Instagram"
-                />
-              </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-3">
-              <div>
-                <label class="block text-xs text-white/70 mb-1">TikTok (si tienes)</label>
-                <input
-                  type="url"
-                  name="tiktok_link"
-                  class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                  placeholder="Enlace de tu TikTok"
-                />
-              </div>
-              <div>
-                <label class="block text-xs text-white/70 mb-1">YouTube (si tienes)</label>
-                <input
-                  type="url"
-                  name="youtube_link"
-                  class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                  placeholder="Enlace de tu canal"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs text-white/70 mb-1">
-                Describe brevemente qué te diferencia de otros (opcional)
-              </label>
-              <textarea
-                name="diferenciador"
-                rows="2"
-                class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                placeholder="Ej. Envíos rápidos, ingredientes frescos, atención personalizada..."
-              ></textarea>
-            </div>
-          </div>
-
-          <!-- SECCIÓN 4 -->
-          <div class="border border-white/10 rounded-xl p-4 bg-black/40 space-y-3">
-            <h4 class="text-sm font-semibold text-clturq flex items-center gap-2">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-clturq text-xs font-bold text-clblack">4</span>
-              Dominio y hosting
-            </h4>
-
-            <div class="text-xs text-white/75 space-y-2">
-              <p>
-                Incluimos un <strong>subdominio GRATIS</strong> en el formato:
-                <span class="text-clturq font-semibold">tunegocio.crisslombeida.com</span>.
-                Esta es la opción que utilizamos para entregar las páginas web gratuitas del proyecto social.
-              </p>
-              <p>
-                Opcionalmente, puedes solicitar tu <strong>dominio propio</strong> (ej. <em>www.tunegocio.com</em>), que incluye:
-              </p>
-              <ul class="list-disc list-inside text-white/80">
-                <li>1 año de dominio</li>
-                <li>Hosting incluido</li>
-                <li>Configuración completa</li>
-              </ul>
-              <p class="text-[11px] text-white/60">
-                Cuando eliges usar dominio propio, también estás aportando indirectamente para que podamos seguir
-                entregando páginas web gratuitas dentro del proyecto social.
-              </p>
-            </div>
-
-            <p class="text-xs text-white/70 mt-2">
-              ¿Qué tipo de dominio deseas? <span class="text-red-400">*</span>
-            </p>
-
-            <div class="space-y-2 text-xs">
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="tipo_dominio" value="Subdominio GRATIS" required class="mt-1" />
-                <span>
-                  <strong>Subdominio GRATIS:</strong> tunegocio.crisslombeida.com (lista de espera / proyecto social).
-                </span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="tipo_dominio" value="Dominio propio" class="mt-1" />
-                <span>
-                  <strong>Dominio propio:</strong> tu marca con nombre propio, hosting incluido y configuración completa.
-                </span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="tipo_dominio" value="Necesito asesoría" class="mt-1" />
-                <span>
-                  <strong>Tengo dudas, necesito asesoría</strong> antes de decidir.
-                </span>
-              </label>
-            </div>
-          </div>
-
-          <!-- SECCIÓN 5 -->
-          <div class="border border-white/10 rounded-xl p-4 bg-black/40 space-y-3">
-            <h4 class="text-sm font-semibold text-clturq flex items-center gap-2">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-clturq text-xs font-bold text-clblack">5</span>
-              Material para la página web
-            </h4>
-
-            <div class="grid md:grid-cols-2 gap-4 text-xs">
-              <div>
-                <label class="block text-white/70 mb-2">Sube tu logo (si tienes)</label>
-                <input
-                  type="file"
-                  name="logo_file"
-                  accept="image/*"
-                  class="w-full text-[11px] text-white/70 file:mr-2 file:rounded-md file:border-none file:bg-clturq file:px-2 file:py-1 file:text-[11px] file:font-semibold file:text-clblack"
-                />
-              </div>
-              <div>
-                <label class="block text-white/70 mb-2">Sube fotos de tu negocio o productos (hasta 10 fotos)</label>
-                <input
-                  type="file"
-                  name="photos_file"
-                  accept="image/*"
-                  multiple
-                  class="w-full text-[11px] text-white/70 file:mr-2 file:rounded-md file:border-none file:bg-clturq file:px-2 file:py-1 file:text-[11px] file:font-semibold file:text-clblack"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- SECCIÓN 6 -->
-          <div class="border border-white/10 rounded-xl p-4 bg-black/40 space-y-3">
-            <h4 class="text-sm font-semibold text-clturq flex items-center gap-2">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-clturq text-xs font-bold text-clblack">6</span>
-              ¿Qué esperas lograr con esta página web?
-            </h4>
-
-            <p class="text-xs text-white/70">
-              ¿Cuál es tu objetivo principal con la página? <span class="text-red-400">*</span>
-            </p>
-
-            <div class="space-y-2 text-xs">
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="objetivo" value="Aumentar clientes" required class="mt-1" />
-                <span><strong>Aumentar clientes</strong></span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="objetivo" value="Recibir más pedidos por WhatsApp" class="mt-1" />
-                <span><strong>Recibir más pedidos por WhatsApp</strong></span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="objetivo" value="Tener presencia profesional" class="mt-1" />
-                <span><strong>Tener presencia profesional</strong></span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="objetivo" value="Aumentar ventas con carrito" class="mt-1" />
-                <span><strong>Aumentar ventas con carrito de compras</strong></span>
-              </label>
-
-              <label class="flex items-start gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="objetivo" value="Otra" class="mt-1" />
-                <span><strong>Otra (describir abajo)</strong></span>
-              </label>
-            </div>
-
-            <div>
-              <label class="block text-xs text-white/70 mb-1">
-                Si elegiste “Otra”, describe tu objetivo (opcional)
-              </label>
-              <textarea
-                name="objetivo_detalle"
-                rows="2"
-                class="w-full rounded-lg border border-white/15 bg-black/60 px-3 py-2 text-sm outline-none focus:border-clturq"
-                placeholder="Describe tu objetivo específico..."
-              ></textarea>
-            </div>
-          </div>
-
-          <!-- SECCIÓN 7 -->
-          <div class="border border-white/10 rounded-xl p-4 bg-black/40 space-y-3">
-            <h4 class="text-sm font-semibold text-clturq flex items-center gap-2">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-clturq text-xs font-bold text-clblack">7</span>
-              Confirmación final
-            </h4>
-
-            <p class="text-xs text-white/70 mb-2">
-              ¿Confirmas que deseas que iniciemos con el diseño de tu página web? <span class="text-red-400">*</span>
-            </p>
-
-            <div class="space-y-2 text-xs">
-              <label class="flex items-center gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="confirmacion" value="Sí, confirmo" required />
-                <span><strong>Sí, confirmo. Quiero que inicien con mi web.</strong></span>
-              </label>
-              <label class="flex items-center gap-2 rounded-lg border border-white/15 bg-black/60 px-3 py-2 cursor-pointer hover:border-clturq/70">
-                <input type="radio" name="confirmacion" value="Tengo dudas, quiero asesoría" />
-                <span>Aún tengo dudas, quiero hablar con un asesor antes.</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-2 border-t border-white/10">
-            <p class="text-[11px] text-white/60 max-w-xs">
-              Al enviar este formulario, indicas que estás listo para que revisemos tu caso
-              y te guiemos por WhatsApp en los siguientes pasos.
-            </p>
-            <button
-              type="submit"
-              class="btn-primary-hotmart justify-center"
-            >
-              Enviar mi solicitud ahora
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
   <footer class="border-t border-white/10 py-6 bg-black/95">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-white/55">
       <p>© <span id="year"></span> CL Tech Solutions · Impulso Digital 360</p>
-      <p>Páginas web profesionales para emprendedores que se mueven.</p>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-    // Año footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Menú móvil con cierre al hacer clic fuera
+    // Menú móvil
     const mobileBtn = document.getElementById("mobileMenuBtn");
     const mobileNav = document.getElementById("mobileNav");
-
     if (mobileBtn && mobileNav) {
-      mobileBtn.addEventListener("click", (event) => {
-        event.stopPropagation();
+      mobileBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
         mobileNav.classList.toggle("hidden");
       });
-
-      document.addEventListener("click", (event) => {
-        if (!mobileNav.classList.contains("hidden")) {
-          const clickInsideMenu = mobileNav.contains(event.target);
-          const clickOnToggle = mobileBtn.contains(event.target);
-          if (!clickInsideMenu && !clickOnToggle) {
-            mobileNav.classList.add("hidden");
-          }
+      document.addEventListener("click", (e) => {
+        if (!mobileNav.contains(e.target) && !mobileBtn.contains(e.target)) {
+          mobileNav.classList.add("hidden");
         }
       });
     }
 
-    // Cuenta regresiva 15 minutos
+    // CONTADOR PERSISTENTE (localStorage)
     (function() {
-      let remaining = 15 * 60; // 15 minutos en segundos
       const minsEl = document.getElementById("cd-mins");
       const secsEl = document.getElementById("cd-secs");
-
       if (!minsEl || !secsEl) return;
 
+      const DURATION = 15 * 60; // 15 minutos
+      const STORAGE_KEY = 'impulso_timer_target_v1';
+
+      function getEndTime() {
+        let stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const target = parseInt(stored, 10);
+          if (target > Date.now()) {
+            return target;
+          }
+        }
+        // Si no existe o ya expiró hace mucho, reinicia 15 min
+        const newTarget = Date.now() + (DURATION * 1000);
+        localStorage.setItem(STORAGE_KEY, newTarget);
+        return newTarget;
+      }
+
+      let endTime = getEndTime();
+
       function updateCountdown() {
+        const now = Date.now();
+        let remaining = Math.floor((endTime - now) / 1000);
+
+        if (remaining < 0) remaining = 0;
+
         const m = Math.floor(remaining / 60);
         const s = remaining % 60;
 
         minsEl.textContent = String(m).padStart(2, "0");
         secsEl.textContent = String(s).padStart(2, "0");
 
-        if (remaining > 0) {
-          remaining--;
-        } else {
+        if (remaining <= 0) {
           clearInterval(timer);
+          minsEl.classList.add("text-red-500");
+          secsEl.classList.add("text-red-500");
         }
       }
 
       updateCountdown();
       const timer = setInterval(updateCountdown, 1000);
     })();
-
-    // Modal formulario
-    const formModal = document.getElementById("formModal");
-    const closeFormModalBtn = document.getElementById("closeFormModal");
-
-    const openButtonsIds = [
-      "openFormModalDesktop",
-      "openFormModalMobile",
-      "openFormModalHero",
-      "openFormModalSection",
-      "openFormModalParaQuien",
-      "openFormModalLoQueRecibes",
-      "openFormModalModelo1",
-      "openFormModalModelo2",
-      "openFormModalModelo3",
-      "openFormModalPasos",
-      "openFormModalFinal",
-      "openFormModalFloating"
-    ];
-
-    openButtonsIds.forEach((id) => {
-      const btn = document.getElementById(id);
-      if (btn) {
-        btn.addEventListener("click", () => {
-          formModal.classList.remove("hidden");
-          formModal.classList.add("flex");
-        });
-      }
-    });
-
-    if (closeFormModalBtn) {
-      closeFormModalBtn.addEventListener("click", () => {
-        formModal.classList.add("hidden");
-        formModal.classList.remove("flex");
-      });
-    }
-
-    // Cerrar modal al hacer clic fuera del contenido
-    formModal.addEventListener("click", (e) => {
-      if (e.target === formModal) {
-        formModal.classList.add("hidden");
-        formModal.classList.remove("flex");
-      }
-    });
-
-    // Cerrar modal con ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !formModal.classList.contains("hidden")) {
-        formModal.classList.add("hidden");
-        formModal.classList.remove("flex");
-      }
-    });
   </script>
 </body>
 </html>
