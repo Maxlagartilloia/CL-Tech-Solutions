@@ -1049,7 +1049,7 @@
   </footer>
 
   <!-- MODAL 3D COMPLETO (Se inyecta al final) -->
-  <div id="modal-3d" class="fixed inset-0 z-50 items-center justify-center p-4 bg-slate-900/90 backdrop-blur-sm transition-opacity duration-300">
+  <div id="modal-3d" class="fixed inset-0 z-50 items-center justify-center p-4 bg-slate-900/95 backdrop-blur-md transition-opacity duration-300">
     
     <!-- Botón Cerrar -->
     <button onclick="cerrarModal3D()" class="absolute top-4 right-4 z-50 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors cursor-pointer">
@@ -1058,51 +1058,48 @@
       </svg>
     </button>
 
-    <!-- Contenedor Perspectiva -->
-    <div class="relative w-full max-w-lg perspective-1000" onclick="event.stopPropagation()">
+    <!-- Contenedor Perspectiva (Máxima altura para móvil) -->
+    <div class="relative w-full max-w-sm sm:max-w-md h-[90vh] perspective-1000 flex flex-col justify-center" onclick="event.stopPropagation()">
       
       <!-- Tarjeta 3D -->
-      <div id="modal-card" class="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform-gpu transition-transform duration-100 ease-out preserve-3d">
+      <div id="modal-card" class="relative w-full h-full bg-white rounded-2xl shadow-2xl overflow-hidden transform-gpu transition-transform duration-100 ease-out preserve-3d flex flex-col">
         
         <!-- Brillo/Reflejo -->
-        <div id="modal-shine" class="absolute inset-0 z-20 pointer-events-none mix-blend-overlay transition-opacity duration-300" 
+        <div id="modal-shine" class="absolute inset-0 z-30 pointer-events-none mix-blend-overlay transition-opacity duration-300" 
              style="background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%); opacity: 0;">
         </div>
 
-        <!-- Imagen / Header -->
-        <div id="modal-header-bg" class="h-64 sm:h-80 w-full bg-gradient-to-br flex items-center justify-center relative">
-           <!-- Imagen real de fondo -->
-           <img id="modal-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-90" alt="Mockup 3D">
-           <div class="absolute inset-0 bg-black/20"></div>
-
-           <!-- Etiqueta Flotante 3D -->
-           <div class="absolute bottom-4 left-4 right-4 translate-z-10 text-center">
-              <span class="inline-block px-3 py-1 bg-black/40 backdrop-blur-md rounded-lg text-white text-sm border border-white/20 shadow-sm">
-                Vista Previa Interactiva
+        <!-- Imagen / Header (Ahora ocupa casi todo) -->
+        <div id="modal-header-bg" class="flex-1 w-full bg-slate-900 flex items-center justify-center relative overflow-hidden">
+           <!-- Imagen real de fondo (object-contain para verla completa) -->
+           <img id="modal-img" src="" class="w-full h-full object-contain" alt="Mockup 3D">
+           
+           <!-- Etiqueta Flotante Sutil -->
+           <div class="absolute top-4 left-0 right-0 text-center pointer-events-none z-10">
+              <span class="inline-block px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-white text-[10px] border border-white/10 shadow-sm uppercase tracking-wider">
+                Vista Previa del Diseño
               </span>
            </div>
         </div>
 
-        <!-- Texto -->
-        <div class="p-6 bg-white translate-z-20">
-          <h2 id="modal-title" class="text-2xl font-bold text-slate-800 mb-2">Título del Modelo</h2>
-          <div class="w-full h-px bg-slate-100 my-3"></div>
-          <p id="modal-desc" class="text-slate-600 text-lg leading-relaxed mb-4">
-            Descripción del modelo seleccionado.
+        <!-- Texto Footer (Fijo abajo) -->
+        <div class="p-5 bg-white border-t border-slate-100 z-20 flex-shrink-0">
+          <div class="flex items-center justify-between mb-2">
+             <h2 id="modal-title" class="text-xl font-bold text-slate-800 leading-tight">Título</h2>
+             <span class="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-bold uppercase">Incluido</span>
+          </div>
+          <p id="modal-desc" class="text-slate-500 text-xs leading-relaxed mb-4 line-clamp-2">
+            Descripción corta.
           </p>
-          <button onclick="cerrarModal3D(); document.getElementById('formulario-final').scrollIntoView({behavior:'smooth'});" class="w-full bg-slate-900 text-white py-3 rounded-lg font-medium hover:bg-slate-800 transition-colors shadow-lg">
-            Quiero este modelo
+          <button onclick="cerrarModal3D(); document.getElementById('formulario-final').scrollIntoView({behavior:'smooth'});" class="w-full bg-slate-900 text-white py-3.5 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-lg flex items-center justify-center gap-2">
+            QUIERO ESTE MODELO <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
         </div>
 
       </div>
 
       <!-- Sombra de suelo -->
-      <div id="modal-shadow" class="absolute -bottom-12 left-10 right-10 h-8 bg-black/40 blur-xl rounded-full transition-all duration-100 opacity-50"></div>
-    </div>
-
-    <div class="absolute bottom-10 left-0 right-0 text-center text-white/50 text-sm animate-bounce pointer-events-none">
-      Mueve el mouse sobre la imagen
+      <div id="modal-shadow" class="absolute -bottom-8 left-10 right-10 h-6 bg-black/50 blur-xl rounded-full transition-all duration-100 opacity-40"></div>
     </div>
   </div>
 
@@ -1253,12 +1250,13 @@
       document.getElementById('modal-desc').innerText = descripcion;
       document.getElementById('modal-img').src = imgSrc;
       // Ajustar gradiente si se quiere (opcional), aquí reseteamos clases y ponemos una por defecto o la que venga
-      const headerBg = document.getElementById('modal-header-bg');
-      headerBg.className = `h-64 sm:h-80 w-full bg-gradient-to-br ${gradientClass} flex items-center justify-center relative`;
-
+      
       // Mostrar modal
       modal3D.classList.add('flex');
       document.body.style.overflow = 'hidden'; // Evitar scroll
+      
+      // Refrescar iconos dentro del modal si es necesario
+      lucide.createIcons();
     }
 
     function cerrarModal3D() {
@@ -1279,9 +1277,9 @@
       const xPct = x / rect.width;
       const yPct = y / rect.height;
 
-      // Rotación máxima 20 grados
-      const rotateX = (0.5 - yPct) * 20; 
-      const rotateY = (xPct - 0.5) * 20;
+      // Rotación máxima 10 grados (más sutil)
+      const rotateX = (0.5 - yPct) * 10; 
+      const rotateY = (xPct - 0.5) * 10;
 
       modalCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
@@ -1303,4 +1301,5 @@
   </script>
 </body>
 </html>
+
 
