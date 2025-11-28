@@ -23,6 +23,9 @@
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons (Para el formulario) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -31,7 +34,16 @@
             clturq: "#11D7E3",
             clblack: "#05060A",
             clgray: "#11141B",
-            claccent: "#F97316" /* naranja estilo botón Hotmart */
+            claccent: "#F97316"
+          },
+          animation: {
+            'fadeIn': 'fadeIn 0.5s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
           }
         }
       }
@@ -111,8 +123,7 @@
       color:#0b0b0b;
       box-shadow:0 14px 40px rgba(249,115,22,0.6);
       transition:transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-      border: none;
-      cursor: pointer;
+      cursor: pointer; border: none; text-decoration: none;
     }
     .btn-primary-hotmart:hover{
       transform:translateY(-2px);
@@ -153,21 +164,34 @@
       text-align:center;
     }
 
-    /* Inputs del formulario */
-    .input-field {
+    /* ESTILOS DEL FORMULARIO MULTI-PASOS (Integrado al estilo dark) */
+    .input-dark {
       width: 100%;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 0.5rem;
-      padding: 0.75rem 1rem;
+      padding: 0.85rem 1rem;
       color: white;
       outline: none;
       transition: all 0.2s;
     }
-    .input-field:focus {
+    .input-dark:focus {
       border-color: #11D7E3;
       background: rgba(17,215,227,0.05);
     }
+    .radio-card-input:checked + .radio-card {
+      border-color: #11D7E3;
+      background: rgba(17,215,227,0.05);
+    }
+    .radio-card-input:checked + .radio-card .radio-circle {
+      background-color: #11D7E3;
+      border-color: #11D7E3;
+      box-shadow: 0 0 8px rgba(17,215,227,0.5);
+    }
+    .radio-circle { transition: all 0.2s; }
+    
+    .step-content { display: none; }
+    .step-content.active { display: block; animation: fadeIn 0.5s ease-in-out; }
 
     /* FAQ */
     details summary::-webkit-details-marker{display:none;}
@@ -189,12 +213,12 @@
         />
       </a>
 
-      <!-- CTA escritorio -->
+      <!-- CTA escritorio (Lleva al formulario) -->
       <a
         href="#formulario-final"
         class="hidden md:inline-flex btn-primary-hotmart"
       >
-        Sí, quiero aprovechar la oferta
+        Sí, quiero aprovechar la oferta ahora
       </a>
 
       <!-- Menu móvil -->
@@ -675,66 +699,282 @@
       </div>
     </section>
 
-    <!-- SECCIÓN FINAL: FORMULARIO DE RESERVA (Sustituye a la anterior CTA solo botón) -->
-    <section id="formulario-final" class="bg-section-dark py-16 border-t border-white/10">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <!-- FORMULARIO MULTI-PASOS (Integrado al final) -->
+    <section id="formulario-final" class="bg-section-dark py-16 border-t border-white/10 relative">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-clturq/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
         <div class="text-center mb-8">
-          <h2 class="text-2xl md:text-3xl font-semibold mb-3">Aquí decides si sigues jugando en pequeño o no</h2>
-          <p class="text-sm md:text-base text-white/75 mb-6">
-            Asegura tu página web de <span class="line-through text-red-400">$480</span> pagando solo los $97 de dominio y hosting.
-          </p>
+          <span class="text-claccent font-bold tracking-wider text-xs uppercase">Último paso: Asegura tu cupo</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-3 mt-1 text-white">Tu Página Web Profesional</h2>
+          <p class="text-white/60">Completa los pasos para aplicar a la oferta de diseño gratuito.</p>
         </div>
 
-        <div class="card-hotmart p-6 sm:p-8">
-          <!-- 
-            FORMULARIO CONECTADO A NETLIFY Y REDIRECCIÓN A GRACIAS:
-            1. name="lead-impulso": Nombre para identificar en Netlify
-            2. data-netlify="true": Habilita el backend de Netlify
-            3. action="/thank-you.html": Redirige al usuario tras enviar
-          -->
-          <form 
-            name="lead-impulso" 
-            method="POST" 
-            data-netlify="true" 
-            action="/thank-you.html"
-            class="space-y-4"
-          >
-            <!-- Campo oculto necesario para Netlify -->
-            <input type="hidden" name="form-name" value="lead-impulso" />
+        <div class="card-hotmart overflow-hidden shadow-2xl ring-1 ring-white/10">
+          
+          <!-- Barra de Progreso -->
+          <div class="bg-white/5 h-1.5 w-full">
+            <div id="progress-bar" class="bg-gradient-to-r from-claccent to-orange-500 h-1.5 transition-all duration-500 ease-out" style="width: 15%;"></div>
+          </div>
 
-            <div>
-              <label class="block text-xs font-semibold text-white/80 mb-1">Tu Nombre Completo</label>
-              <input type="text" name="nombre" required placeholder="Ej: Cristian Lombeida" class="input-field" />
-            </div>
+          <div class="p-6 md:p-10">
+            <!-- 
+               FORMULARIO NETLIFY:
+               - action="/thank-you.html": Redirige al final
+            -->
+            <form id="webForm" name="lead-multistep" method="POST" data-netlify="true" action="/thank-you.html" enctype="multipart/form-data" onsubmit="return validateFinalStep()">
+              
+              <input type="hidden" name="form-name" value="lead-multistep" />
+              <input type="hidden" name="fecha_solicitud" id="fecha_solicitud" />
 
-            <div>
-              <label class="block text-xs font-semibold text-white/80 mb-1">WhatsApp (Importante)</label>
-              <input type="tel" name="whatsapp" required placeholder="Ej: 0999630862" class="input-field" />
-            </div>
+              <!-- PASO 1: DATOS -->
+              <div class="step-content active" data-step="1">
+                <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                  <span class="flex items-center justify-center w-8 h-8 rounded-full bg-clturq text-black font-bold text-sm">1</span>
+                  <h3 class="text-lg font-bold text-white">Datos del Negocio</h3>
+                </div>
+                
+                <div class="space-y-5">
+                  <div>
+                    <label class="block text-xs font-semibold text-white/60 mb-1">Nombre Completo <span class="text-claccent">*</span></label>
+                    <input type="text" name="nombre" required class="input-dark" placeholder="Ej. Juan Pérez">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-white/60 mb-1">WhatsApp <span class="text-claccent">*</span></label>
+                    <input type="tel" name="whatsapp" required class="input-dark" placeholder="Ej. 099 123 4567">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-white/60 mb-1">Nombre del Negocio <span class="text-claccent">*</span></label>
+                    <input type="text" name="negocio" required class="input-dark" placeholder="Ej. Comedor La Bendición">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-white/60 mb-1">Ciudad <span class="text-claccent">*</span></label>
+                    <input type="text" name="ciudad" required class="input-dark" placeholder="Ej. Quito, Guayaquil...">
+                  </div>
+                </div>
 
-            <div>
-              <label class="block text-xs font-semibold text-white/80 mb-1">¿Qué tipo de negocio tienes?</label>
-              <select name="tipo_negocio" class="input-field text-white bg-black">
-                <option value="servicios">Servicios (Abogado, Técnico, etc)</option>
-                <option value="restaurante">Restaurante / Comida</option>
-                <option value="heladeria">Heladería / Postres</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
+                <div class="mt-8 flex justify-end">
+                  <button type="button" onclick="nextStep()" class="btn-primary-hotmart px-8">
+                    Siguiente <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                  </button>
+                </div>
+              </div>
 
-            <div>
-              <label class="block text-xs font-semibold text-white/80 mb-1">Nombre del Negocio (si tienes)</label>
-              <input type="text" name="negocio_nombre" placeholder="Ej: Liss Fashion" class="input-field" />
-            </div>
+              <!-- PASO 2: TIPO DE PÁGINA -->
+              <div class="step-content" data-step="2">
+                <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                  <span class="flex items-center justify-center w-8 h-8 rounded-full bg-clturq text-black font-bold text-sm">2</span>
+                  <h3 class="text-lg font-bold text-white">¿Qué modelo necesitas?</h3>
+                </div>
 
-            <button type="submit" class="w-full btn-primary-hotmart text-base py-3 mt-2">
-              No quiero seguir igual · Reservar mi página ahora
-            </button>
-            
-            <p class="text-[10px] text-center text-white/50 mt-3">
-              Al enviar, se te redirigirá a WhatsApp para coordinar el pago de los $97.
-            </p>
-          </form>
+                <div class="space-y-4">
+                  <label class="cursor-pointer relative block group">
+                    <input type="radio" name="tipo_pagina" value="Servicios" class="radio-card-input sr-only" required>
+                    <div class="radio-card p-4 rounded-xl border border-white/10 bg-white/5 hover:border-clturq/50 transition flex items-start gap-4">
+                      <div class="radio-circle w-5 h-5 rounded-full border border-white/30 mt-1 flex-shrink-0"></div>
+                      <div>
+                        <span class="font-bold block text-white group-hover:text-clturq transition">Servicios Profesionales</span>
+                        <span class="text-xs text-white/50 block mb-2">Abogados, técnicos, coach, contadores.</span>
+                        <span class="inline-block bg-blue-500/20 text-blue-300 text-[10px] px-2 py-0.5 rounded font-medium border border-blue-500/30">Botón: "Agendar Cita"</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="cursor-pointer relative block group">
+                    <input type="radio" name="tipo_pagina" value="Restaurantes" class="radio-card-input sr-only">
+                    <div class="radio-card p-4 rounded-xl border border-white/10 bg-white/5 hover:border-clturq/50 transition flex items-start gap-4">
+                      <div class="radio-circle w-5 h-5 rounded-full border border-white/30 mt-1 flex-shrink-0"></div>
+                      <div>
+                        <span class="font-bold block text-white group-hover:text-clturq transition">Restaurantes / Comida</span>
+                        <span class="text-xs text-white/50 block mb-2">Menú digital, combos y ubicación.</span>
+                        <span class="inline-block bg-orange-500/20 text-orange-300 text-[10px] px-2 py-0.5 rounded font-medium border border-orange-500/30">Botón: "Pedir Ahora"</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="cursor-pointer relative block group">
+                    <input type="radio" name="tipo_pagina" value="Postres" class="radio-card-input sr-only">
+                    <div class="radio-card p-4 rounded-xl border border-white/10 bg-white/5 hover:border-clturq/50 transition flex items-start gap-4">
+                      <div class="radio-circle w-5 h-5 rounded-full border border-white/30 mt-1 flex-shrink-0"></div>
+                      <div>
+                        <span class="font-bold block text-white group-hover:text-clturq transition">Heladería / Postres</span>
+                        <span class="text-xs text-white/50 block mb-2">Catálogo visual de antojos.</span>
+                        <span class="inline-block bg-pink-500/20 text-pink-300 text-[10px] px-2 py-0.5 rounded font-medium border border-pink-500/30">Botón: "Quiero mi helado"</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="mt-8 flex justify-between">
+                  <button type="button" onclick="prevStep()" class="text-white/50 hover:text-white px-4 text-sm font-medium">Atrás</button>
+                  <button type="button" onclick="nextStep()" class="btn-primary-hotmart px-8">Siguiente <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></button>
+                </div>
+              </div>
+
+              <!-- PASO 3: CONTENIDO -->
+              <div class="step-content" data-step="3">
+                <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                  <span class="flex items-center justify-center w-8 h-8 rounded-full bg-clturq text-black font-bold text-sm">3</span>
+                  <h3 class="text-lg font-bold text-white">Detalles del Contenido</h3>
+                </div>
+
+                <div class="space-y-5">
+                  <div>
+                    <label class="block text-xs font-semibold text-white/60 mb-1">¿Qué productos/servicios principales ofreces?</label>
+                    <textarea name="servicios" rows="3" required class="input-dark" placeholder="Ej. Hamburguesas, Alitas y Papas..."></textarea>
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-semibold text-white/60 mb-2">Redes Sociales (Opcional)</label>
+                    <div class="space-y-3">
+                      <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/40">
+                          <i data-lucide="facebook" class="w-4 h-4"></i>
+                        </div>
+                        <input type="text" name="facebook" class="input-dark pl-10" placeholder="Link de Facebook">
+                      </div>
+                      <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/40">
+                          <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </div>
+                        <input type="text" name="instagram" class="input-dark pl-10" placeholder="Link de Instagram">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 flex justify-between">
+                  <button type="button" onclick="prevStep()" class="text-white/50 hover:text-white px-4 text-sm font-medium">Atrás</button>
+                  <button type="button" onclick="nextStep()" class="btn-primary-hotmart px-8">Siguiente <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></button>
+                </div>
+              </div>
+
+              <!-- PASO 4: DOMINIO -->
+              <div class="step-content" data-step="4">
+                <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                  <span class="flex items-center justify-center w-8 h-8 rounded-full bg-clturq text-black font-bold text-sm">4</span>
+                  <h3 class="text-lg font-bold text-white">Tu Marca en Internet</h3>
+                </div>
+
+                <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5 mb-6">
+                  <div class="flex items-start gap-3">
+                    <i data-lucide="info" class="text-blue-400 w-6 h-6 flex-shrink-0 mt-1"></i>
+                    <div>
+                      <h4 class="text-blue-200 font-bold text-sm mb-1">Crecimiento real</h4>
+                      <p class="text-blue-100/70 text-xs leading-relaxed">
+                        El <strong>Dominio Propio (.com)</strong> asegura que tu página entre a producción inmediata.
+                        <br>
+                        <span class="text-white font-semibold">"Invierte los $97 y recibe el diseño de $480 gratis YA."</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <label class="cursor-pointer relative block group">
+                    <input type="radio" name="plan_dominio" value="Pago Inmediato" class="radio-card-input sr-only" checked required>
+                    <div class="radio-card p-4 rounded-xl border border-clturq/40 bg-clturq/5 hover:bg-clturq/10 transition flex items-start gap-4 ring-1 ring-clturq/30">
+                      <div class="radio-circle w-5 h-5 rounded-full border border-clturq mt-1 flex-shrink-0 bg-clturq shadow-[0_0_10px_rgba(17,215,227,0.5)]"></div>
+                      <div>
+                        <span class="font-bold block text-clturq">Dominio Propio + Hosting ($97/año)</span>
+                        <span class="text-xs text-white block mt-1">
+                          ✅ Diseño GRATIS inmediato. Marca profesional (.com).
+                        </span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="cursor-pointer relative block group">
+                    <input type="radio" name="plan_dominio" value="Sorteo Subdominio" class="radio-card-input sr-only">
+                    <div class="radio-card p-4 rounded-xl border border-white/10 bg-white/5 hover:border-white/30 transition flex items-start gap-4 grayscale opacity-70 hover:opacity-100 hover:grayscale-0">
+                      <div class="radio-circle w-5 h-5 rounded-full border border-white/30 mt-1 flex-shrink-0"></div>
+                      <div>
+                        <span class="font-bold block text-white">Subdominio Gratuito (Sorteo)</span>
+                        <span class="text-xs text-white/50 block mt-1">
+                          ⏳ Entras a lista de espera.
+                        </span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="mt-8 flex justify-between">
+                  <button type="button" onclick="prevStep()" class="text-white/50 hover:text-white px-4 text-sm font-medium">Atrás</button>
+                  <button type="button" onclick="nextStep()" class="btn-primary-hotmart px-8">Siguiente <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></button>
+                </div>
+              </div>
+
+              <!-- PASO 5: ARCHIVOS -->
+              <div class="step-content" data-step="5">
+                <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                  <span class="flex items-center justify-center w-8 h-8 rounded-full bg-clturq text-black font-bold text-sm">5</span>
+                  <h3 class="text-lg font-bold text-white">Material Visual</h3>
+                </div>
+
+                <div class="space-y-6">
+                  <div>
+                    <label class="block text-xs font-semibold text-white/60 mb-2">Tu Logo (Si tienes)</label>
+                    <div class="relative group">
+                      <input type="file" name="logo" id="logo_input" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" onchange="updateFileLabel('logo_input', 'logo_label')">
+                      <div class="border-2 border-dashed border-white/20 rounded-xl p-8 text-center group-hover:border-clturq/50 group-hover:bg-white/5 transition">
+                        <i data-lucide="upload-cloud" class="w-8 h-8 text-white/40 mx-auto mb-2 group-hover:text-clturq"></i>
+                        <p id="logo_label" class="text-sm text-white/60">Clic para subir imagen</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-semibold text-white/60 mb-2">Fotos de tus productos (Opcional)</label>
+                    <div class="relative group">
+                      <input type="file" name="fotos" id="fotos_input" multiple class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" onchange="updateFileLabel('fotos_input', 'fotos_label')">
+                      <div class="border-2 border-dashed border-white/20 rounded-xl p-8 text-center group-hover:border-clturq/50 group-hover:bg-white/5 transition">
+                        <i data-lucide="image" class="w-8 h-8 text-white/40 mx-auto mb-2 group-hover:text-clturq"></i>
+                        <p id="fotos_label" class="text-sm text-white/60">Clic para subir varias fotos</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 flex justify-between">
+                  <button type="button" onclick="prevStep()" class="text-white/50 hover:text-white px-4 text-sm font-medium">Atrás</button>
+                  <button type="button" onclick="nextStep()" class="btn-primary-hotmart px-8">Siguiente <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></button>
+                </div>
+              </div>
+
+              <!-- PASO 6: CONFIRMACIÓN FINAL -->
+              <div class="step-content" data-step="6">
+                <div class="text-center py-6">
+                  <div class="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-500/40">
+                    <i data-lucide="check" class="w-8 h-8 text-emerald-400"></i>
+                  </div>
+                  
+                  <h3 class="text-2xl font-bold text-white mb-2">¡Todo Listo!</h3>
+                  <p class="text-white/60 mb-6 text-sm max-w-sm mx-auto">
+                    Al hacer clic en "Enviar y Reservar", tus datos serán procesados y te redirigiremos a WhatsApp para finalizar tu pago de $97.
+                  </p>
+
+                  <div class="bg-white/5 rounded-lg p-4 text-left border border-white/10 mb-6 text-sm">
+                    <p class="flex items-center gap-2 mb-2">
+                      <i data-lucide="shield-check" class="w-4 h-4 text-clturq"></i>
+                      <span class="text-white/80">Diseño Web Valor $480: <strong class="text-emerald-400">GRATIS</strong></span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                      <i data-lucide="server" class="w-4 h-4 text-clturq"></i>
+                      <span class="text-white/80">Hosting + Dominio: <strong class="text-white">$97.00</strong></span>
+                    </p>
+                  </div>
+
+                  <div class="flex justify-between items-center gap-4">
+                    <button type="button" onclick="prevStep()" class="text-white/50 hover:text-white text-sm">Volver</button>
+                    <button type="submit" id="submitBtn" class="flex-1 btn-primary-hotmart py-4 text-base shadow-[0_0_20px_rgba(249,115,22,0.4)]">
+                      ENVIAR Y RESERVAR <i data-lucide="send" class="w-4 h-4 ml-2"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
         </div>
 
         <p class="mt-6 text-[11px] text-white/60 text-center">
@@ -744,9 +984,9 @@
     </section>
   </main>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <!-- BOTÓN FLOTANTE WHATSAPP (MANTENIDO) -->
   <a
-    href="https://wa.me/593999630862?text=Hola%20Cristian%2C%20acabo%20de%20ver%20tu%20p%C3%A1gina%20de%20Impulso%20Digital%20360%20y%20tengo%20una%20duda%20antes%20de%20llenar%20el%20formulario."
+    href="https://wa.me/593999630862?text=Hola%20Cristian%2C%20acabo%20de%20ver%20tu%20p%C3%A1gina%20de%20Impulso%20Digital%20360%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20para%20aprovechar%20la%20oferta%20de%2097%20USD."
     target="_blank"
     class="fixed z-40 bottom-4 right-4 sm:bottom-5 sm:right-5 h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-emerald-500 flex items-center justify-center shadow-[0_18px_70px_rgba(16,185,129,0.9)]"
   >
@@ -768,6 +1008,9 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Lucide Icons
+    lucide.createIcons();
+
     // Menú móvil con cierre al hacer clic fuera
     const mobileBtn = document.getElementById("mobileMenuBtn");
     const mobileNav = document.getElementById("mobileNav");
@@ -787,26 +1030,22 @@
       });
     }
 
-    // Cuenta regresiva 15 minutos (PERSISTENTE CON LOCALSTORAGE)
+    // Cuenta regresiva 15 minutos (PERSISTENTE)
     (function() {
       const minsEl = document.getElementById("cd-mins");
       const secsEl = document.getElementById("cd-secs");
 
       if (!minsEl || !secsEl) return;
 
-      const DURATION = 15 * 60; // 15 minutos en segundos
+      const DURATION = 15 * 60; 
       const STORAGE_KEY = 'impulso_timer_target_v1';
 
       function getEndTime() {
         let stored = localStorage.getItem(STORAGE_KEY);
         if (stored) {
           const target = parseInt(stored, 10);
-          // Si la fecha objetivo está en el futuro, la usamos
-          if (target > Date.now()) {
-            return target;
-          }
+          if (target > Date.now()) return target;
         }
-        // Si no hay fecha guardada o ya pasó, creamos una nueva (ahora + 15 min)
         const newTarget = Date.now() + (DURATION * 1000);
         localStorage.setItem(STORAGE_KEY, newTarget);
         return newTarget;
@@ -817,11 +1056,7 @@
       function updateCountdown() {
         const now = Date.now();
         let remaining = Math.floor((endTime - now) / 1000);
-
-        // Si se acaba, se queda en 00:00 (o podrías resetearlo)
-        if (remaining < 0) {
-          remaining = 0;
-        }
+        if (remaining < 0) remaining = 0;
 
         const m = Math.floor(remaining / 60);
         const s = remaining % 60;
@@ -839,6 +1074,95 @@
       updateCountdown();
       const timer = setInterval(updateCountdown, 1000);
     })();
+
+    /* =========================================
+       LÓGICA DEL FORMULARIO MULTI-PASOS
+       ========================================= */
+    let currentStep = 1;
+    const totalSteps = 6;
+    
+    // Inicializar fecha
+    const dateInput = document.getElementById('fecha_solicitud');
+    if(dateInput) dateInput.value = new Date().toISOString();
+
+    function showStep(step) {
+      document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+      const target = document.querySelector(`.step-content[data-step="${step}"]`);
+      if(target) target.classList.add('active');
+
+      // Actualizar barra de progreso
+      const percentage = (step / totalSteps) * 100;
+      const progBar = document.getElementById('progress-bar');
+      if(progBar) progBar.style.width = `${percentage}%`;
+      
+      // Scroll suave solo al contenedor del formulario
+      const formContainer = document.getElementById('formulario-final');
+      if(formContainer) formContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function validateStep(step) {
+      const stepEl = document.querySelector(`.step-content[data-step="${step}"]`);
+      const inputs = stepEl.querySelectorAll('input[required], textarea[required]');
+      let isValid = true;
+
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          isValid = false;
+          input.style.borderColor = '#ef4444'; // Rojo si falta
+          input.addEventListener('input', function() { this.style.borderColor = ''; });
+        }
+      });
+
+      // Radios
+      const radios = stepEl.querySelectorAll('input[type="radio"][required]');
+      if (radios.length > 0) {
+        const name = radios[0].name;
+        const checked = stepEl.querySelector(`input[name="${name}"]:checked`);
+        if (!checked) isValid = false;
+      }
+
+      if (!isValid) {
+        // Vibración visual
+        stepEl.classList.add('animate-pulse');
+        setTimeout(() => stepEl.classList.remove('animate-pulse'), 300);
+      }
+
+      return isValid;
+    }
+
+    function nextStep() {
+      if (validateStep(currentStep)) {
+        if (currentStep < totalSteps) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    function updateFileLabel(inputId, labelId) {
+      const input = document.getElementById(inputId);
+      const label = document.getElementById(labelId);
+      if (input.files && input.files.length > 0) {
+        label.innerText = `${input.files.length} archivo(s) seleccionado(s)`;
+        label.style.color = '#11D7E3';
+      }
+    }
+
+    function validateFinalStep() {
+      const btn = document.getElementById('submitBtn');
+      if(btn) {
+        btn.innerHTML = 'ENVIANDO...';
+        btn.disabled = true;
+      }
+      return true; // Permite el envío
+    }
   </script>
 </body>
 </html>
