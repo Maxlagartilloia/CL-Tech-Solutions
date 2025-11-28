@@ -216,6 +216,27 @@
     #modal-3d.flex {
       display: flex; /* Mostrar como flex cuando se activa */
     }
+    /* Estilos para navegación de galería */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 50;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: rgba(0,0,0,0.8); border-color: #11D7E3; color: #11D7E3; }
+    .nav-prev { left: 10px; }
+    .nav-next { right: 10px; }
   </style>
 </head>
 <body class="overflow-x-hidden">
@@ -371,13 +392,13 @@
                 hace que la gente te escriba, no que se pierda.
               </p>
 
-              <!-- GRID DE IMÁGENES 9:16 (MODIFICADO: AHORA ABREN EL MODAL 3D) -->
+              <!-- GRID DE IMÁGENES 9:16 (MODIFICADO: AHORA SOPORTAN GALERÍA) -->
               <div class="grid grid-cols-3 gap-2 mt-3">
                 
-                <!-- Servicios -->
+                <!-- Servicios (1 sola imagen) -->
                 <div 
                   class="relative aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer border border-white/10"
-                  onclick="abrirModal3D('Servicios Profesionales', 'Diseño limpio y serio. Muestra tus servicios, biografía y botones de contacto claros.', 'mockup-servicios.jpg', 'from-blue-600 to-cyan-500')"
+                  onclick="abrirModal3D('Servicios Profesionales', 'Diseño limpio y serio. Muestra tus servicios, biografía y botones de contacto claros.', ['mockup-servicios.jpg'], 'from-blue-600 to-cyan-500')"
                 >
                   <img 
                     src="mockup-servicios.jpg" 
@@ -391,10 +412,10 @@
                   </div>
                 </div>
 
-                <!-- Restaurante -->
+                <!-- Restaurante (2 IMÁGENES: Menú + Carrito) -->
                 <div 
                   class="relative aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer border border-white/10"
-                  onclick="abrirModal3D('Restaurantes y Comida', 'Menú digital interactivo, fotos de platos deliciosos y botón de pedido directo a WhatsApp.', 'mockup-restaurante.jpg', 'from-orange-600 to-red-500')"
+                  onclick="abrirModal3D('Restaurantes y Comida', 'Menú digital interactivo. Desliza para ver cómo se ve el Carrito de Compras listo para enviar a WhatsApp.', ['mockup-restaurante.jpg', 'mockup-restaurante-carrito.jpg'], 'from-orange-600 to-red-500')"
                 >
                   <img 
                     src="mockup-restaurante.jpg" 
@@ -404,14 +425,18 @@
                   />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2 pointer-events-none">
                     <span class="text-[9px] uppercase tracking-wider text-clturq font-bold block">Restaurante</span>
-                    <span class="text-[8px] text-white/70 leading-tight">Ver en 3D</span>
+                    <span class="text-[8px] text-white/70 leading-tight">Ver Carrito</span>
+                  </div>
+                  <!-- Indicador de que hay más fotos -->
+                  <div class="absolute top-2 right-2 bg-black/60 rounded-full p-1 border border-white/20">
+                     <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
                   </div>
                 </div>
 
-                <!-- Heladería -->
+                <!-- Heladería (2 IMÁGENES opcional) -->
                 <div 
                   class="relative aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer border border-white/10"
-                  onclick="abrirModal3D('Heladerías y Postres', 'Catálogo visual irresistible. Perfecto para antojar a tus clientes y vender más.', 'mockup-heladeria.jpg', 'from-pink-600 to-purple-500')"
+                  onclick="abrirModal3D('Heladerías y Postres', 'Catálogo visual irresistible. Perfecto para antojar a tus clientes y vender más.', ['mockup-heladeria.jpg', 'mockup-heladeria-2.jpg'], 'from-pink-600 to-purple-500')"
                 >
                   <img 
                     src="mockup-heladeria.jpg" 
@@ -725,7 +750,7 @@
               <span class="text-clturq text-lg ml-3">+</span>
             </summary>
             <div class="mt-2 text-white/80 text-xs">
-              No es excusa. Podemos arrancar con un diseño limpio, colores base y fotos sencillas. Luego,
+              No. Es excusa. Podemos arrancar con un diseño limpio, colores base y fotos sencillas. Luego,
               cuando tengas logo/fotos, se pueden cambiar. Lo importante es que empieces.
             </div>
           </details>
@@ -1070,15 +1095,20 @@
         </div>
 
         <!-- Imagen / Header (Ahora ocupa casi todo) -->
-        <div id="modal-header-bg" class="flex-1 w-full bg-slate-900 flex items-center justify-center relative overflow-hidden">
+        <div id="modal-header-bg" class="flex-1 w-full bg-slate-900 flex items-center justify-center relative overflow-hidden group">
            <!-- Imagen real de fondo (object-contain para verla completa) -->
-           <img id="modal-img" src="" class="w-full h-full object-contain" alt="Mockup 3D">
+           <img id="modal-img" src="" class="w-full h-full object-contain transition-opacity duration-300" alt="Mockup 3D">
            
            <!-- Etiqueta Flotante Sutil -->
            <div class="absolute top-4 left-0 right-0 text-center pointer-events-none z-10">
               <span class="inline-block px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-white text-[10px] border border-white/10 shadow-sm uppercase tracking-wider">
                 Vista Previa del Diseño
               </span>
+           </div>
+
+           <!-- CONTROLES DE GALERÍA (Flechas) - Se inyectan vía JS si hay > 1 foto -->
+           <div id="gallery-controls" class="absolute inset-0 pointer-events-none">
+              <!-- Botones generados dinámicamente -->
            </div>
         </div>
 
@@ -1237,33 +1267,94 @@
       const timer = setInterval(updateCountdown, 1000);
     })();
 
-    /* --- LÓGICA DEL MODAL 3D (Vanilla JS) --- */
+    /* --- LÓGICA DEL MODAL 3D + GALERÍA --- */
     const modal3D = document.getElementById('modal-3d');
     const modalCard = document.getElementById('modal-card');
     const modalShine = document.getElementById('modal-shine');
     const modalShadow = document.getElementById('modal-shadow');
-    const modalContainer = modal3D.querySelector('.perspective-1000'); // El contenedor que recibe el mousemove
+    const modalContainer = modal3D.querySelector('.perspective-1000'); 
+    const modalImg = document.getElementById('modal-img');
+    const galleryControls = document.getElementById('gallery-controls');
 
-    function abrirModal3D(titulo, descripcion, imgSrc, gradientClass) {
-      // Setear datos
+    // Estado de la galería
+    let currentImages = [];
+    let currentImgIndex = 0;
+
+    function abrirModal3D(titulo, descripcion, imagenesInput, gradientClass) {
+      // 1. Manejar si es 1 imagen o varias
+      if (Array.isArray(imagenesInput)) {
+        currentImages = imagenesInput;
+      } else {
+        currentImages = [imagenesInput];
+      }
+      currentImgIndex = 0; // Resetear al abrir
+
+      // 2. Setear datos básicos
       document.getElementById('modal-title').innerText = titulo;
       document.getElementById('modal-desc').innerText = descripcion;
-      document.getElementById('modal-img').src = imgSrc;
-      // Ajustar gradiente si se quiere (opcional), aquí reseteamos clases y ponemos una por defecto o la que venga
       
+      // 3. Cargar primera imagen
+      updateGalleryImage();
+
+      // 4. Generar controles si hay más de 1 imagen
+      renderGalleryControls();
+
       // Mostrar modal
       modal3D.classList.add('flex');
-      document.body.style.overflow = 'hidden'; // Evitar scroll
+      document.body.style.overflow = 'hidden'; 
       
-      // Refrescar iconos dentro del modal si es necesario
       lucide.createIcons();
+    }
+
+    function updateGalleryImage() {
+      // Efecto suave de transición (opcional)
+      modalImg.style.opacity = '0.5';
+      setTimeout(() => {
+        modalImg.src = currentImages[currentImgIndex];
+        modalImg.style.opacity = '1';
+      }, 100);
+    }
+
+    function nextImage(e) {
+      if(e) e.stopPropagation();
+      currentImgIndex = (currentImgIndex + 1) % currentImages.length;
+      updateGalleryImage();
+    }
+
+    function prevImage(e) {
+      if(e) e.stopPropagation();
+      currentImgIndex = (currentImgIndex - 1 + currentImages.length) % currentImages.length;
+      updateGalleryImage();
+    }
+
+    function renderGalleryControls() {
+      galleryControls.innerHTML = ''; // Limpiar
+      if (currentImages.length > 1) {
+        galleryControls.style.pointerEvents = 'auto'; // Permitir clicks
+
+        // Botón Prev
+        const btnPrev = document.createElement('div');
+        btnPrev.className = 'nav-btn nav-prev';
+        btnPrev.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>';
+        btnPrev.onclick = prevImage;
+
+        // Botón Next
+        const btnNext = document.createElement('div');
+        btnNext.className = 'nav-btn nav-next';
+        btnNext.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>';
+        btnNext.onclick = nextImage;
+
+        galleryControls.appendChild(btnPrev);
+        galleryControls.appendChild(btnNext);
+      } else {
+        galleryControls.style.pointerEvents = 'none';
+      }
     }
 
     function cerrarModal3D() {
       modal3D.classList.remove('flex');
-      document.body.style.overflow = 'auto'; // Restaurar scroll
+      document.body.style.overflow = 'auto';
       
-      // Resetear rotación
       modalCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
       modalShine.style.opacity = '0';
     }
@@ -1277,17 +1368,14 @@
       const xPct = x / rect.width;
       const yPct = y / rect.height;
 
-      // Rotación máxima 10 grados (más sutil)
       const rotateX = (0.5 - yPct) * 10; 
       const rotateY = (xPct - 0.5) * 10;
 
       modalCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-      // Brillo
       modalShine.style.background = `radial-gradient(circle at ${xPct * 100}% ${yPct * 100}%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%)`;
       modalShine.style.opacity = '1';
 
-      // Sombra
       modalShadow.style.transform = `translateX(${-rotateY}px) scale(${1 - Math.abs(rotateX)/90})`;
       modalShadow.style.opacity = `${0.6 - Math.abs(rotateX)/60}`;
     });
