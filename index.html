@@ -197,6 +197,25 @@
     details summary::-webkit-details-marker{display:none;}
     details summary::marker{display:none;}
 
+    /* --- NUEVOS ESTILOS PARA EL MODAL 3D --- */
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .preserve-3d {
+      transform-style: preserve-3d;
+    }
+    .translate-z-10 {
+      transform: translateZ(20px);
+    }
+    .translate-z-20 {
+      transform: translateZ(40px);
+    }
+    #modal-3d {
+      display: none; /* Oculto por defecto */
+    }
+    #modal-3d.flex {
+      display: flex; /* Mostrar como flex cuando se activa */
+    }
   </style>
 </head>
 <body class="overflow-x-hidden">
@@ -352,47 +371,57 @@
                 hace que la gente te escriba, no que se pierda.
               </p>
 
-              <!-- GRID DE IMÁGENES 9:16 (MODIFICADO AQUÍ) -->
+              <!-- GRID DE IMÁGENES 9:16 (MODIFICADO: AHORA ABREN EL MODAL 3D) -->
               <div class="grid grid-cols-3 gap-2 mt-3">
+                
                 <!-- Servicios -->
-                <div class="relative aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer border border-white/10">
+                <div 
+                  class="relative aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer border border-white/10"
+                  onclick="abrirModal3D('Servicios Profesionales', 'Diseño limpio y serio. Muestra tus servicios, biografía y botones de contacto claros.', 'mockup-servicios.jpg', 'from-blue-600 to-cyan-500')"
+                >
                   <img 
                     src="mockup-servicios.jpg" 
                     alt="Ejemplo Servicios" 
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onerror="this.onerror=null; this.parentElement.style.backgroundColor='#1e293b'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-[10px] text-white/50 text-center p-1\'>Sube mockup-servicios.jpg</div>';"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2 pointer-events-none">
                     <span class="text-[9px] uppercase tracking-wider text-clturq font-bold block">Servicios</span>
-                    <span class="text-[8px] text-white/70 leading-tight">Profesionales</span>
+                    <span class="text-[8px] text-white/70 leading-tight">Ver en 3D</span>
                   </div>
                 </div>
 
                 <!-- Restaurante -->
-                <div class="relative aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer border border-white/10">
+                <div 
+                  class="relative aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer border border-white/10"
+                  onclick="abrirModal3D('Restaurantes y Comida', 'Menú digital interactivo, fotos de platos deliciosos y botón de pedido directo a WhatsApp.', 'mockup-restaurante.jpg', 'from-orange-600 to-red-500')"
+                >
                   <img 
                     src="mockup-restaurante.jpg" 
                     alt="Ejemplo Restaurante" 
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onerror="this.onerror=null; this.parentElement.style.backgroundColor='#1e293b'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-[10px] text-white/50 text-center p-1\'>Sube mockup-restaurante.jpg</div>';"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2 pointer-events-none">
                     <span class="text-[9px] uppercase tracking-wider text-clturq font-bold block">Restaurante</span>
-                    <span class="text-[8px] text-white/70 leading-tight">Menú Digital</span>
+                    <span class="text-[8px] text-white/70 leading-tight">Ver en 3D</span>
                   </div>
                 </div>
 
                 <!-- Heladería -->
-                <div class="relative aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer border border-white/10">
+                <div 
+                  class="relative aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer border border-white/10"
+                  onclick="abrirModal3D('Heladerías y Postres', 'Catálogo visual irresistible. Perfecto para antojar a tus clientes y vender más.', 'mockup-heladeria.jpg', 'from-pink-600 to-purple-500')"
+                >
                   <img 
                     src="mockup-heladeria.jpg" 
                     alt="Ejemplo Heladería" 
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onerror="this.onerror=null; this.parentElement.style.backgroundColor='#1e293b'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-[10px] text-white/50 text-center p-1\'>Sube mockup-heladeria.jpg</div>';"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2 pointer-events-none">
                     <span class="text-[9px] uppercase tracking-wider text-clturq font-bold block">Heladería</span>
-                    <span class="text-[8px] text-white/70 leading-tight">Catálogo</span>
+                    <span class="text-[8px] text-white/70 leading-tight">Ver en 3D</span>
                   </div>
                 </div>
               </div>
@@ -1019,7 +1048,65 @@
     </div>
   </footer>
 
-  <!-- LÓGICA DEL FORMULARIO -->
+  <!-- MODAL 3D COMPLETO (Se inyecta al final) -->
+  <div id="modal-3d" class="fixed inset-0 z-50 items-center justify-center p-4 bg-slate-900/90 backdrop-blur-sm transition-opacity duration-300">
+    
+    <!-- Botón Cerrar -->
+    <button onclick="cerrarModal3D()" class="absolute top-4 right-4 z-50 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors cursor-pointer">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Contenedor Perspectiva -->
+    <div class="relative w-full max-w-lg perspective-1000" onclick="event.stopPropagation()">
+      
+      <!-- Tarjeta 3D -->
+      <div id="modal-card" class="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform-gpu transition-transform duration-100 ease-out preserve-3d">
+        
+        <!-- Brillo/Reflejo -->
+        <div id="modal-shine" class="absolute inset-0 z-20 pointer-events-none mix-blend-overlay transition-opacity duration-300" 
+             style="background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%); opacity: 0;">
+        </div>
+
+        <!-- Imagen / Header -->
+        <div id="modal-header-bg" class="h-64 sm:h-80 w-full bg-gradient-to-br flex items-center justify-center relative">
+           <!-- Imagen real de fondo -->
+           <img id="modal-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-90" alt="Mockup 3D">
+           <div class="absolute inset-0 bg-black/20"></div>
+
+           <!-- Etiqueta Flotante 3D -->
+           <div class="absolute bottom-4 left-4 right-4 translate-z-10 text-center">
+              <span class="inline-block px-3 py-1 bg-black/40 backdrop-blur-md rounded-lg text-white text-sm border border-white/20 shadow-sm">
+                Vista Previa Interactiva
+              </span>
+           </div>
+        </div>
+
+        <!-- Texto -->
+        <div class="p-6 bg-white translate-z-20">
+          <h2 id="modal-title" class="text-2xl font-bold text-slate-800 mb-2">Título del Modelo</h2>
+          <div class="w-full h-px bg-slate-100 my-3"></div>
+          <p id="modal-desc" class="text-slate-600 text-lg leading-relaxed mb-4">
+            Descripción del modelo seleccionado.
+          </p>
+          <button onclick="cerrarModal3D(); document.getElementById('formulario-final').scrollIntoView({behavior:'smooth'});" class="w-full bg-slate-900 text-white py-3 rounded-lg font-medium hover:bg-slate-800 transition-colors shadow-lg">
+            Quiero este modelo
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Sombra de suelo -->
+      <div id="modal-shadow" class="absolute -bottom-12 left-10 right-10 h-8 bg-black/40 blur-xl rounded-full transition-all duration-100 opacity-50"></div>
+    </div>
+
+    <div class="absolute bottom-10 left-0 right-0 text-center text-white/50 text-sm animate-bounce pointer-events-none">
+      Mueve el mouse sobre la imagen
+    </div>
+  </div>
+
+  <!-- LÓGICA DEL FORMULARIO Y MODAL -->
   <script>
     lucide.createIcons();
 
@@ -1152,8 +1239,68 @@
       updateCountdown();
       const timer = setInterval(updateCountdown, 1000);
     })();
+
+    /* --- LÓGICA DEL MODAL 3D (Vanilla JS) --- */
+    const modal3D = document.getElementById('modal-3d');
+    const modalCard = document.getElementById('modal-card');
+    const modalShine = document.getElementById('modal-shine');
+    const modalShadow = document.getElementById('modal-shadow');
+    const modalContainer = modal3D.querySelector('.perspective-1000'); // El contenedor que recibe el mousemove
+
+    function abrirModal3D(titulo, descripcion, imgSrc, gradientClass) {
+      // Setear datos
+      document.getElementById('modal-title').innerText = titulo;
+      document.getElementById('modal-desc').innerText = descripcion;
+      document.getElementById('modal-img').src = imgSrc;
+      // Ajustar gradiente si se quiere (opcional), aquí reseteamos clases y ponemos una por defecto o la que venga
+      const headerBg = document.getElementById('modal-header-bg');
+      headerBg.className = `h-64 sm:h-80 w-full bg-gradient-to-br ${gradientClass} flex items-center justify-center relative`;
+
+      // Mostrar modal
+      modal3D.classList.add('flex');
+      document.body.style.overflow = 'hidden'; // Evitar scroll
+    }
+
+    function cerrarModal3D() {
+      modal3D.classList.remove('flex');
+      document.body.style.overflow = 'auto'; // Restaurar scroll
+      
+      // Resetear rotación
+      modalCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      modalShine.style.opacity = '0';
+    }
+
+    // Efecto Tilt
+    modalContainer.addEventListener('mousemove', (e) => {
+      const rect = modalContainer.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const xPct = x / rect.width;
+      const yPct = y / rect.height;
+
+      // Rotación máxima 20 grados
+      const rotateX = (0.5 - yPct) * 20; 
+      const rotateY = (xPct - 0.5) * 20;
+
+      modalCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+      // Brillo
+      modalShine.style.background = `radial-gradient(circle at ${xPct * 100}% ${yPct * 100}%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%)`;
+      modalShine.style.opacity = '1';
+
+      // Sombra
+      modalShadow.style.transform = `translateX(${-rotateY}px) scale(${1 - Math.abs(rotateX)/90})`;
+      modalShadow.style.opacity = `${0.6 - Math.abs(rotateX)/60}`;
+    });
+
+    modalContainer.addEventListener('mouseleave', () => {
+      modalCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      modalShine.style.opacity = '0';
+      modalShadow.style.transform = 'translateX(0) scale(1)';
+      modalShadow.style.opacity = '0.5';
+    });
   </script>
 </body>
 </html>
-
 
